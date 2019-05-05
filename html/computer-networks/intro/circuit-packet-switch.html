@@ -1,0 +1,211 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Revision website</title>
+
+    <!-- include css stylesheets -->
+    <link rel="stylesheet" href="../../../styles.css">
+
+    <!-- include bootstrap CDN -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+    <!-- google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+</head>
+<body>
+    <!-- main navigation bar at top of window -->
+    <nav class="mnb navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <i class="ic fa fa-bars"></i>
+                </button>
+                <div style="padding: 15px 0;">
+                    <a href="#" id="msbo"><i class="ic fa fa-bars"></i></a>
+                </div>
+            </div> <!-- end of div.navbar-header -->
+
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">More revision<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">CSC2023</a></li>
+                            <li><a href="#">CSC2024</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">CSC1024</a></li>
+                            <li><a href="#">CSC1021</a></li>
+                            <li><a href="#">CSC1022</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#"><i class="fa fa-bell-o"></i></a></li>
+                    <li><a href="#"><i class="fa fa-comment-o"></i></a></li>
+                </ul>
+            </div> <!-- end of div.navbar-collapse -->
+            
+        </div> <!-- end of div.container-fluid -->
+    </nav> <!-- end of main nav-bar -->
+
+    <div class="msb" id="msb">
+        <nav class="navbar navbar-default" role="navigation">
+
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <div class="brand-wrapper">
+                    <!-- Brand -->
+                    <div class="brand-name-wrapper">
+                        <a class="navbar-brand" href="../../../index.html">
+                            NOZWIN
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Menu -->
+            <div class="side-menu-container">
+                <ul class="nav navbar-nav">
+
+                    <li class="active panel panel-default" id="dropdown">
+                        <a data-toggle="collapse" href="#intro-dropdown">
+                            1. Introduction to Computer Networks
+                            <span class="caret"></span>                            
+                        </a>
+                        <div id="intro-dropdown" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <ul class="nav navbar-nav">
+                                    <li><a href="what-is-a-computer-network.html">1.1. What is a computer network?</a></li>
+                                    <li><a href="#">1.2. Circuit Switch/Packet Switch</a></li>
+                                    <li><a href="network-topology.html">1.3. Network Topology</a></li>
+                                    <li><a href="types-of-networks.html">1.4. Types of networks</a></li>
+                                    <li><a href="osi-model.html">1.5. OSI model</a></li>
+                                    <li><a href="summary.html">1.6. Summary</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li><a href="#">2. Communications Theory</a></li>
+                    <li><a href="#">3. Physical Layer</a></li>
+
+                    <li class="panel panel-default" id="dropdown">
+                        <a data-toggle="collapse" href="#datalink-dropdown">
+                            4. Data-Link Layer
+                            <span class="caret"></span>
+                        </a>
+                        <!-- Dropdown level 1 -->
+                        <div id="datalink-dropdown" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <ul class="nav navbar-nav">
+                                    <li><a href="#">Mail</a></li>
+                                    <li><a href="#">Calendar</a></li>
+                                    <li><a href="#">Ecommerce</a></li>
+                                    <li><a href="#">User</a></li>
+                                    <li><a href="#">Social</a></li>
+
+                                    <!-- Dropdown level 2 -->
+                                    <li class="panel panel-default" id="dropdown">
+                                        <a data-toggle="collapse" href="#dropdown-lvl2">
+                                            <i class="glyphicon glyphicon-off"></i> Sub Level <span class="caret"></span>
+                                        </a>
+                                        <div id="dropdown-lvl2" class="panel-collapse collapse">
+                                            <div class="panel-body">
+                                                <ul class="nav navbar-nav">
+                                                    <li><a href="#">Link</a></li>
+                                                    <li><a href="#">Link</a></li>
+                                                    <li><a href="#">Link</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li><a href="#"></span> 5. MAC sublayer</a></li>
+                    <li><a href="#"></span> 6. Transport Layer</a></li>
+                    <li><a href="#"></span> 7. Network Layer</a></li>
+                    <li><a href="#"></span> 8. Application Layer</a></li>
+                </ul> <!-- end of ul.navbar -->
+
+            </div><!--  end of div.side-menu-container -->
+        </nav>
+    </div> <!-- end of main side-bar (msb) div -->
+
+    <div class="mcw">
+        <!--navigation here-->
+        <!--main content view-->
+        <div class="cv">
+            <div>
+            <div class="inbox">
+                <div class="inbox-sb">
+                
+                </div>
+                <div class="inbox-bx container-fluid">
+                    <h1>Connection-Orientated vs Connectionless Services</h1>
+                    <hr>
+                    <h3>Connection-Orientated:</h3>
+                    <ul>
+                        <li>Route chosen when virtual circuit is set up; all packets follow it.</li>
+                        <li>Packets arrive in order.</li>
+                        <li>Each packet contains a short vc_id instead of its destination address.</li>
+                        <div class="col-xs-12">
+                            <table class="table table-bordered table-hover dt-responsive">
+                                <caption class="text-center">Examples of connection-orientated services</caption> 
+                                <thead>
+                                    <tr> <th><span>Service</span></th>  <th><span>Example</span></th> </tr>
+                                </thead>
+                                <tbody>
+                                    <tr> <td>Reliable message stream</td>  <td>Sequence of pages</td>  </tr>
+                                    <tr> <td>Reliable byte stream</td>     <td>Movie download</td> </tr>
+                                    <tr> <td>Unreliable connection</td>    <td>Video/voice call</td> </tr>
+                                    <tr> <td>Reliable connection</td>      <td>File transfer</td> </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <p>You may be wondering why video/voice calling is an unreliable connection...</p>
+                        <ul>
+                            <li>Realtime data needs an unreliable service... apparently?</li>
+                            <li>It means you may have to wait a long time for ACK</li>
+                            <li>The main thing is just to have a consistent flow of realtime data.</li>
+                        </ul>
+                    </ul>
+                    <h3>Connectionless:</h3>
+                    <ul>
+                        <li>Each packet is routed independently of its predecessors. Successive packets may follow different routes.</li>
+                        <li>Packets may arrive in a different order from that in which they were sent</li>
+                        <li>Each datagram must contain the full destination address.</li>
+                        <div class="col-xs-12">
+                            <table class="table table-bordered table-hover dt-responsive">
+                                <caption class="text-center">Examples of connectionless services</caption> 
+                                <thead>
+                                    <tr> <th><span>Service</span></th>  <th><span>Example</span></th> </tr>
+                                </thead>
+                                <tbody>
+                                    <tr> <td>Unreliable datagram</td>   <td>Electronic junk email</td>  </tr>
+                                    <tr> <td>Reliable datagram</td>     <td>Email</td> </tr>
+                                    <tr> <td>Acknowledged datagram</td> <td>Text messaging</td> </tr>
+                                    <tr> <td>Request-reply</td>         <td>Database query</td> </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </ul>
+                    <p>You may be wondering why electronic junk email is an unreliable datagram...</p>
+                    <ul>
+                        <li>Because the junk email was probably sent to thousands of users, and naturally a few might get lost along the way which is no big deal... apparently?</li>
+                    </ul>
+
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="../../../funky.js"></script>
+</body>
+</html>

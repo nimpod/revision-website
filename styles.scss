@@ -1,0 +1,343 @@
+// sass variables
+$bg: rgb(255, 255, 255);
+$bg-sidebar: rgb(245,247,249);
+$bg-navbar: rgb(255, 255, 255);
+$bg-navbar-header: rgb(255, 255 ,255);
+$font-colour-navbar: rgb(95,95,95);
+$font-colour-mcw: rgb(57,70,78);
+
+$width-sidebar: 300px;
+$delay-sidebar-toggle: 0ms;
+
+
+body {
+    margin-top: 50px !important;
+    margin-left: 30px !important;
+    background-color: $bg;
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 15px !important;
+    letter-spacing: 0.01em;
+    color: $font-colour-mcw;
+  }
+  
+  .navbar-default {
+    background-color: $bg-navbar;
+    margin-left: $width-sidebar;
+  }
+  
+  /*main side bar*/
+  .msb {
+    width: $width-sidebar;
+    background-color: $bg-sidebar;
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: auto;
+    min-height: 100%;
+    overflow-y: auto;
+    white-space: nowrap;
+    height: 100%;
+    z-index: 1;
+    border-right: 1px solid rgb(221, 221, 221);
+    width: $width-sidebar;
+
+    .navbar {
+      border: none;
+      margin-left: 0;
+      background-color: inherit;
+    }
+    .navbar-header {
+      width: 100%;
+      border-bottom: 1px solid rgb(231, 231, 231);
+      background: $bg-navbar-header;
+
+      .navbar-brand {
+            color: rgb(0, 0, 0);
+            &:hover { color: rgb(46, 145, 250); }
+        }
+    }
+    .navbar-nav {
+      .panel {
+        border: 0 none;
+        box-shadow: none;
+        margin: 0;
+        background: inherit;
+      }
+      li {
+        display: block;
+        width: 100%;
+        
+        a {
+          padding: 10px;
+          color: $font-colour-navbar;
+        }
+      }
+    }
+    .nb {
+      padding-top: 5px;
+      padding-left: 10px;
+      margin-bottom: 30px;
+      overflow: hidden;
+      
+    }
+  }
+
+  /*sb: sidebar*/
+  /*nv: nav*/
+  ul.nv,
+  ul.ns {
+    position: relative;
+    padding: 0;
+    list-style: none;  
+  }
+  
+  .nv {  
+    li {
+      display: block;
+      position: relative;
+      
+      &::before {
+        clear: both;
+        content: "";      
+        display: table;
+      }
+      a {
+        color: rgb(68,68,68);
+        padding: 10px 25px;
+        display: block;
+        vertical-align: middle;
+      }
+    }
+    /*ns: nav-sub*/
+    .ns {
+      li {
+        a {
+          padding: 10px 50px;
+        }
+      }
+    }
+    
+  }
+
+  .side-menu-container ul li {
+    .panel-body {
+        padding: 0 !important;
+    }
+    a {
+        border-bottom: 1px solid rgb(217, 217, 217);
+        &:hover {
+            background: rgb(231, 231, 231) !important;
+            color: rgb(0, 0, 0) !important;
+        }
+    }
+
+    div div ul li {
+        a {
+            margin-left: 10px;
+            &:hover {
+                background: rgb(255, 255, 255) !important;
+                color: rgb(0, 0, 0) !important;
+            }
+        }
+        background:  rgb(255, 255, 255) !important;
+    }
+  }
+  
+    table {
+        caption {
+            padding: .5em 0;
+        }
+        .dataTable th,
+        .dataTable td {
+            white-space: nowrap;
+        }
+    }
+    
+  /*main content wrapper*/
+  .mcw {
+    margin-left: $width-sidebar;
+    position: relative;
+    min-height: 100%;
+    
+    /*content view*/
+    .cv {
+    }
+    a:hover {
+        color: rgb(255, 123, 0);
+        text-decoration: none;
+    }
+  }
+  
+// Custom scrollbar on medn
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #f5f5f5;
+}
+::-webkit-scrollbar-thumb {
+    background: #aaa;
+}
+
+  /*globals*/
+  a,
+  a:focus,
+  a:hover {
+   text-decoration: none;
+  }
+  
+  .inbox {
+    .container-fluid {
+      padding-left: 0;
+      padding-right: 0;
+    }
+    
+    ul, li {
+      margin: 0;
+      margin-left: 20px;
+      padding: 0;
+    }
+    ul {
+      li {
+        a {
+          display: block;
+          padding: 10px 20px;
+        }
+      }
+    }
+  }
+  .msb, .mnb {
+      -moz-animation: slidein $delay-sidebar-toggle forwards;
+      -o-animation: slidein $delay-sidebar-toggle forwards;
+      -webkit-animation: slidein $delay-sidebar-toggle forwards;
+      animation: slidein $delay-sidebar-toggle forwards;
+      -webkit-transform-style: preserve-3d;
+      transform-style: preserve-3d;  
+  }
+  .mcw {
+      -moz-animation: bodyslidein $delay-sidebar-toggle forwards;
+      -o-animation: bodyslidein $delay-sidebar-toggle forwards;
+      -webkit-animation: bodyslidein $delay-sidebar-toggle forwards;
+      animation: bodyslidein $delay-sidebar-toggle forwards;
+      -webkit-transform-style: preserve-3d;
+      transform-style: preserve-3d;  
+  }
+  body.msb-x {
+  
+    .mcw, .mnb {
+      margin-left: 0;
+  -moz-animation: bodyslideout $delay-sidebar-toggle forwards;
+      -o-animation: bodyslideout $delay-sidebar-toggle forwards;
+      -webkit-animation: bodyslideout $delay-sidebar-toggle forwards;
+      animation: bodyslideout $delay-sidebar-toggle forwards;
+      -webkit-transform-style: preserve-3d;
+      transform-style: preserve-3d;
+    }
+    .msb {
+      -moz-animation: slideout $delay-sidebar-toggle forwards;
+      -o-animation: slideout $delay-sidebar-toggle forwards;
+      -webkit-animation: slideout $delay-sidebar-toggle forwards;
+      animation: slideout $delay-sidebar-toggle forwards;
+      -webkit-transform-style: preserve-3d;
+      transform-style: preserve-3d;
+    }
+  }
+  
+    /* Slide in animation */
+    @-moz-keyframes slidein {
+      0% {
+        left: -$width-sidebar;
+      }
+      100% {
+        left: 0;
+      }
+    }
+    @-webkit-keyframes slidein {
+      0% {
+        left: -$width-sidebar;
+      }
+      100% {
+        left: 0;
+      }
+    }
+    @keyframes slidein {
+      0% {
+        left: -$width-sidebar;
+      }
+      100% {
+        left: 0;
+      }
+    }
+    @-moz-keyframes slideout {
+      0% {
+        left: 0;
+      }
+      100% {
+        left: -$width-sidebar;
+      }
+    }
+    @-webkit-keyframes slideout {
+      0% {
+        left: 0;
+      }
+      100% {
+        left: -$width-sidebar;
+      }
+    }
+    @keyframes slideout {
+      0% {
+        left: 0;
+      }
+      100% {
+        left: -$width-sidebar;
+      }
+    }
+  
+    @-moz-keyframes bodyslidein {
+      0% {
+        left: 0;
+      }
+      100% {
+        margin-left: $width-sidebar;
+      }
+    }
+    @-webkit-keyframes bodyslidein {
+      0% {
+        left: 0;
+      }
+      100% {
+        left:0
+      }
+    }
+    @keyframes bodyslidein {
+      0% {
+        margin-left: 0;
+      }
+      100% {
+        margin-left: $width-sidebar;
+      }
+    }
+    @-moz-keyframes bodyslideout {
+      0% {
+        margin-left: $width-sidebar;
+      }
+      100% {
+        margin-right: 0;
+      }
+    }
+    @-webkit-keyframes bodyslideout {
+      0% {
+        margin-left: $width-sidebar;
+      }
+      100% {
+        margin-left: 0;
+      }
+    }
+    @keyframes bodyslideout {
+      0% {
+        margin-left: $width-sidebar;
+      }
+      100% {
+        margin-left: 0;
+      }
+    }
