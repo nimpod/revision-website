@@ -1,3 +1,4 @@
+/* ----------------------------------< SCSS VARIABLES >----------------------------------*/
 body {
   margin-top: 50px !important;
   margin-left: 30px !important;
@@ -13,7 +14,7 @@ body {
   margin-left: 300px;
 }
 
-/*main side bar*/
+/* ----------------------------------< MSB (Main Side-Bar) >----------------------------------*/
 .msb {
   width: 300px;
   background-color: #f5f7f9;
@@ -136,6 +137,26 @@ ul.ns {
   color: black !important;
 }
 
+/* ----------------------------------<Homepage grids>----------------------------------*/
+div.grid-item {
+  background-color: #eeeeee;
+  width: 300px;
+  height: 300px;
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+  transition: transform 0.5s, -webkit-transform 0.5s;
+  border-radius: 10px;
+  margin: 1%;
+  float: left;
+}
+
+div.grid-item:hover {
+  -webkit-transform: scale(0.98);
+          transform: scale(0.98);
+}
+
+/* ----------------------------------<TABLE SYLING>----------------------------------*/
 table caption {
   padding: .5em 0;
 }
@@ -145,19 +166,21 @@ table .dataTable td {
   white-space: nowrap;
 }
 
-/*main content wrapper*/
+/* ----------------------------------<MCW STYLING>----------------------------------*/
 .mcw {
   margin-left: 300px;
   position: relative;
   min-height: 100%;
+  padding-bottom: 50px;
   /*content view*/
 }
 
 .mcw a:hover {
-  color: #ff7b00;
+  color: #1eff00;
   text-decoration: none;
 }
 
+/* ----------------------------------<CUSTOM SCROLLBAR>----------------------------------*/
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -170,7 +193,7 @@ table .dataTable td {
   background: #aaa;
 }
 
-/*globals*/
+/* ----------------------------------<Globals>----------------------------------*/
 a,
 a:focus,
 a:hover {
