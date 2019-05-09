@@ -6,7 +6,7 @@
     <title>Revision website</title>
 
     <!-- include css stylesheets -->
-    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="../../../styles.css">
 
     <!-- include bootstrap CDN -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
@@ -61,7 +61,7 @@
                 <div class="brand-wrapper">
                     <!-- Brand -->
                     <div class="brand-name-wrapper">
-                        <a class="navbar-brand" href="../../index.html">
+                        <a class="navbar-brand" href="../../../index.html">
                             NIMPOD
                         </a>
                     </div>
@@ -80,19 +80,19 @@
                         <div id="intro-dropdown" class="panel-collapse collapse">
                             <div class="panel-body">
                                 <ul class="nav navbar-nav">
-                                    <li><a href="intro/what-is-a-computer-network.html">1.1. What is a computer network?</a></li>
-                                    <li><a href="intro/circuit-packet-switch.html">1.2. Circuit Switch/Packet Switch</a></li>
-                                    <li><a href="intro/network-topology.html">1.3. Network Topology</a></li>
-                                    <li><a href="network-types.html">1.4. Types of networks</a></li>
-                                    <li><a href="intro/osi-model.html">1.5. OSI model</a></li>
-                                    <li><a href="intro/summary.html">1.6. Summary</a></li>
+                                    <li><a href="what-is-a-computer-network.html">1.1. What is a computer network?</a></li>
+                                    <li><a href="circuit-packet-switch.html">1.2. Circuit Switch/Packet Switch</a></li>
+                                    <li><a href="network-topologies.html">1.3. Network Topology</a></li>
+                                    <li><a href="#">1.4. Types of networks</a></li>
+                                    <li><a href="osi-model.html">1.5. OSI model</a></li>
+                                    <li><a href="summary.html">1.6. Summary</a></li>
                                 </ul>
                             </div>
                         </div>
                     </li>
                     <li><a href="#">2. Communications Theory</a></li>
                     <li><a href="#">3. Physical Layer</a></li>
-                    
+
                     <li class="panel panel-default" id="dropdown">
                         <a data-toggle="collapse" href="#datalink-dropdown">
                             4. Data-Link Layer
@@ -131,7 +131,6 @@
                     <li><a href="#"></span> 6. Transport Layer</a></li>
                     <li><a href="#"></span> 7. Network Layer</a></li>
                     <li><a href="#"></span> 8. Application Layer</a></li>
-
                 </ul> <!-- end of ul.navbar -->
 
             </div><!--  end of div.side-menu-container -->
@@ -148,21 +147,37 @@
                 
                 </div>
                 <div class="inbox-bx container-fluid">
-                    <h1>Computer Networks</h1>
-                    <div class="grid">
-                        <div class="grid-item"></div>
-                        <div class="grid-item"></div>
-                        <div class="grid-item"></div>
-                        <div class="grid-item"></div>
-                        <div class="grid-item"></div>
+                    <h1>Types of Networks</h1>
+                    <hr>
+                    <p>There are 4 main types of networks:</p>
+                    <ul>
+                        <li><b>PAN</b> = Personal Area Network</li>
+                        <li><b>LAN</b> = Local Area Network</li>
+                        <li><b>MAN</b> = Metropolitan Area Network</li>
+                        <li><b>WAN</b> = Wide Area Network</li>
+                    </ul>
 
+                    <div class="col-xs-12">
+                        <table class="table table-bordered table-hover dt-responsive">
+                            <caption class="text-center">Detailed description of each network type</caption> 
+                            <thead>
+                                <tr> <th><span>Network type</span></th>  <th><span>Distance</span></th> <th><span>Description</span></th>  <th><span>Wired examples</span></th>             <th><span>Wireless examples</span></th> <th><span>Main technology</span></th> </tr>
+                            </thead>
+                            <tbody>
+                                <tr> <td>PAN</td>  <td>1m</td>             <td>Used in phones, computers, servers</td>                    <td>USB, SATA, DATA (stuff in your PC)</td>       <td>Bluetooth, infrared, microwave</td> <td>Broadcast and point-to-point</td> </tr>
+                                <tr> <td>LAN</td>  <td>10m - 1km</td>      <td>Used in offices, schools, houses</td>                      <td>Ethernet (100-1000 mbps), coaxial cables</td> <td>Wi-Fi (11-100 mbps)</td>            <td>Broadcast</td>                   </tr>
+                                <tr> <td>MAN</td>  <td>10km</td>           <td>Used to connect devices over a city</td>                   <td>Fibre optic cables.</td>                      <td>n/a</td>                            <td>Point-to-point</td>              </tr>
+                                <tr> <td>WAN</td>  <td>100km - 1000km</td> <td>Used to connect devices across a country or continent</td> <td>Transmission lines (depends on subnet)</td>   <td>3G, 4G, satellite systems</td>      <td>Point-to-point</td>              </tr>
+                            </tbody>
+                        </table>
                     </div>
+
                 </div>
             </div>
             </div>
         </div>
     </div>
 
-    <script type="text/javascript" src="../../funky.js"></script>
+    <script type="text/javascript" src="../../../funky.js"></script>
 </body>
 </html>

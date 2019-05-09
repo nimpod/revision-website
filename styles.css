@@ -1,4 +1,8 @@
 /* ----------------------------------< SCSS VARIABLES >----------------------------------*/
+/* background variables */
+/* sidebar variables */
+/* font variables */
+/* button variables */
 body {
   margin-top: 50px !important;
   margin-left: 30px !important;
@@ -191,6 +195,68 @@ table .dataTable td {
 
 ::-webkit-scrollbar-thumb {
   background: #aaa;
+}
+
+/* ----------------------------------<BUTTONS>----------------------------------*/
+.button-bar {
+  padding: 40px;
+}
+
+/* General Button */
+/* -------------- */
+.button {
+  position: relative;
+  margin: 0;
+  padding-left: 14px;
+  padding-right: 14px;
+  padding-top: 2.8px;
+  padding-bottom: 2.8px;
+  background: #0d5287;
+  color: white;
+  font-size: 14px;
+  color: white !important;
+  text-decoration: none;
+}
+
+.button::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 0;
+  height: 0;
+}
+
+.button:hover {
+  background: #0585e8;
+  color: white !important;
+}
+
+/* Arrow Buttons */
+.next::after,
+.prev::after {
+  border-style: solid;
+}
+
+/* Next Button */
+.next::after {
+  right: -22px;
+  border-width: 11px;
+  border-color: transparent transparent transparent #0d5287;
+}
+
+.next:hover::after {
+  border-left-color: #0585e8;
+}
+
+/* Prev Button */
+.prev::after {
+  left: -22px;
+  border-color: transparent #0d5287 transparent transparent;
+  border-width: 11px;
+}
+
+.prev:hover::after {
+  border-right-color: #0585e8;
 }
 
 /* ----------------------------------<Globals>----------------------------------*/

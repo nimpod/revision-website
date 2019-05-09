@@ -6,7 +6,7 @@
     <title>Revision website</title>
 
     <!-- include css stylesheets -->
-    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="../../../styles.css">
 
     <!-- include bootstrap CDN -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
@@ -61,7 +61,7 @@
                 <div class="brand-wrapper">
                     <!-- Brand -->
                     <div class="brand-name-wrapper">
-                        <a class="navbar-brand" href="../../index.html">
+                        <a class="navbar-brand" href="../../../index.html">
                             NIMPOD
                         </a>
                     </div>
@@ -80,19 +80,19 @@
                         <div id="intro-dropdown" class="panel-collapse collapse">
                             <div class="panel-body">
                                 <ul class="nav navbar-nav">
-                                    <li><a href="intro/what-is-a-computer-network.html">1.1. What is a computer network?</a></li>
-                                    <li><a href="intro/circuit-packet-switch.html">1.2. Circuit Switch/Packet Switch</a></li>
-                                    <li><a href="intro/network-topology.html">1.3. Network Topology</a></li>
+                                    <li><a href="what-is-a-computer-network.html">1.1. What is a computer network?</a></li>
+                                    <li><a href="circuit-packet-switch.html">1.2. Circuit Switch/Packet Switch</a></li>
+                                    <li><a href="#">1.3. Network Topology</a></li>
                                     <li><a href="network-types.html">1.4. Types of networks</a></li>
-                                    <li><a href="intro/osi-model.html">1.5. OSI model</a></li>
-                                    <li><a href="intro/summary.html">1.6. Summary</a></li>
+                                    <li><a href="osi-model.html">1.5. OSI model</a></li>
+                                    <li><a href="summary.html">1.6. Summary</a></li>
                                 </ul>
                             </div>
                         </div>
                     </li>
                     <li><a href="#">2. Communications Theory</a></li>
                     <li><a href="#">3. Physical Layer</a></li>
-                    
+
                     <li class="panel panel-default" id="dropdown">
                         <a data-toggle="collapse" href="#datalink-dropdown">
                             4. Data-Link Layer
@@ -131,7 +131,6 @@
                     <li><a href="#"></span> 6. Transport Layer</a></li>
                     <li><a href="#"></span> 7. Network Layer</a></li>
                     <li><a href="#"></span> 8. Application Layer</a></li>
-
                 </ul> <!-- end of ul.navbar -->
 
             </div><!--  end of div.side-menu-container -->
@@ -148,21 +147,44 @@
                 
                 </div>
                 <div class="inbox-bx container-fluid">
-                    <h1>Computer Networks</h1>
-                    <div class="grid">
-                        <div class="grid-item"></div>
-                        <div class="grid-item"></div>
-                        <div class="grid-item"></div>
-                        <div class="grid-item"></div>
-                        <div class="grid-item"></div>
+                    <h1>Network Topology</h1>
+                    <hr>
+                    <ul>
+                        <li><b>Bus</b> topology</li>
+                        <li><b>Star</b> topology</li>
+                        <li><b>Ring</b> topology</li>
+                        <li><b>Mesh</b> topology - most common</li>
+                        <li><b>Tree</b> topology - least common</li>
+                    </ul>
 
+                    <div class="col-xs-12">
+                        <table class="table table-bordered table-hover dt-responsive">
+                            <caption class="text-center">Description and diagrams of each network topology</caption> 
+                            <thead>
+                                <tr> <th><span>Topology</span></th>  <th><span>Diagram</span></th>                  <th><span>Advantages</span></th>   <th><span>Disadvantages</span></th>  </tr>
+                            </thead>
+                            <tbody>
+                                <tr> <td>Bus</td>   <td><img src="../../../img/bus-topology.PNG" width="100"></td>  <td><ul><li>Works well when you have a small network.</li><li>It requires less cable length than other topologies.</li></ul></td> <td><ul><li>It can be difficult to identify problems if whole network goes down.</li><li>Not great for large networks.</li><li>Terminators are required for both ends of main cable.</li></ul></td> </tr>
+                                <tr> <td>Star</td>  <td><img src="../../../img/star-topology.PNG" width="100"></td> <td><ul><li>Reliable - if one cable or device fails, then all others continue to work.</li><li>0 to little data collisions.</li></ul></td> <td><ul><li>Expensive.</li><li>It requires a lot of cable length.</li><li>If the central hub fails, every node in network fails!</li></ul></td> </tr>
+                                <tr> <td>Ring</td>  <td><img src="../../../img/ring-topology.PNG" width="100"></td> <td><ul><li>Data transfer is quick.</li><li>0 to little data collisions.</li></ul></td> <td><ul><li>Expensive.</li><li>If main cable fails, or any device is faulty, whole network fails.</li></ul></td> </tr>
+                                <tr> <td>Mesh</td>  <td><img src="../../../img/mesh-topology.PNG" width="100"></td> <td><ul><li>If 1 of the connections goes down, there will be lots of other routes that can be taken to get to the same destination.</li></ul></td> <td><ul><li>Expensive.</li><li>Requires the most cable of all topologies.</li><li>Requires big NIC's (more nodes -> bigger NIC's)</li></ul></td>  </tr>
+                                <tr> <td>Tree</td>  <td><img src="../../../img/tree-topology.PNG" width="100"></td> <td><ul><li>Scalable as leaf modes can accommodate more nodes in hierarchical chain.</li></ul></td> <td><ul><li>Expensive.</li><li>Lot's of maintenance is required.</li><li>Backbone forms the point of failure.</li></ul></td>  </tr>
+                            </tbody>
+                        </table>
+                        <p><a href="http://www.certiology.com/computing/computer-networking/network-topology.html">diagrams from Certiology</a></p>
                     </div>
+
+                    <div class="button-bar">
+                        <a href="what-is-a-computer-network.html" class="button prev">Previous</a>
+                        <a href="network-types.html" class="button next">Next</a>
+                    </div>
+
                 </div>
             </div>
             </div>
         </div>
     </div>
 
-    <script type="text/javascript" src="../../funky.js"></script>
+    <script type="text/javascript" src="../../../funky.js"></script>
 </body>
 </html>
