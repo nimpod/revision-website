@@ -1,0 +1,306 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Revision website</title>
+
+    <!-- include css stylesheets -->
+    <link rel="stylesheet" href="../../../styles.css">
+
+    <!-- include bootstrap CDN -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+    <!-- google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+
+    <!-- prettify.js -->
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?lang=ruby&amp;skin=sunburst"></script>
+</head>
+<body>
+    <!-- main navigation bar at top of window -->
+    <nav class="mnb navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <i class="ic fa fa-bars"></i>
+                </button>
+                <div style="padding: 15px 0;">
+                    <a href="#" id="msbo"><i class="ic fa fa-bars"></i></a>
+                </div>
+            </div> <!-- end of div.navbar-header -->
+
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">More revision<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">CSC2023</a></li>
+                            <li><a href="../computer-networks.html">CSC2026</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">CSC1024</a></li>
+                            <li><a href="#">CSC1021</a></li>
+                            <li><a href="#">CSC1022</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#"><i class="fa fa-bell-o"></i></a></li>
+                    <li><a href="#"><i class="fa fa-comment-o"></i></a></li>
+                </ul>
+            </div> <!-- end of div.navbar-collapse -->
+            
+        </div> <!-- end of div.container-fluid -->
+    </nav> <!-- end of main nav-bar -->
+
+    <div class="msb" id="msb">
+        <nav class="navbar navbar-default" role="navigation">
+
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <div class="brand-wrapper">
+                    <!-- Brand -->
+                    <div class="brand-name-wrapper">
+                        <a class="navbar-brand" href="../../../index.html">
+                            NIMPOD
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Menu -->
+            <div class="side-menu-container">
+                <ul class="nav navbar-nav">
+
+                    <li class="panel panel-default" id="dropdown">
+                        <a data-toggle="collapse" href="#intro-dropdown">
+                            1. Introduction to Computer Networks
+                            <span class="caret"></span>                            
+                        </a>
+                        <div id="intro-dropdown" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <ul class="nav navbar-nav">
+                                    <li><a href="../intro/what-is-a-computer-network.html">1.1. What is a computer network?</a></li>
+                                    <li><a href="../intro/circuit-packet-switch.html">1.2. Circuit Switch/Packet Switch</a></li>
+                                    <li><a href="../intro/network-topology.html">1.3. Network Topology</a></li>
+                                    <li><a href="../intro/network-types.html">1.4. Types of networks</a></li>
+                                    <li><a href="../intro/osi-model.html">1.5. OSI model</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="active panel panel-default" id="dropdown">
+                        <a data-toggle="collapse" href="#physical-dropdown">
+                            2. Physical Layer
+                            <span class="caret"></span>                            
+                        </a>
+                        <div id="physical-dropdown" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <ul class="nav navbar-nav">
+                                    <li><a href="introduction-to-physical-layer.html">2.1. Introduction to the Physical Layer</a></li>
+                                    <li><a href="transmission-media.html">2.2. Trasmission Media</a></li>
+                                    <li><a href="communication-satellites.html">2.3. Communication Satellites</a></li>
+                                    <li><a href="transmission-impairment.html">2.4. Transmission Impairment</a></li>
+                                    <li><a href="encoding-modulation.html">2.5. Encoding and Modulation</a></li>
+                                    <li><a href="simplex-duplex.html">2.6. Simplex and Duplex</a></li>
+                                    <li><a href="parallel-serial.html">2.7. Parallel and Serial</a></li>
+                                    <li><a href="multiplexing.html">2.8. Multiplexing</a></li>
+                                    <li><a href="communication-systems.html">2.9. Communication Systems</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li class="panel panel-default" id="dropdown">
+                        <a data-toggle="collapse" href="#datalink-dropdown">
+                            3. Data-Link Layer
+                            <span class="caret"></span>
+                        </a>
+                        <!-- Dropdown level 1 -->
+                        <div id="datalink-dropdown" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <ul class="nav navbar-nav">
+                                    <li><a href="#">Mail</a></li>
+                                    <li><a href="#">Calendar</a></li>
+                                    <li><a href="#">Ecommerce</a></li>
+                                    <li><a href="#">User</a></li>
+                                    <li><a href="#">Social</a></li>
+
+                                    <!-- Dropdown level 2 -->
+                                    <li class="panel panel-default" id="dropdown">
+                                        <a data-toggle="collapse" href="#dropdown-lvl2">
+                                            <i class="glyphicon glyphicon-off"></i> Sub Level <span class="caret"></span>
+                                        </a>
+                                        <div id="dropdown-lvl2" class="panel-collapse collapse">
+                                            <div class="panel-body">
+                                                <ul class="nav navbar-nav">
+                                                    <li><a href="#">Link</a></li>
+                                                    <li><a href="#">Link</a></li>
+                                                    <li><a href="#">Link</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li><a href="#"></span> 4. MAC sublayer</a></li>
+                    <li><a href="#"></span> 5. Transport Layer</a></li>
+                    <li><a href="#"></span> 6. Network Layer</a></li>
+                    <li><a href="../acronyms.html">Acronyms</a></li>
+
+                </ul> <!-- end of ul.navbar -->
+
+            </div><!--  end of div.side-menu-container -->
+        </nav>
+    </div> <!-- end of main side-bar (msb) div -->
+
+    <div class="mcw">
+        <!--navigation here-->
+        <!--main content view-->
+        <div class="cv">
+            <div>
+            <div class="inbox">
+                <div class="inbox-sb">
+                
+                </div>
+                <div class="inbox-bx container-fluid">
+                    <h1>Communication Systems</h1>
+                    <hr>
+
+                    <p>We will be covering three examples of communication systems:</p>
+                    <ul>
+                        <li>Mobile telephone system</li>
+                        <li>Direct Subscriber Line (<b>DSL</b>)</li>
+                        <li>Internet over Cable (<b>IOC</b>)</li>
+                    </ul>
+
+                    <h3>Mobile telephone system</h3>
+                    <hr>
+
+                    <p>The base station relays incoming and outgoing messages to and from your mobile.</p>
+                    <p>Mobile phones use radio communication to send and receive information.</p>
+                    <p>There have been 4 generations of mobile phone systems over the last 40 years (1G, 2G, 3G, 4G).</p>
+                    <p>These are what we call <b>digital cellular networks</b> (hence the diagram above, and the name cell-phone)</p>
+                    <div class="col-xs-12">
+                        <table class="table table-bordered table-hover dt-responsive">
+                            <caption class="text-center">Network types over the years</caption> 
+                            <thead>
+                                <tr> <th><span>Name</span></th>  <th><span>Year</span></th> <th><span>Description</span></th> </tr>
+                            </thead>
+                            <tbody style="font-size: 14px;">   
+                                <tr> <td>1G</td> <td>1981</td> <td>Analog voice</td> </tr>
+                                <tr> <td>2G</td> <td>1992</td> <td>Digital voice</td> </tr>
+                                <tr> <td>3G</td> <td>2001</td> <td>Digital voice + Digital data</td> </tr>
+                                <tr> <td>4G</td> <td>2011</td> <td>Digital voice + More digital data</td> </tr>
+                                <tr> <td>5G</td> <td>?</td>    <td>n/a</td> </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <p>The dominant technology in 2G was the Global System for Mobile communications (<b>GSM</b>)</p>
+                    <p>GSM was the first technology to make use of the SIM card.</p>
+                    <img src="../../../img/gsm.png" width="400">
+                    <p>Figure 2.9a</p>
+                    <br><br>
+
+                    <p><i>Figure 2.9a</i> shows the GSM mobile network architecture. There are a lot of scary looking acronyms and funny shapes, but I'll try and break it down.</p>
+                    <ul>
+                        <li>On the far left you can see 3 mobile phones (aka. handsets). Each handset has a SIM card.</li>
+                        <li>The handsets are connected to a cell tower via an 'Air Interface' <span style="font-size: 13px; color: rgb(180,180,180);">(that dotted line)</span>.</li>
+                        <li>The Air Interface does multiplexing using FDM and TDM.</li>
+                        <ul>
+                            <li>FDM - the cell tower splits the channel into 2 frequencies (one to send calls, one to receive calls - we should be able to do both simultaneously).</li>
+                            <li>TDM - the cell tower splits the time into 8 slots.</li>
+                        </ul>
+                        <li>Each cell tower is connected to a BSC.</li>
+                        <li>All BSC's are connected to one MSC, which is responsible for routing your calls.</li>
+                        <li>The MSC does the routing using the databases VLR and HLR:</li>
+                        <ul>
+                            <li>VLR lists the last known location of the mobiles in the network.</li>
+                            <li>If searching the VLR was unsucesful then you resort to the HLR database, which does the same thing but on the entire country.</li>
+                        </ul>
+                        <li>And finally the MSC is connected to the PSTN.</li>
+                    </ul>
+
+                    <h3>DSL</h3>
+                    <hr>
+
+                    <p>DSL is a common technology for bringing <b>broadband connection</b> to homes by <b>reusing existing telephone infrastructure</b>.</p>
+                    <img src="../../../img/DSL.png" width="400">
+                    <p>Figure 2.9b</p> <br><br>
+                    
+                    <p>As you can in see in <i>Figure 2.9b</i> above, twisted pair cables are used in the 'Local Loop'. The local loop is just the link between a house and the end office.</p>
+                    <p>The Local Loop <b>uses frequencies that are not used for the voice band</b> (0 - 3kHz). This is a concept known as '<b>Passband Modulation</b>'.</p>
+                    <p>The local loop means we get a constant speed, since the bandwidth is dedicated for each customer (more secure).</p>
+
+                    <img src="../../../img/DSL-2.png" width="500">
+                    <p>Figure 2.9c</p> <br><br>
+                    <p>In <i>Figure 2.9c</i> above, voice signals do not need much kHz.</p>
+                    <p>A slightly larger, but still relatively small consumer of kHz is uploading (aka. Upstream).</p>
+                    <p>The biggest consumer of the kHz is the downloading (aka. Downstream).</p>
+                    <p>Why is this? Because on average we <b>download a lot more than we upload</b>.</p>
+                    <p>Unfortunately twisted pair cables have their limitations - they are distance-sensitive meaning signals will degrade :(</p>
+                    <p>Due to this limitation, <b>the speed of DSL depends on your location</b>.</p>
+                    <br>
+
+                    <h3>IOC</h3>
+                    <hr>
+
+                    <p>IOC is another common technology for bringing <b>broadband connection</b> to homes by <b>reusing the existing cable TV infrastructure</b>.</p>
+                    <p>The bandwidth is shared over customers. This is the opposite of what it was in DSL, where each customer had their own local loop and thus their own bandwidth.</p>
+                    <p>If you see the diagram for IOC it will make sense how the bandwidth is shared.</p>
+                    <img src="../../../img/IOC.png" width="350">
+                    <p>Figure 2.9d</p> <br><br>
+
+                    <p>Since the bandwidth is shared across customers, the data rate depends on the number of people online.</p>
+                    <p>But in general, IOC is faster than DSL... Why?</p>
+                    <ul>
+                        <li>IOC use coaxial cables.</li>
+                        <li>Coaxial cables provide higher data rate than twisted pair cables.</li>
+                    </ul>
+                    <p>Also there is a security issue with IOC because the link is shared between all the customers.</p>
+                    <p>Just like with DSL, Upstream and downstream data are allocated to frequency channels not used by TV channels.</p>
+
+                    <img src="../../../img/IOC-2.png" width="500">
+                    <p>Figure 2.9e</p> <br><br>
+                    
+                    <p>Like with DSL, voice signals do not need much MHz.</p>
+                    <p>Slightly smaller is FM radio.</p>
+                    <p>Slightly larger is downloading (aka. Upstream).</p>
+                    <p>What you might think is the largest is downloading (aka. Downstream).</p>
+                    <p>The biggest consumer of the MHz is in fact TV.</p>
+
+                    <p>So in summary, the main difference between DSL and IOC (apart from them being used for two differnet reasons - TV and Broadband) are:</p>
+                    <div class="col-xs-12">
+                        <table class="table table-bordered table-hover dt-responsive">
+                            <caption class="text-center">Comparison between DSL and IOC</caption> 
+                            <thead>
+                                <tr> <th><span></span></th>  <th><span>Advantages</span></th> <th><span>Disadvantages</span></th> </tr>
+                            </thead>
+                            <tbody style="font-size: 14px;">   
+                                <tr> <td>DSL</td> <td>More secure</td> <td>Lower data-rate</td> </tr>
+                                <tr> <td>IOC</td> <td>Higher data-rate</td> <td>Less secure</td> </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="button-bar">
+                        <a href="multiplexing.html" class="button prev">Previous</a>
+                        <a href="introduction-to-datalink-layer.html" class="button next">Next</a>
+                    </div>
+
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="../../../funky.js"></script>
+</body>
+</html>

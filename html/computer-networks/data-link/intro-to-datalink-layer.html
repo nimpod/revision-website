@@ -16,9 +16,6 @@
 
     <!-- google fonts -->
     <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
-
-    <!-- prettify.js -->
-    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?lang=ruby&amp;skin=sunburst"></script>
 </head>
 <body>
     <!-- main navigation bar at top of window -->
@@ -170,52 +167,24 @@
                 
                 </div>
                 <div class="inbox-bx container-fluid">
-                    <h1>Multiplexing</h1>
+                    <h1>Introduction to the Physical Layer</h1>
                     <hr>
 
-                    <p>If you want to <b>send more than 1 conversation(s) across a single link</b>, multiplexing is your friend.</p>
-                    <p>What do I mean by a '<b>conversation</b>'? - The communication between 2 devices that carries and transmits some data with it.</p>
-                    <p>Multiplexing allows the carrying of multiple signals on a single medium.</p>
-                    <p>This allows more <b>efficient use of the transmission medium</b>, because more devices can use the link at the same time!</p>
-                    <p>This is the whole <b>purpose</b> behind doing multiplexing - to <b>efficiently use the transmission medium</b>.</p>
-                    <p>There are 3 main multiplexing techniques</p>
+                    <p><b>Layer 1</b> - The Physical Layer deals with <b>bit-level transmission</b> between different devices.</p>
+                    <p>However, that binary data is kind of an abstraction from what they are in reality.</p>
+                    <p>If you cut open a fibre optic cable you wouldn't see 1's and 0's pouring out of the wire.</p>
+                    <p>There are signals travelling through the wire.</p>
+                    <p>Those signals have voltage levels.</p>
+                    <p>Then what we'll do is choose a <b>reliability margin</b>:</p>
                     <ul>
-                        <li>Frequency Division Multiplexing (<b>FDM</b>)</li>
-                        <li>Time Division Multiplexing (<b>TDM</b>)</li>
-                        <li>Code Division Multiple Access(<b>CDMA</b>)</li>
+                        <li>a number that says everything above it = 1, and everything below it = 0</li>
+                        <li>a reliability margin of 5V is common</li>
+                        <ul> <li>so 1V=0; 2V=0; 3V=0; 4V=0; 5V=0; 6V=1; 7V=1; 8V=1, etc...</li> </ul>
                     </ul>
 
-                    <h3>Frequency Division Multiplexing (FDM)</h3>
-                    <hr>
-
-                    <p style="font-size: 13px; color: rgb(180,180,180);">Similar to a motorway.</p>
-                    <p>FDM is a multiplexing technique that <b>shares the channel by placing users on different frequencies</b>.</p>
-                    <p><i>"break down the channel into multiple channels, each with a specific frequency, and we divide the channels among different hosts."</i></p>
-                    <p>So we are basically '<b>dividing by the frequency</b>' hence the name FDM.</p>
-                    <p>In other words, we shift each signal to a different carrier frequency.</p>
-                    <p>The total bandwidth available is divided into a series of non-overlapping frequency bands, each of which is used to carry a separate signal. Kind of like a motorway, where you can send multiple cars down one lane, and there can be multiple lanes per motorway.</p>
-                    <p>For FDM to work properly frequency overlap must be avoided. Therefore, the link must have sufficient bandwidth to be able to carry the wide range of frequencies required.</p>
-
-                    <h3>Time Division Multiplexing (TDM)</h3>
-                    <hr>
-
-                    <p style="font-size: 13px; color: rgb(180,180,180);">Similar to Round Robin (oh those were dark times).</p>
-                    <p>Use the entire bandwidth, but only for short time periods.</p>
-                    <p>Instead of dividing the frequencies, we <b>divide the time into separate slots</b>. Then we give those slots to different conversations. (It's sorta like how Round Robin works because they are taking turns in using the link.)
-                    <p>Takes advantage of the fact that achievable bit rate of medium exceeds the required data rate of a digital signal.</p>
-
-                    <h3>Code Division Multiple Access (CDMA)</h3>
-                    <hr>
-
-                    <p>Shares the channel by giving user specific codes.</p>
-                    <p>Distinguishing between conversations is just a case of <b>differentiating between those codes</b>. You could then <b>tune the network to only listen to conversations with a particular code</b>.</p>
-                    <p>Allows conversations to use the whole bandwidth at any time.</p>
-                    <p>Commonly used in 3G networks.</p>
-
-
                     <div class="button-bar">
-                        <a href="parallel-serial.html" class="button prev">Previous</a>
-                        <a href="communication-systems.html" class="button next">Next</a>
+                        <a href="../intro/osi-model.html" class="button prev">Previous</a>
+                        <a href="transmission-media.html" class="button next">Next</a>
                     </div>
 
                 </div>
