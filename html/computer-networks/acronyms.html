@@ -1,0 +1,279 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Revision website</title>
+
+    <!-- include css stylesheets -->
+    <link rel="stylesheet" href="../../styles.css">
+
+    <!-- include bootstrap CDN -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+    <!-- google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+</head>
+<body>
+    <!-- main navigation bar at top of window -->
+    <nav class="mnb navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <i class="ic fa fa-bars"></i>
+                </button>
+                <div style="padding: 15px 0;">
+                    <a href="#" id="msbo"><i class="ic fa fa-bars"></i></a>
+                </div>
+            </div> <!-- end of div.navbar-header -->
+
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">More revision<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">CSC2023</a></li>
+                            <li><a href="../computer-networks.html">CSC2026</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">CSC1024</a></li>
+                            <li><a href="#">CSC1021</a></li>
+                            <li><a href="#">CSC1022</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#"><i class="fa fa-bell-o"></i></a></li>
+                    <li><a href="#"><i class="fa fa-comment-o"></i></a></li>
+                </ul>
+            </div> <!-- end of div.navbar-collapse -->
+            
+        </div> <!-- end of div.container-fluid -->
+    </nav> <!-- end of main nav-bar -->
+
+    <div class="msb" id="msb">
+        <nav class="navbar navbar-default" role="navigation">
+
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <div class="brand-wrapper">
+                    <!-- Brand -->
+                    <div class="brand-name-wrapper">
+                        <a class="navbar-brand" href="../../index.html">
+                            NIMPOD
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Menu -->
+            <div class="side-menu-container">
+                <ul class="nav navbar-nav">
+
+                    <li class="active panel panel-default" id="dropdown">
+                        <a data-toggle="collapse" href="#intro-dropdown">
+                            1. Introduction to Computer Networks
+                            <span class="caret"></span>                            
+                        </a>
+                        <div id="intro-dropdown" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <ul class="nav navbar-nav">
+                                    <li><a href="intro/what-is-a-computer-network.html">1.1. What is a computer network?</a></li>
+                                    <li><a href="intro/circuit-packet-switch.html">1.2. Circuit Switch/Packet Switch</a></li>
+                                    <li><a href="intro/network-topology.html">1.3. Network Topology</a></li>
+                                    <li><a href="network-types.html">1.4. Types of networks</a></li>
+                                    <li><a href="intro/osi-model.html">1.5. OSI model</a></li>
+                                    <li><a href="intro/summary.html">1.6. Summary</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="panel panel-default" id="dropdown">
+                        <a data-toggle="collapse" href="#physical-dropdown">
+                            2. Physical Layer
+                            <span class="caret"></span>                            
+                        </a>
+                        <div id="physical-dropdown" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <ul class="nav navbar-nav">
+                                    <li><a href="physical/introduction-to-physical-layer.html">2.1. Introduction to the Physical Layer</a></li>
+                                    <li><a href="physical/transmission-media.html">2.2. Trasmission Media</a></li>
+                                    <li><a href="physical/communication-satellites.html">2.3. Communication Satellites</a></li>
+                                    <li><a href="physical/transmission-impairment.html">2.4. Transmission Impairment</a></li>
+                                    <li><a href="physical/encoding-modulation.html">2.5. Encoding and Modulation</a></li>
+                                    <li><a href="physical/simplex-duplex.html">2.6. Simplex and Duplex</a></li>
+                                    <li><a href="physical/parallel-serial.html">2.7. Parallel and Serial</a></li>
+                                    <li><a href="physical/multiplexing.html">2.8. Multiplexing</a></li>
+                                    <li><a href="physical/communication-systems.html">2.9. Communication Systems</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li class="panel panel-default" id="dropdown">
+                        <a data-toggle="collapse" href="#datalink-dropdown">
+                            3. Data-Link Layer
+                            <span class="caret"></span>
+                        </a>
+                        <!-- Dropdown level 1 -->
+                        <div id="datalink-dropdown" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <ul class="nav navbar-nav">
+                                    <li><a href="#">Mail</a></li>
+                                    <li><a href="#">Calendar</a></li>
+                                    <li><a href="#">Ecommerce</a></li>
+                                    <li><a href="#">User</a></li>
+                                    <li><a href="#">Social</a></li>
+
+                                    <!-- Dropdown level 2 -->
+                                    <li class="panel panel-default" id="dropdown">
+                                        <a data-toggle="collapse" href="#dropdown-lvl2">
+                                            <i class="glyphicon glyphicon-off"></i> Sub Level <span class="caret"></span>
+                                        </a>
+                                        <div id="dropdown-lvl2" class="panel-collapse collapse">
+                                            <div class="panel-body">
+                                                <ul class="nav navbar-nav">
+                                                    <li><a href="#">Link</a></li>
+                                                    <li><a href="#">Link</a></li>
+                                                    <li><a href="#">Link</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li><a href="#"> 4. MAC sublayer</a></li>
+                    <li><a href="#"> 5. Transport Layer</a></li>
+                    <li><a href="#"> 6. Network Layer</a></li>
+                    <li><a href="#">Acronyms</a></li>
+
+                </ul> <!-- end of ul.navbar -->
+
+            </div><!--  end of div.side-menu-container -->
+        </nav>
+    </div> <!-- end of main side-bar (msb) div -->
+
+    <div class="mcw">
+        <!--navigation here-->
+        <!--main content view-->
+        <div class="cv">
+            <div>
+            <div class="inbox">
+                <div class="inbox-sb">
+                
+                </div>
+                <div class="inbox-bx container-fluid">
+                    <h1>Computer Networks</h1>
+                    <p>Pink cells like this...</p>
+                    <div class="col-xs-12"><table class="table table-bordered table-hover dt-responsive" >
+                        <tbody style="font-size: 14px;"><tr class="important-tablecell"><td>IKEA</td> <td>Ingvar Kamprad Elmtaryd Agunnaryd</td><td>IKEA stands for Ingvar Kamprad Elmtaryd Agunnaryd, named for the founder’s initials and his hometown.</td></tr></tbody>
+                    </table></div>
+                    <p>...are (in my opinion) the most important acronyms to learn.</p>
+                    <p>I would recommend studying the pink acronyms in more detail than white acronyms.</p>
+                    
+                    <div class="col-xs-12">
+                        <table class="table table-bordered table-hover dt-responsive">
+                            <caption class="text-center">Every acronym that has been mentioned in a lecture</caption> 
+                            <thead>
+                                <tr> <th><span>Acronym</span></th>  <th><span>Stands for...</span></th> <th><span>What does it do?</span></th> </tr>
+                            </thead>
+                            <tbody style="font-size: 14px;">                           
+                                <tr> <td>ADSL</td>  <td>Asymmetric Digital Subscriber Line</td>  <td>Connects home subscribers to the Internet over the old telephone service using PPP protocol</td> </tr>
+                                <tr> <td>AM</td>  <td>Amplitude Modulation</td>  <td>As in AM Radio</td> </tr>
+                                <tr class="important-tablecell"> <td>ARQ</td>  <td>Automatic Repeat reQuest</td>  <td>Flow control protocol used to manage refusal and acceptance of new device connections in a network (also known as PAR protocol)</td> </tr>
+                                <tr class="important-tablecell"> <td>ARP</td>  <td>Address Resolution Protocol</td>  <td>Internet protocol that gives a host an IP address. NO LONGER USED SINCE IT IS MANUAL. DHCP is used instead!</td> </tr>
+                                <tr> <td>ARPANET</td>  <td>Advanced Research Projects Agency Network</td>  <td>The predecessor to the Internet.</td> </tr>
+                                <tr> <td>ATM</td>  <td>Asynchronous Transfer Model</td>  <td>Involved during the last leg of the journey from the ISP to your home.</td> </tr>
+                                <tr class="important-tablecell"> <td>BGP</td>  <td>Border Gateway Protocol</td>  <td>Protocol that manages how packets are routed across the internet through the exchange of routing and reachability information between edge routers.</td> </tr>
+                                <tr class="important-tablecell"> <td>BOOTP</td>  <td>Bootstrap Protocol</td>  <td>Internet protocol that gives a host an IP address. NO LONGER USED SINCE IT IS MANUAL. DHCP is used instead!</td> </tr>
+                                <tr> <td>BSC</td>  <td>Base Station Controller</td>  <td>Part of the GSM</td> </tr>
+                                <tr class="important-tablecell"> <td>CDMA</td>  <td>Code Division Multiple Access</td>  <td>Multiplexing technique that shares the channel by giving specific code to users (used in 3G networks)</td> </tr>
+                                <tr> <td>CIDR</td>  <td>Classless Inter Domain Routing</td>  <td>Notation used in classless IPv4 address.</td> </tr>
+                                <tr class="important-tablecell"> <td>CSMA</td>  <td>Carrier Sense Multiple Access</td>  <td></td> </tr>
+                                <tr> <td>CTS</td>  <td>Clear To Send</td>  <td>Part of IEEE 802.11 for the MACA protocol for safe communication in wireless LAN's. Solves the Exposed Terminal Problem.</td> </tr>
+                                <tr class="important-tablecell"> <td>DHCP</td>  <td>Dynamic Host Configuration Protocol</td>  <td>Internet protocol that automatically assign a local IP address to a host.</td> </tr>
+                                <tr class="important-tablecell"> <td>DNS</td>  <td>Domain Name System</td>  <td>Maps IP addresses to domain names</td> </tr>
+                                <tr> <td>DSL</td>  <td>Digital Subscriber Line</td>  <td></td> </tr>
+                                <tr class="important-tablecell"> <td>ECN</td>  <td>Explicit Congestion Notification</td>  <td>Field in the IP header to indicate whether there is congestion in the network. If there is congestion, ECN = 11</td> </tr>
+                                <tr class="important-tablecell"> <td>EGP</td>  <td>Exterior Gateway Protocol</td>  <td>Group of protocols used for routing algorithms</td> </tr>
+                                <tr> <td>FDDI</td>  <td>Fibre Distributed Data Interface</td>  <td>Data transmission using fiber optic cables. Often used to connect lots of routers from a WAN.</td> </tr>
+                                <tr class="important-tablecell"> <td>FDM</td>  <td>Frequency Division Multiplexing</td>  <td>Multiplexing technique that shares the channel by placing users on different frequencies</td> </tr>
+                                <tr> <td>FM</td>  <td>Frequency Modulation</td>  <td>As in FM Radio</td> </tr>
+                                <tr> <td>FTP</td>  <td>File Transfer Protocol</td>  <td></td> </tr>
+                                <tr class="important-tablecell"> <td>GEO</td>  <td>Geo-stationary Earth Orbit</td>  <td>Type of communication satellite (35,000km above ground)</td> </tr>
+                                <tr> <td>GSM</td>  <td>Global System for Mobile communications</td>  <td>The global system for mobile communications</td> </tr>
+                                <tr> <td>HLDC</td>  <td>High Level Data Control</td>  <td>Data-link protocol</td> </tr>
+                                <tr> <td>HLR</td>  <td>Home Location Register</td>  <td>Part of GSM</td> </tr>
+                                <tr class="important-tablecell"> <td>HTTP</td>  <td>Hyper Text Transfer Protocol</td>  <td></td> </tr>
+                                <tr class="important-tablecell"> <td>ICMP</td>  <td>Internet Control Message Protocol</td>  <td>Error-reporting protocol used in the Internet - routers use it to generate error messages to the source IP address when network problems prevent delivery of IP packets.</td> </tr>
+                                <tr> <td>IEEE</td>  <td>Institute of Electronic Engineers</td>  <td></td> </tr>
+                                <tr class="important-tablecell"> <td>IMAP</td>  <td>Internet Message Access Protocol</td>  <td>Protocol used by the Application layer for mail transfer</td> </tr>
+                                <tr> <td>IGP</td>  <td>Interior Gateway Protocol</td>  <td>Group of protocols used for routing algorithms</td> </tr>
+                                <tr class="important-tablecell"> <td>IHL</td>  <td>Internet Header Length</td>  <td>IPv4 field to indicate length of IP header</td> </tr>
+                                <tr> <td>IPP</td>  <td>Internet Printing Protocol</td>  <td></td> </tr>
+                                <tr> <td>IOC</td>  <td>Internet Over Cable</td>  <td></td> </tr>
+                                <tr> <td>ISP</td>  <td>Internet Service Provider</td>  <td></td> </tr>
+                                <tr> <td>IXP</td>  <td>Internet eXchange Point</td>  <td></td> </tr>
+                                <tr> <td>LAN</td>  <td>Local Area Network</td>  <td></td> </tr>
+                                <tr> <td>LEO</td>  <td>Low Earth Orbit</td>  <td>Type of communication satellite (5,000km above ground)</td> </tr>
+                                <tr class="important-tablecell"> <td>MACA</td>  <td>Multiple Access Collision Avoidance</td>  <td>Wireless LAN protocol</td> </tr>
+                                <tr> <td>MAN</td>  <td>Metropolitan Area Network</td>  <td></td> </tr>
+                                <tr> <td>MANET</td>  <td>Mobile Adhoc NETwork</td>  <td></td> </tr>
+                                <tr> <td>MIME</td>  <td>Multipurpose Internet Mail Extensions</td>  <td></td> </tr>
+                                <tr> <td>MEO</td>  <td>Middle Earth Orbit</td>  <td>Type of communication satellite (15,000km above ground)</td> </tr>
+                                <tr class="important-tablecell"> <td>MPLS</td>  <td>Multi Protocol Label Switching</td>  <td>Protocol used in the Network layer to route packets. Works on connection-orientated services to make virtual circuits</td> </tr>
+                                <tr> <td>MSC</td>  <td>Mobile Switching Centre</td>  <td>Part of the GSM</td> </tr>
+                                <tr class="important-tablecell"> <td>MTU</td>  <td>Maximum Transmission Unit</td>  <td></td> </tr>
+                                <tr class="important-tablecell"> <td>NAT</td>  <td>Network Address Translation</td>  <td>Maps private IP address to a public IP address</td> </tr>
+                                <tr> <td>NAV</td>  <td>Network Allocation Vector</td>  <td></td> </tr>
+                                <tr> <td>NIC</td>  <td>Network Interface Card</td>  <td></td> </tr>
+                                <tr> <td>NNTP</td>  <td>Network News Transfer Protocol</td>  <td></td> </tr>
+                                <tr> <td>NSAP</td>  <td>Network Service Access Point</td>  <td>Basically an IP address</td> </tr>
+                                <tr class="important-tablecell"> <td>OSPF</td>  <td>Open Shortest Path First</td>  <td>Routing protocol, it is a type of IGP and uses an LSR algorithm. It uses a shortest path first algorithm where distances are based on physical distance/delay.</td> </tr>
+                                <tr> <td>PAN</td>  <td>Personal Area Network</td>  <td></td> </tr>
+                                <tr class="important-tablecell"> <td>PAR</td>  <td>Positive Acknowledgement Protocol</td>  <td>Same thing as ARQ</td> </tr>
+                                <tr> <td>RARP</td>  <td>Reverse Positive Acknowledgement Protocol</td>  <td>Internet protocol that gives a host an IP address. NO LONGER USED SINCE IT IS MANUAL. DHCP is used instead!</td> </tr>
+                                <tr> <td>RFID</td>  <td>Radio Frequency Identification Device</td>  <td></td> </tr>
+                                <tr> <td>PPP</td>  <td>Point to Point Protocol</td>  <td>Data-link protocol </td> </tr>
+                                <tr class="important-tablecell"> <td>POP3</td>  <td>Post Office Protocol v3</td>  <td>Protocol used by the Application layer for mail transfer</td> </tr>
+                                <tr> <td>PSTN</td>  <td>Public Switch Telephone Network</td>  <td></td> </tr>
+                                <tr> <td>RIP</td>  <td>Router Information Protocol</td>  <td>Distance vector protocol. It is an older version of OSPF.</td> </tr>
+                                <tr class="important-tablecell"> <td>RTP</td>  <td>Real Time Protocol</td>  <td></td> </tr>
+                                <tr> <td>RTSP</td>  <td>Real Time Streaming Protocol</td>  <td></td> </tr>
+                                <tr> <td>RTS</td>  <td>Request To Send</td>  <td>Part of IEEE 802.11 for the MACA protocol for safe communication in wireless LAN's. Solves the Exposed Terminal Problem.</td> </tr>
+                                <tr class="important-tablecell"> <td>SCTP</td>  <td>Streaming Control Transmission Protocol</td>  <td>Protocol used to do Downward Multiplexing.</td> </tr>
+                                <tr> <td>SIM</td>  <td>Subscriber Identity Module</td>  <td>Part of GSM. What activates your mobile phone and connects it to a network.</td> </tr>
+                                <tr> <td>SONET</td>  <td></td>  <td></td> </tr>
+                                <tr class="important-tablecell"> <td>SMTP</td>  <td>Simple Mail Tranfer Protocol</td>  <td>Protocol used by the Application layer for mail transfer</td> </tr>
+                                <tr> <td>STP</td>  <td>Shielded Twisted Pair</td>  <td>A type of twisted pair cable</td> </tr>
+                                <tr class="important-tablecell"> <td>TCP</td>  <td>Transfer Control Protocol</td>  <td>Reliable connection-orientated protocol. Used to do Upward Multiplexing.</td> </tr>
+                                <tr class="important-tablecell"> <td>TDM</td>  <td>Time Division Multiplexing</td>  <td>Multiplexing technique that shares a channel over time</td> </tr>
+                                <tr> <td>TPDU</td>  <td>Transport Protocol Data Unit</td>  <td>Alternative name for segment (the data abstraction at the Transport Layer)</td> </tr>
+                                <tr> <td>TSAP</td>  <td>Transport Service Access Point</td>  <td>Basically a port in the Internet</td> </tr>
+                                <tr> <td>UART</td>  <td>Universal Asynchronous Receiver Transmitter</td>  <td></td> </tr>
+                                <tr class="important-tablecell"> <td>UDP</td>  <td>User Datagram Protocol</td>  <td>Unreliable connection-less protocol. Used during streaming, video/voice calls.</td> </tr>
+                                <tr> <td>UHF</td>  <td>Ultra High Frequency</td>  <td>Type of radiowave</td> </tr>
+                                <tr> <td>USB</td>  <td>Universal Serial Bus</td>  <td></td> </tr>
+                                <tr> <td>UTP</td>  <td>Unshielded Twisted Pair</td>  <td>Another type of twisted pair cable</td> </tr>
+                                <tr> <td>VLR</td>  <td>Visitor Location Register</td>  <td>Part of GSM</td> </tr>
+                                <tr> <td>VSAT</td>  <td>Very Small Aperture Terminal</td>  <td>A two-way satellite ground station with a dish antenna that is smaller than 4 meters. They bounce signals off larger transmitters</td> </tr>
+                                <tr> <td>VHF</td>  <td>Very High Frequency</td>  <td>Type of radiowave</td> </tr>
+                                <tr> <td>WAN</td>  <td>Wide Area Network</td>  <td></td> </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="../../funky.js"></script>
+</body>
+</html>

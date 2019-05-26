@@ -72,7 +72,7 @@
             <div class="side-menu-container">
                 <ul class="nav navbar-nav">
 
-                    <li class="active panel panel-default" id="dropdown">
+                    <li class="panel panel-default" id="dropdown">
                         <a data-toggle="collapse" href="#intro-dropdown">
                             1. Introduction to Computer Networks
                             <span class="caret"></span>                            
@@ -80,18 +80,18 @@
                         <div id="intro-dropdown" class="panel-collapse collapse">
                             <div class="panel-body">
                                 <ul class="nav navbar-nav">
-                                    <li><a href="what-is-a-computer-network.html">1.1. What is a computer network?</a></li>
-                                    <li><a href="circuit-packet-switch.html">1.2. Circuit Switch/Packet Switch</a></li>
-                                    <li><a href="network-topology.html">1.3. Network Topology</a></li>
-                                    <li><a href="network-types.html">1.4. Types of networks</a></li>
-                                    <li><a href="osi-model.html">1.5. OSI model</a></li>
-                                    <li><a href="summary.html">1.6. Summary</a></li>
+                                    <li><a href="../intro/what-is-a-computer-network.html">1.1. What is a computer network?</a></li>
+                                    <li><a href="../intro/circuit-packet-switch.html">1.2. Circuit Switch/Packet Switch</a></li>
+                                    <li><a href="../intro/network-topology.html">1.3. Network Topology</a></li>
+                                    <li><a href="../intro/network-types.html">1.4. Types of networks</a></li>
+                                    <li><a href="../intro/osi-model.html">1.5. OSI model</a></li>
+                                    <li><a href="../intro/summary.html">1.6. Summary</a></li>
                                 </ul>
                             </div>
                         </div>
                     </li>
 
-                    <li class="panel panel-default" id="dropdown">
+                    <li class="active panel panel-default" id="dropdown">
                         <a data-toggle="collapse" href="#physical-dropdown">
                             2. Physical Layer
                             <span class="caret"></span>                            
@@ -99,13 +99,15 @@
                         <div id="physical-dropdown" class="panel-collapse collapse">
                             <div class="panel-body">
                                 <ul class="nav navbar-nav">
-                                    <li><a href="../physical/introduction-to-physical-layer.html">2.1. Introduction to the Physical Layer</a></li>
-                                    <li><a href="../physical/transmission-media.html">2.2. Trasmission Media</a></li>
-                                    <li><a href="../physical/communication-satellites.html">2.3. Communication Satellites</a></li>
-                                    <li><a href="../physical/transmission-impairment.html">2.4. Transmission Impairment</a></li>
-                                    <li><a href="../physical/transmission-methods.html">2.5. Parallel vs Serial Transmission</a></li>
-                                    <li><a href="../physical/multiplexing.html">2.6. Multiplexing</a></li>
-                                    <li><a href="../physical/communication-systems.html">2.7. Communication Systems</a></li>
+                                    <li><a href="introduction-to-physical-layer.html">2.1. Introduction to the Physical Layer</a></li>
+                                    <li><a href="transmission-media.html">2.2. Trasmission Media</a></li>
+                                    <li><a href="communication-satellites.html">2.3. Communication Satellites</a></li>
+                                    <li><a href="transmission-impairment.html">2.4. Transmission Impairment</a></li>
+                                    <li><a href="encoding-modulation.html">2.5. Encoding and Modulation</a></li>
+                                    <li><a href="simplex-duplex.html">2.6. Simplex and Duplex</a></li>
+                                    <li><a href="parallel-serial.html">2.7. Parallel and Serial</a></li>
+                                    <li><a href="multiplexing.html">2.8. Multiplexing</a></li>
+                                    <li><a href="communication-systems.html">2.9. Communication Systems</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -161,83 +163,83 @@
         <!--main content view-->
         <div class="cv">
             <div>
-                <div class="inbox">
-                    <div class="inbox-sb">
+            <div class="inbox">
+                <div class="inbox-sb">
+                
+                </div>
+                <div class="inbox-bx container-fluid">
+                    <h1>Communication Satellites</h1>
+                    <hr>
+
+                    <p>There are three main types of communication satellites:</p>
+                    <ul>
+                        <li><b>GEO</b> = Geostationary Earth Orbit <span style="font-size: 13px; color: rgb(180,180,180);">(they are called geostationary, because from the perspective of someone on Earth, they look stationary for 2 reasons: they are directly above the equator, and satellite.orbitSpeed = Earth.orbitSpeed)</span></li>
+                        <li><b>MEO</b> = Middle Earth Orbit <span style="font-size: 13px; color: rgb(180,180,180);">(they are not stationary. They just orbit the Earth at a lower orbit)</span></li>
+                        <li><b>LEO</b> = Low Earth Orbit</li>
+                    </ul>
+                    <br>
+
+                    <p>The following diagram illustrates where each type of satellite sits in the Earth's atmosphere, and also includes some mysterious information about latency and satellites needed (we will go into this later...):</p>
                     
-                    </div>
-                    <div class="inbox-bx container-fluid">
-                        <h1>What is a computer network?</h1>
-                        <hr>
-                        <p>A computer network is a collection of computers connected by <a href="https://www.sciencedirect.com/topics/computer-science/communication-link">communication links</a>.</p>
-                        <p>Why are computer networks important?</p>
+                    <img src="../../../img/satellite-types.png" width="500">
+                    <p>Figure 2.2a</p>
+
+                    <br><br>
+
+                    <h3>Van Allen Radiation Belt</h3>
+                    <hr>
+                    <p>The areas labelled <b>Upper Van Allen Belt</b> and <b>Lower Van Allen Belt</b> in <i>Figure 2.2a</i> are parts of the Van Allen Radiation Belt</p>
+                    <ul>
+                        <li>It is a zone of energetic charged particles that originate from solar wind.</li>
+                        <li>The charged particles are captured by Earth's magnetic field and held in the Van Allen belt.</li>
+                        <li>Travelling through the Van Allen belt is very dangerous due to extreme levels of radiation. It is possible to plan a route that goes through less intense areas of the Van Allen Belt, which is what the moon landing missions did back in the 60's and 70's.</li>
                         <ul>
-                            <li>Resource sharing</li>
-                            <li>Social impact</li>
-                            <li>Easy access to knowledge and education</li>
-                            <li>Economic impact</li>
+                            <li>Interestingly, the ISS passes through one of the most intense areas of the Van Allen Belt everyday (The South Atlantic Anomaly) and no dramatic side effects have been recorded.</li>
+                            <li>So whilst the phrase 'extreme levels of radiation' sounds scary, with the right protection (aluminium) and a good route it's not a big deal.</li>
                         </ul>
+                    </ul>
+                    <br>
 
-                        <h3>Communication Links</h3>
-                        <hr class="content-hr">
-                        <p>There are 4 types of communication links:</p>
-                        <ol>
-                            <li>Point-to-Point</li>
-                            <li>Broadcast</li>
-                            <li>Multicast</li>
-                            <li>Unicast</li>
-                        </ol>
-                        <div class="col-xs-12">
-                            <table class="table table-bordered table-hover dt-responsive">
-                                <caption class="text-center">The different types of communication links</caption> 
-                                <thead>
-                                    <tr> <th><span>Link Type</span></th>  <th><span>What it does</span></th>  <th><span>Example</span></th>             </tr>
-                                </thead>
-                                <tbody>
-                                    <tr> <td>Point-to-Point</td>  <td>Private link, goes to only 1 device.</td>  <td>Text message, Ethernet</td>        </tr>
-                                    <tr> <td>Broadcast</td>  <td>Public link, spreads to all devices.</td>  <td>Wi-Fi</td>                              </tr>
-                                    <tr> <td>Multicast</td>  <td>Smaller broadcast that only spreads out to a certain group of devices.</td>  <td></td> </tr>
-                                    <tr> <td>Unicast</td>  <td>A ptp link inside a broadcast system.</td>   <td></td>                                   </tr>
-                                </tbody>
-                            </table>
-                        </div>
+                    <h3>Latency</h3>
+                    <hr>
+                    <p><b>Latency is the time (in milliseconds) it takes for a signal to from sender -> receiver -> sender</b>.</p>
+                    <ul>
+                        <li>For <b>GEO</b>, it takes 270ms, which is quite a lot! That's almost 3 whole seconds.</li>
+                        <ul>
+                            <li>Because of the high latency GEO satellites are not used for data communication.</li>
+                            <li>Instead, GEO satellites are used for weather and TV communication.</li>
+                        </ul>
+                        <li>For <b>MEO</b>, it takes 35-85ms, which is always under 1 second.</li>
+                        <ul>
+                            <li>MEO satellites are used for GPS.</li>
+                        </ul>
+                        <li>For <b>LEO</b>, it takes 1-7ms, which is very quick at less than 0.1 milliseconds.</li>
+                        <ul>
+                            <li>Because of the low latency, LEO satellites are used for data communication with the Internet, and mobile phones, and GPS</li>
+                        </ul>
+                    </ul>
+                    <br>
 
-                        <h3>Core components of a computer network</h3>
-                        <hr>
-                        <p>There are 4 core components to a computer network:</p>
-                        <ol>
-                            <li>Application</li>
-                            <li>Nodes</li>
-                            <li>Links/Channels</li>
-                            <li>Communication devices</li>
-                        </ol>
-                        
-                        <p>The image below is a (over-simplified) diagram of these core components.</p>
-                        <img src="../../../img/network-structure.png" width="300px" height="100px">
+                    <h3>Number of satellites required at a particular atlitude</h3>
+                    <hr>
+                    <p>Finally, the diagram also mentioned the <b>number of satellites required at that particular altitude</b>:</p>
+                    <ul>
+                        <li>So for example, we need 3 GEO satellites at 35,000km</li>
+                        <li>We need 10 MEO satellites in the Upper Van Allen Belt</li>
+                        <li>And we need 50 LEO satellites in the Lower Van Allen Belt</li>
+                    </ul>
+                    <br>
 
-                        <div class="col-xs-12">
-                            <table class="table table-bordered table-hover dt-responsive">
-                                <caption class="text-center">The different components of a computer network</caption> 
-                                <thead>
-                                    <tr> <th><span>Component</span></th>  <th><span>Example</span></th>             </tr>
-                                </thead>
-                                <tbody>
-                                    <tr> <td>Application</td>  <td>Skype, Chrome</td>                               </tr>
-                                    <tr> <td>Nodes</td> <td>PC, laptop, mobile</td>                                 </tr>
-                                    <tr> <td>Links/Channels</td>   <td>links connecting nodes together</td>         </tr>
-                                    <tr> <td>Communication devices</td>  <td>routers, switches, repeaters, NIC</td> </tr>
-                                </tbody>
-                            </table>
-                        </div>
+                    <div class="button-bar">
+                        <a href="transmission-media.html" class="button prev">Previous</a>
+                        <a href="transmission-impairment.html" class="button next">Next</a>
+                    </div>
 
-                        <div class="button-bar">
-                            <a href="circuit-packet-switch.html" class="button next">Next</a>
-                        </div>
-
-                    </div> <!-- end of container-fluid -->
-                </div> <!-- end of .inbox-->
+                </div>
             </div>
-        </div> <!-- end of .cv -->
-    </div> <!-- end of .mcw -->
+            </div>
+        </div>
+    </div>
 
     <script type="text/javascript" src="../../../funky.js"></script>
 </body>

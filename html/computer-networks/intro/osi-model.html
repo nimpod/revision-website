@@ -161,83 +161,65 @@
         <!--main content view-->
         <div class="cv">
             <div>
-                <div class="inbox">
-                    <div class="inbox-sb">
+            <div class="inbox">
+                <div class="inbox-sb">
+                
+                </div>
+                <div class="inbox-bx container-fluid">
+                    <h1>OSI Model</h1>
+                    <hr>
                     
+                    <p>The Open Systems Interconnection (<b>OSI</b>) model is a conceptual model that characterises and standardises the communication functions of a telecommunication or computing system.</p>
+                    <p>It conceptually divides computer network architecture into 7 layers.</p>
+                    <ul>
+                        <li>The higher layers (7,6,5,4) cover <b>network requests/responses</b>, and <b>representing data</b> in meaningful ways.</li>
+                        <li>Lower layers (3,2,1) deal with <b>electrical signals</b>, <b>binary data</b> and <b>routing data</b> across networks.</li>
+                    </ul>
+                    <br>
+
+                    <p>As you travel down the OSI model, you <b>add headers to each layer</b>.</p>
+                    <p>There are 7 OSI layers:</p>
+
+                    <div class="col-xs-12">
+                        <table class="table table-bordered table-hover dt-responsive">
+                            <caption class="text-center">Each OSI layer's responsibilities and functions</caption> 
+                            <thead>
+                                <tr> <th><span>Level</span></th>  <th><span>Name</span></th>  <th><span>Description</span></th>   <th><span>Data abstraction</span></th>   </tr>
+                            </thead>
+                            <tbody>
+                                <tr> <td>7</td>  <td>Application</td>  <td>Some application designed to be used by an end-user (e.g: SSH, FTP, SMTP, HTTP(S), DNS)</td>     <td></td>   </tr>
+                                <tr> <td>6</td>  <td>Presentation</td> <td>Irrelevant to this module</td>  <td></td> </tr>
+                                <tr> <td>5</td>  <td>Session</td>      <td>Irrelevant to this module</td>  <td></td> </tr>
+                                <tr> <td>4</td>  <td>Transport</td>    <td>Decides how much data will be passed through. Encapsulates packets into <b>segments</b>. This is about security and validity. Scans the data to check for errors. Capable of error recovery, flow control, and re-transmission. Data that is not recovered from an error will not pass through, and may be destroyed.</td>  <td>Segment</td></tr>
+                                <tr> <td>3</td>  <td>Network</td>      <td>Encapsulates the data into separate <b>packets</b>. Also determines the best, most reliable, fastest route to deliver some data. (Routers are involved in this layer). The network layer also adds a source and destination IP address to each packet.</td>    <td>Packet</td>   </tr>
+                                <tr> <td>2</td>  <td>Data Link</td>    <td>Switches operate on this layer. Packets are turned into <b>frames</b>, and error-free data transfer of the frames is provided, over into the Physical Layer. MAC addresses!</td>  <td>Frame</td>    </tr>
+                                <tr> <td>1</td>  <td>Physical</td>     <td>Responsible for the transmission of digital data <b>bits</b>. Uses physical medium like copper cable, fibre optic cable, WiFi, Ethernet or infrared.</td>   <td>Bit</td> </tr>
+                            </tbody>
+                        </table>
                     </div>
-                    <div class="inbox-bx container-fluid">
-                        <h1>What is a computer network?</h1>
-                        <hr>
-                        <p>A computer network is a collection of computers connected by <a href="https://www.sciencedirect.com/topics/computer-science/communication-link">communication links</a>.</p>
-                        <p>Why are computer networks important?</p>
-                        <ul>
-                            <li>Resource sharing</li>
-                            <li>Social impact</li>
-                            <li>Easy access to knowledge and education</li>
-                            <li>Economic impact</li>
-                        </ul>
+                    <p>Here is a diagram that might help to visualise the model more clearly.</p>
+                    <img src="../../../img/osi.jpg" width="300">
 
-                        <h3>Communication Links</h3>
-                        <hr class="content-hr">
-                        <p>There are 4 types of communication links:</p>
-                        <ol>
-                            <li>Point-to-Point</li>
-                            <li>Broadcast</li>
-                            <li>Multicast</li>
-                            <li>Unicast</li>
-                        </ol>
-                        <div class="col-xs-12">
-                            <table class="table table-bordered table-hover dt-responsive">
-                                <caption class="text-center">The different types of communication links</caption> 
-                                <thead>
-                                    <tr> <th><span>Link Type</span></th>  <th><span>What it does</span></th>  <th><span>Example</span></th>             </tr>
-                                </thead>
-                                <tbody>
-                                    <tr> <td>Point-to-Point</td>  <td>Private link, goes to only 1 device.</td>  <td>Text message, Ethernet</td>        </tr>
-                                    <tr> <td>Broadcast</td>  <td>Public link, spreads to all devices.</td>  <td>Wi-Fi</td>                              </tr>
-                                    <tr> <td>Multicast</td>  <td>Smaller broadcast that only spreads out to a certain group of devices.</td>  <td></td> </tr>
-                                    <tr> <td>Unicast</td>  <td>A ptp link inside a broadcast system.</td>   <td></td>                                   </tr>
-                                </tbody>
-                            </table>
-                        </div>
+                    <p>Network engineers use the OSI model as a conceptual tool to classify problems. For example...</p>
+                    <ul>
+                        <li>If your computer is not connected to the network => Application Layer problem</li>
+                        <li>If you put in the wrong IP address => Network Layer problem</li>
+                        <li>If the router dies => Network Layer problem</li>
+                        <li>If a cable gets cut, or is mis-wired => Physical Layer problem</li>
+                    </ul>
+                    <br>
+                    <p>The remainder of this module is structured around the OSI model, using it as a framework to teach important concepts about computer networks.</p>
+                    
+                    <div class="button-bar">
+                        <a href="what-is-a-computer-network.html" class="button prev">Previous</a>
+                        <a href="../physical/introduction-to-physical-layer.html" class="button next">Next</a>
+                    </div>
 
-                        <h3>Core components of a computer network</h3>
-                        <hr>
-                        <p>There are 4 core components to a computer network:</p>
-                        <ol>
-                            <li>Application</li>
-                            <li>Nodes</li>
-                            <li>Links/Channels</li>
-                            <li>Communication devices</li>
-                        </ol>
-                        
-                        <p>The image below is a (over-simplified) diagram of these core components.</p>
-                        <img src="../../../img/network-structure.png" width="300px" height="100px">
-
-                        <div class="col-xs-12">
-                            <table class="table table-bordered table-hover dt-responsive">
-                                <caption class="text-center">The different components of a computer network</caption> 
-                                <thead>
-                                    <tr> <th><span>Component</span></th>  <th><span>Example</span></th>             </tr>
-                                </thead>
-                                <tbody>
-                                    <tr> <td>Application</td>  <td>Skype, Chrome</td>                               </tr>
-                                    <tr> <td>Nodes</td> <td>PC, laptop, mobile</td>                                 </tr>
-                                    <tr> <td>Links/Channels</td>   <td>links connecting nodes together</td>         </tr>
-                                    <tr> <td>Communication devices</td>  <td>routers, switches, repeaters, NIC</td> </tr>
-                                </tbody>
-                            </table>
-                        </div>
-
-                        <div class="button-bar">
-                            <a href="circuit-packet-switch.html" class="button next">Next</a>
-                        </div>
-
-                    </div> <!-- end of container-fluid -->
-                </div> <!-- end of .inbox-->
+                </div>
             </div>
-        </div> <!-- end of .cv -->
-    </div> <!-- end of .mcw -->
+            </div>
+        </div>
+    </div>
 
     <script type="text/javascript" src="../../../funky.js"></script>
 </body>

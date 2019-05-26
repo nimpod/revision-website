@@ -3,6 +3,10 @@
 /* sidebar variables */
 /* font variables */
 /* button variables */
+.important-tablecell {
+  background: #ffeaea;
+}
+
 body {
   margin-top: 50px !important;
   margin-left: 30px !important;
@@ -108,7 +112,7 @@ ul.ns {
   color: #444444;
   padding: 10px 25px;
   display: block;
-  vertical-align: middle;
+  /* vertical-align: middle; */
 }
 
 .nv .ns li a {
@@ -176,7 +180,10 @@ table .dataTable td {
   position: relative;
   min-height: 100%;
   padding-bottom: 50px;
-  /*content view*/
+  /*content view
+    .cv {
+      
+    }*/
 }
 
 .mcw a:hover {
@@ -259,6 +266,7 @@ table .dataTable td {
   border-right-color: #0585e8;
 }
 
+/* ----------------------------------<Tooltip>----------------------------------*/
 /* ----------------------------------<Globals>----------------------------------*/
 a,
 a:focus,
