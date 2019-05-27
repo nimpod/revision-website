@@ -8,9 +8,22 @@
   color: #2e2e2e;
   font-family: 'consolas';
   padding: 10px;
-  border-radius: 5px;
-  max-width: 100vw;
+  border-radius: 8px;
+  max-width: 80vw;
   margin-bottom: 20px;
+}
+
+.example-question .stuffed {
+  color: red !important;
+}
+
+.example-question .not-stuffed {
+  color: blue !important;
+}
+
+.sub-note {
+  font-size: 13px !important;
+  color: #b4b4b4 !important;
 }
 
 .important-tablecell {

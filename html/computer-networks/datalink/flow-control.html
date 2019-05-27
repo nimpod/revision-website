@@ -1,0 +1,383 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Revision website</title>
+
+    <!-- include css stylesheets -->
+    <link rel="stylesheet" href="../../../styles.css">
+
+    <!-- include bootstrap CDN -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+    <!-- google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+
+    <!-- prettify.js -->
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?lang=ruby&amp;skin=sunburst"></script>
+</head>
+<body>
+    <!-- main navigation bar at top of window -->
+    <nav class="mnb navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <i class="ic fa fa-bars"></i>
+                </button>
+                <div style="padding: 15px 0;">
+                    <a href="#" id="msbo"><i class="ic fa fa-bars"></i></a>
+                </div>
+            </div> <!-- end of div.navbar-header -->
+
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">More revision<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">CSC2023</a></li>
+                            <li><a href="../computer-networks.html">CSC2026</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">CSC1024</a></li>
+                            <li><a href="#">CSC1021</a></li>
+                            <li><a href="#">CSC1022</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#"><i class="fa fa-bell-o"></i></a></li>
+                    <li><a href="#"><i class="fa fa-comment-o"></i></a></li>
+                </ul>
+            </div> <!-- end of div.navbar-collapse -->
+            
+        </div> <!-- end of div.container-fluid -->
+    </nav> <!-- end of main nav-bar -->
+
+    <div class="msb" id="msb">
+        <nav class="navbar navbar-default" role="navigation">
+
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <div class="brand-wrapper">
+                    <!-- Brand -->
+                    <div class="brand-name-wrapper">
+                        <a class="navbar-brand" href="../../../index.html">
+                            NIMPOD
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Menu -->
+            <div class="side-menu-container">
+                <ul class="nav navbar-nav">
+
+                    <li class="panel panel-default" id="dropdown">
+                        <a data-toggle="collapse" href="#intro-dropdown">
+                            1. Introduction to Computer Networks
+                            <span class="caret"></span>                            
+                        </a>
+                        <div id="intro-dropdown" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <ul class="nav navbar-nav">
+                                    <li><a href="../intro/what-is-a-computer-network.html">1.1. What is a computer network?</a></li>
+                                    <li><a href="../intro/circuit-packet-switch.html">1.2. Circuit Switch/Packet Switch</a></li>
+                                    <li><a href="../intro/network-topology.html">1.3. Network Topology</a></li>
+                                    <li><a href="../intro/network-types.html">1.4. Types of networks</a></li>
+                                    <li><a href="../intro/osi-model.html">1.5. OSI model</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="panel panel-default" id="dropdown">
+                        <a data-toggle="collapse" href="#physical-dropdown">
+                            2. Physical Layer
+                            <span class="caret"></span>
+                        </a>
+                        <div id="physical-dropdown" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <ul class="nav navbar-nav">
+                                    <li><a href="../physical/introduction-to-physical-layer.html">2.1. Introduction to the Physical Layer</a></li>
+                                    <li><a href="../physical/transmission-media.html">2.2. Trasmission Media</a></li>
+                                    <li><a href="../physical/communication-satellites.html">2.3. Communication Satellites</a></li>
+                                    <li><a href="../physical/transmission-impairment.html">2.4. Transmission Impairment</a></li>
+                                    <li><a href="../physical/encoding-modulation.html">2.5. Encoding and Modulation</a></li>
+                                    <li><a href="../physical/simplex-duplex.html">2.6. Simplex and Duplex</a></li>
+                                    <li><a href="../physical/parallel-serial.html">2.7. Parallel and Serial</a></li>
+                                    <li><a href="../physical/multiplexing.html">2.8. Multiplexing</a></li>
+                                    <li><a href="../physical/communication-systems.html">2.9. Communication Systems</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li class="active panel panel-default" id="dropdown">
+                        <a data-toggle="collapse" href="#datalink-dropdown">
+                            3. Data-Link Layer
+                            <span class="caret"></span>
+                        </a>
+                        <div id="datalink-dropdown" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <ul class="nav navbar-nav">
+                                    <li><a href="introduction-to-datalink-layer.html">3.1 Introduction to the Data-Link Layer</a></li>
+                                    <li><a href="byte-count.html">3.2 Byte Count</a></li>
+                                    <li><a href="byte-stuffing.html">3.3 Byte Stuffing</a></li>
+                                    <li><a href="bit-stuffing.html">3.4 Bit Stuffing</a></li>
+                                    <li><a href="parity-bit.html">3.5 Parity Bit</a></li>
+                                    <li><a href="crc.html">3.6 Cyclic Redundancy Check (CRC)</a></li>
+                                    <li><a href="hamming-distance.html">3.7 Hamming Distance</a></li>
+                                    <li><a href="flow-control.html">3.8 Flow Control</a></li>
+                                    <li><a href="hdlc.html">3.9 High Level Data Link Control (HDLC)</a></li>
+                                    <li><a href="ppp.html">3.10 Point to Point Protocol (PPP)</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li><a href="#"></span> 4. MAC sublayer</a></li>
+                    <li><a href="#"></span> 5. Transport Layer</a></li>
+                    <li><a href="#"></span> 6. Network Layer</a></li>
+                    <li><a href="../acronyms.html">Acronyms</a></li>
+                    <li><a href="../terms.html">Terms</a></li>
+                    <li><a href="../formulas.html">Formulas</a></li>
+
+                </ul> <!-- end of ul.navbar -->
+
+            </div><!--  end of div.side-menu-container -->
+        </nav>
+    </div> <!-- end of main side-bar (msb) div -->
+
+    <div class="mcw">
+        <!--navigation here-->
+        <!--main content view-->
+        <div class="cv">
+            <div>
+            <div class="inbox">
+                <div class="inbox-sb">
+                
+                </div>
+                <div class="inbox-bx container-fluid">
+                    <h1>Flow Control</h1>
+                    <hr>
+
+                    <p>Flow control is done in the <b>Data-Link layer</b> and the <b>Transport layer</b>.</p>
+                    <p>Flow control is <i>" the management of data flow between between nodes in a network so that the data can be handled at an efficient pace."</i></p>
+                    <p>In Computer Networks flow control is applied by refusing additional node connections until the flow of traffic has subsided. There are numerous network protocols that are designed in order to achieve this refusal of nodes.</p>
+                    <p>One of those protocols is the Automatic Repeat reQuest (<b>ARQ</b>) protocol. Just for the shits'n'giggles it is also known as the Positive Acknowledgement Retransmission (<b>PAR</b>) protocol.</p>
+
+                    <h3>ARQ protocol</h3>
+                    <hr>
+                    
+                    <p>The ARQ protocol works under 2 main assumptions:</p>
+                    <ol>
+                        <li>Single-bit sequences are used (e.g. 1001101110010001001)</li>
+                        <li>There is an endless supply of data available.</li>
+                    </ol>
+                    <p>Here is the psuedocode to describe the process of the ARQ protocol:</p>
+<pre class="prettyprint">
+sendFrame(A,B)                        // flow control
+if (timeout) -> sendFrame(A,B)        // error control
+reject(duplicate frame, duplicate ACK, frames with CRC errors)
+</pre>
+                    <p>The best utilisation of flow control can be defined using a cool formula. Here are the parameters used:</p>
+                    <ul>
+                        <li>TT = Transmission Time (time taken for frame to physically appear on the transmission link)</li>
+                        <li>RTT = Round Trip Time (time taken to travel from A -> B -> A)</li>
+                    </ul> <br>
+                    <p>Let's explpore what these two parameters actually mean in the network. Best way to do that is with a diagram!</p>
+                    <img src="../../../img/ARQ.png" width="600">
+                    <p>Figure 3.8a</p> <br>
+
+                    <p><i>Figure 3.8a</i> above is a basic visualisation of how ARQ is working.</p>
+                    <p>A frame propogates through <span style="color: blue">some wire (the blue line)</span> that is connected to A. The amount of time it takes to arrive at A is called the <b>Transmission Time (TT)</b>.</p>
+                    <p>Once the entire frame arrives at A, A sends two dataframes to B: the <b>Data</b> and an <b>Acknowledgement (ACK)</b>.</p>
+                    <p>Once B receives the Data and ACK, it sends the same Data and it's own personal ACK back to A.</p>
+                    <p>Once A receives B's Data and ACK, we record the <b>Round Trip Time (RTT)</b>. The time it took to go from A -> B -> A</p>
+                    <p>There are some funky <b>formulas</b> you can use to calculate the <b>TT</b> and <b>RTT</b>.</p>
+                    <img src="../../../img/formulas-tt.png">
+                    <img src="../../../img/formulas-rtt.png">
+                    <ul>
+                        <li><b>len(frame)</b> simply means the length of the frame in bits.</li>
+                        <li><b>TR</b> is the Transmission Rate in bits per seconds.</li>
+                        <li><b>RTD</b> is the Round Trip Distance in metres. How much distance was travelled in going from A -> B -> A?</li>
+                        <li><b>PS</b> is the Propogation Speed in metres per second.</li>
+                    </ul> <br>
+
+                    <p>Also the best utilisation of the network gives you a number that indicates how much % was used:</p>
+                    <img src="../../../img/formulas-bu.png"> <br><br>
+
+                    <p>Unfortunately there are some major <b>disadvantages</b> to the ARQ protocol:</p>
+                    <ul>
+                        <li><b>Requires 2 dataframes</b> - one for the data, one for the ACK -> poor channel utilisation</li>
+                        <li><b>Can only send 1 frame at a time</b></li>
+                    </ul><br>
+
+                    <p>This brings me onto my next topic, the Piggy-Backed ARQ protocol...</p><br>
+
+                    <h3>Piggy-Backed ARQ protocol:</h3>
+                    <hr>
+
+                    <p>The Piggy-Backing approach makes a simple change - <b>combine the data and ACK into 1 dataframe</b>.</p>
+                    <p>This is why we call this the Piggy-Backed ARQ protocol, because the only difference is that <b>ACK is literally getting a piggy-back on the data</b>.</p>
+                    <img src="../../../img/ARQ-piggybacked.png" width="600"> <br><br>
+
+                    <p>The <b>advantages</b> of the Piggy-Backed ARQ protocol:</p>
+                    <ul>
+                        <li></b>Only 1 dataframe going forward and backwards</b> -> better channel utilisation</li>
+                    </ul><br>
+
+                    <p>The <b>disadvantages</b> of the Piggy-Backed ARQ protocol:</p>
+                    <ul>
+                        <li>You can still only send <b>1 frame at a time.</b></li>
+                        <li>if (B has no data to send back to A) --> A will <b>timeout</b> because it is waiting for an ACK --> A will retransmit message --> poor utilisation <span style="font-size: 13px; color: rgb(180,180,180);">solution - give both A and B a timer to ensure A does not wait forever.</span></li>
+                    </ul> <br>
+                    <p>This brings me onto my next topic, the Sliding Window protocol...</p><br>
+
+
+                    <h3>Sliding Window protocol:</h3>
+                    <hr>
+
+                    <p>The ARQ protocols may cause big performance issues as the sender (A) may wait for a long time for acknowledgement even if it has next packet ready to send.</p>
+                    <p>The Sliding Window protocol handles this efficiency issue by <b>sending more than one packet at a time</b> with a larger sequence numbers. The idea is same as pipelining in Computer Architecture.</p>
+                    <p>You probably noticed that the one reoccurring disadvantage of the ARQ protocols was that <i>"you can only send 1 frame at a time"</i>. The Sliding Window protocol solves this issue!</p>
+                    <p>But... how? How does this protocol send more than 1 frame at a time? Let's look into that using some diagrams:</p>
+                    <br>
+
+                    <p>Both the sender and receiver have windows. The data they show means different things:</p>
+                    <ul>
+                        <li>Sender window - the messages that have been sent but not acknowledged</li>
+                        <li>Receiver window - the messages that will be accepted</li>
+                    </ul>
+                    <p>The receiver has a buffer to store those frames.</p>
+
+                    <div class="col-xs-12">
+                        <table class="table table-bordered table-hover dt-responsive">
+                            <caption class="text-center">Memorise this table</caption> 
+                            <thead>
+                                <tr> <th>Sender window</span></th>  <th>Receiver window</th> <th>Description</th> </tr>
+                            </thead>
+                            <tbody style="font-size: 14px;">
+                                <tr> <td><img src="../../../img/sliding-window-sender1.png" width="100"></td> <td><img src="../../../img/sliding-window-receiver1.png" width="100"></td> <td> <ul><li>Nothing has been sent yet</li><li>The receiver wants to accept <span style="color: red;">3 messages (0,1,2)</span></li></ul> </td>  </tr>
+                                <tr> <td><img src="../../../img/sliding-window-sender2.png" width="100"></td> <td><img src="../../../img/sliding-window-receiver2.png" width="100"></td> <td> <ul><li><span style="color: green;">sendMessage(0)</span></li></ul> </td>  </tr>
+                                <tr> <td><img src="../../../img/sliding-window-sender3.png" width="100"></td> <td><img src="../../../img/sliding-window-receiver3.png" width="100"></td> <td> <ul><li><span style="color: green;">sendMessage(1)</span></li></ul> </td>  </tr>
+                                <tr> <td><img src="../../../img/sliding-window-sender4.png" width="100"></td> <td><img src="../../../img/sliding-window-receiver4.png" width="100"></td> <td> <ul><li><span style="color: green;">receiveMessage(0)</span></li><li>The message that was sent had id 0...</li> <li>The receiver can accept the message with id 0...</li> <li>Therefore the receiver accepts message 0...</li> <li><span style="color: red;">Advance the window one place forwards</span> (this prevents accepting duplicate frame 0)</li> </ul> </td>  </tr>
+                                <tr> <td><img src="../../../img/sliding-window-sender5.png" width="100"></td> <td><img src="../../../img/sliding-window-receiver5.png" width="100"></td> <td> <ul><li><span style="color: green;">receiveMessage(1)</span></li><li>The message that was sent had id 1...</li> <li>The receiver can accept the message with id 1...</li> <li>Therefore the receiver accepts message 1...</li> <li><span style="color: red;">Advance the window one place forwards</span> (this prevents accepting duplicate frame 1)</li> </ul></td>  </tr>
+                            </tbody>
+                        </table>
+                    </div> <br>
+                    
+                    <p>The senders window and the receivers window are independent from each other. This means two things:</p>
+                    <ul>
+                        <li>The window sizes do not necessarily have to be the same.</li>
+                        <li>They do not have to rotate at the same time.</li>
+                    </ul> <br><br>
+
+                    <h3>One-bit Sliding Window protocol</h3>
+                    <hr>
+
+                    <p>(apparently) exactly the same as the ARQ protocol</p>
+                    <ul>
+                        <li>sizeof(sender window) = 1</li>
+                        <li>sizeof(receiver window) = 1</li>
+                    </ul> <br>
+                    <p>The sender sends a frame and then waits for ACK before sending the next frame <span style="font-size: 13px; color: rgb(180,180,180);"> - in other words, you can't send more than 1 frame at a time. Just like ARQ! What a coinkydink!)</span></p>
+                    <p>If no ACK is received within a certain time limit, the frame is sent again.</p>
+                    <p>But <b>what if the sender and reciever both send at the same time</b>? -> poor utilisation because half the frames are duplicates.</p><br>
+
+                    <h3>Go Back N protocol:</h3>
+                    <hr>
+
+                    <p>Improvement on the One-bit Sliding Window protocol.</p>
+                    <p><b>if (window size) == N, there must be at least N+1 sequence numbers.</b></p>
+                    <ul>
+                        <li>sizeof(sender window) > 1</li>
+                        <li>sizeof(receiver window) = 1</li>
+                    </ul> <br>
+                    <p>In Go Back N we <b>don't have to wait for an ACK before sending the next frame</b>.</p>
+                    <p>Therefore the sender could send 8 frames before blocking, or 4 frames before blocking, or 18 frames before blocking, etc...</p>
+                    <ul>
+                        <li>In general, this protocol allows the sender to send N frames before blocking.</li>
+                        <li>The receiver only accepts frames that arrive in order.</li>
+                        <li>But the receiver cannot accept frames out of order, or more than 1 frame at a time.</li>
+                    </ul> <br>
+
+                    <p>The <b>utilisation</b> for the Go Back N protocol is a <b>massive improvement</b> from previous protocols we have looked at.</p>
+                    <p>The larger N is, the better the utilisation.</p>
+                    
+                    <img src="../../../img/gobackn.png" width="600">
+                    <p>Figure 3.8b</p> <br>
+
+                    <p>As you can see in <i>Figure 3.8b</i> above, when an error occurs the receiver discards all the subsequent frames coming after the erroneous frame.</p>
+                    <p>The sender continues transmitting the frames unaware that the frames are being discarded by the data-link layer until timeout.</p>
+                    <p>Then the sender will resend all the discarded frames.</p> <br>
+
+                    <h3>Selective Repeat protocol:</h3>
+                    <hr>
+
+                    <p>Improvement on the Go Back N protocol.</p>
+                    <p><b>if (window size) == N, there must be at least 2N sequence numbers.</b></p>
+                    <ul>
+                        <li>sizeof(sender window) > 1</li>
+                        <li>sizeof(receiver window) > 1</li>
+                    </ul> <br>
+                    <p>In Selective Repeat we <b>don't wait for an ACK before sending the next frame</b>. (exactly the same as Go Back N)</p>
+                    <ul>
+                        <li>In general, this protocol allows the sender to send N frames before blocking.</li>
+                        <li>The main difference between Selective Repeat and Go Back N, is that <b>Selective Repeat doesn't discard the frames after the erroneous frame</b>.</li>
+                        <li>But the receiver cannot accept frames out of order, or more than 1 frame at a time.</li>
+                    </ul> <br>
+
+                    <img src="../../../img/selective-repeat.png" width="600">
+                    <p>Figure 3.8c</p> <br>
+
+                    <p>As you can see in <i>Figure 3.8c</i> above, when an error occurs in this protocol, the receiver transmits a NAK to sender.</p>
+                    <p>Then the receiver buffers the subsequent frames.</p>
+                    <p>The sender continues transmitting the frames unaware until the NAK is received.</p>
+                    <p>And the sender sends the erroneous frame 2 again.</p>
+
+                    <p>You may be asking yourself '<i>Why don't we have to acknowledge frames 3,4,5 ?</i>'.</p>
+                    <ul><li>Because with Selective Repeat you do not have to individually acknowledge each frame.</li></ul>
+
+                    <p>Selective Repeat only acknowledges the highest in-order frame. What do I mean by '<i>highest in-order frame</i>' ?</p>
+                    <ul><li>Acknowledging frame 5 means you acknowledge the buffered frames 2,3,4 in one go!</li></ul>
+                    <br>
+
+                    <h3>Summary of Flow Control protocols:</h3>
+                    <hr>
+
+                    <p>If errors are common, Selective Repeat has the best utilisation of all protocols. In general, Selective Repeat is the best Flow Control protocol.</p>
+                    <p><a href="https://mi-learning.mi.hs-offenburg.de/CNet/protokollmechanismen/flusskontrolle/uebungen/index.html">Visualisation of Go Back N and Selective Repeat protocols from the lecture</a> (pretty useful!)</p>
+                    <br>
+                    
+                    <div class="col-xs-12">
+                        <table class="table table-bordered table-hover dt-responsive">
+                            <caption class="text-center">Comparison between the 3 most important Flow Control protocols we have looked at</caption> 
+                            <thead>
+                                <tr> <th>Protocol</th> <th>Description</th> <th>seq_nums required to recover from duplicate frames</span></th>  <th>sizeof(sender window)</th> <th>sizeof(receiver window)</th> </tr>
+                            </thead>
+                            <tbody style="font-size: 14px;">
+                                <tr> <td>One-Bit Sliding Window</td> <td><ul><li>Can't send more than 1 frame at a time.</li><li>ARQ protocol as a Sliding Window.</li> </ul></td>                      <td>n/a</td> <td>1</td> <td>1</td>  </tr>
+                                <tr> <td>Go Back N</td>              <td><ul><li>Can send multiple frames at once.</li><li>When error occurs, discard all subsequent frames</li> </ul></td>            <td>N+1</td> <td>> 1</td> <td>1</td>  </tr>
+                                <tr> <td>Selective Repeat</td>       <td><ul><li>Can send multiple frames at once.</li><li>When error occurs, transmit NAK and buffer subsequent frames</li> </ul></td> <td>2N</td>  <td>> 1</td> <td>> 1</td>  </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="button-bar">
+                        <a href="hamming-distance.html" class="button prev">Previous</a>
+                        <a href="flow-control.html" class="button next">Next</a>
+                    </div>
+
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="../../../funky.js"></script>
+</body>
+</html>
