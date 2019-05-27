@@ -284,15 +284,17 @@ reject(duplicate frame, duplicate ACK, frames with CRC errors)
                         <li>sizeof(sender window) = 1</li>
                         <li>sizeof(receiver window) = 1</li>
                     </ul> <br>
-                    <p>The sender sends a frame and then waits for ACK before sending the next frame <span style="font-size: 13px; color: rgb(180,180,180);"> - in other words, you can't send more than 1 frame at a time. Just like ARQ! What a coinkydink!)</span></p>
-                    <p>If no ACK is received within a certain time limit, the frame is sent again.</p>
-                    <p>But <b>what if the sender and reciever both send at the same time</b>? -> poor utilisation because half the frames are duplicates.</p><br>
-
+                    <ul>
+                        <li>The sender sends a frame and then waits for ACK before sending the next frame <span style="font-size: 13px; color: rgb(180,180,180);"> - in other words, you can't send more than 1 frame at a time. Just like ARQ! What a coinkydink!)</span></li>
+                        <li>If no ACK is received within a certain time limit, the frame is sent again.</li>
+                        <li>But <b>what if the sender and reciever both send at the same time</b>? -> poor utilisation because half the frames are duplicates.</li><br>
+                    </ul> <br>
+                    
                     <h3>Go Back N protocol:</h3>
                     <hr>
 
                     <p>Improvement on the One-bit Sliding Window protocol.</p>
-                    <p><b>if (window size) == N, there must be at least N+1 sequence numbers.</b></p>
+                    <p><b>Where N = sizeof(window), there must be at least N+1 sequence numbers.</b></p>
                     <ul>
                         <li>sizeof(sender window) > 1</li>
                         <li>sizeof(receiver window) = 1</li>
@@ -309,17 +311,19 @@ reject(duplicate frame, duplicate ACK, frames with CRC errors)
                     <p>The larger N is, the better the utilisation.</p>
                     
                     <img src="../../../img/gobackn.png" width="600">
-                    <p>Figure 3.8b</p> <br>
+                    <p>Figure 3.8b</p>
 
-                    <p>As you can see in <i>Figure 3.8b</i> above, when an error occurs the receiver discards all the subsequent frames coming after the erroneous frame.</p>
-                    <p>The sender continues transmitting the frames unaware that the frames are being discarded by the data-link layer until timeout.</p>
-                    <p>Then the sender will resend all the discarded frames.</p> <br>
+                    <ul>
+                        <li>As you can see in <i>Figure 3.8b</i> above, when an error occurs the receiver discards all the subsequent frames coming after the erroneous frame.</li>
+                        <li>The sender continues transmitting the frames unaware that the frames are being discarded by the data-link layer until timeout.</li>
+                        <li>Then the sender will resend all the discarded frames.</li>
+                    </ul>  <br>
 
                     <h3>Selective Repeat protocol:</h3>
                     <hr>
 
                     <p>Improvement on the Go Back N protocol.</p>
-                    <p><b>if (window size) == N, there must be at least 2N sequence numbers.</b></p>
+                    <p><b>Where N = sizeof(window), there must be at least 2N sequence numbers.</b></p>
                     <ul>
                         <li>sizeof(sender window) > 1</li>
                         <li>sizeof(receiver window) > 1</li>
@@ -332,17 +336,19 @@ reject(duplicate frame, duplicate ACK, frames with CRC errors)
                     </ul> <br>
 
                     <img src="../../../img/selective-repeat.png" width="600">
-                    <p>Figure 3.8c</p> <br>
+                    <p>Figure 3.8c</p>
 
-                    <p>As you can see in <i>Figure 3.8c</i> above, when an error occurs in this protocol, the receiver transmits a NAK to sender.</p>
-                    <p>Then the receiver buffers the subsequent frames.</p>
-                    <p>The sender continues transmitting the frames unaware until the NAK is received.</p>
-                    <p>And the sender sends the erroneous frame 2 again.</p>
+                    <ul>
+                        <li>As you can see in <i>Figure 3.8c</i> above, when an error occurs in this protocol, the receiver transmits a NAK to sender.</li>
+                        <li>Then the receiver buffers the subsequent frames.</li>
+                        <li>The sender continues transmitting the frames unaware until the NAK is received.</li>
+                        <li>And the sender sends the erroneous frame 2 again.</li>
+                    </ul>  <br>
 
-                    <p>You may be asking yourself '<i>Why don't we have to acknowledge frames 3,4,5 ?</i>'.</p>
-                    <ul><li>Because with Selective Repeat you do not have to individually acknowledge each frame.</li></ul>
+                    <p>You may be asking yourself '<span style="color: orange;"><i>Why don't we have to acknowledge frames 3,4,5 ?</i></span>'.</p>
+                    <ul><li>Because with Selective Repeat you do not have to individually acknowledge each frame.</li></ul> <br>
 
-                    <p>Selective Repeat only acknowledges the highest in-order frame. What do I mean by '<i>highest in-order frame</i>' ?</p>
+                    <p>Selective Repeat only acknowledges the highest in-order frame. What do I mean by '<i>highest in-order frame?</i>'</p>
                     <ul><li>Acknowledging frame 5 means you acknowledge the buffered frames 2,3,4 in one go!</li></ul>
                     <br>
 
@@ -369,7 +375,7 @@ reject(duplicate frame, duplicate ACK, frames with CRC errors)
 
                     <div class="button-bar">
                         <a href="hamming-distance.html" class="button prev">Previous</a>
-                        <a href="flow-control.html" class="button next">Next</a>
+                        <a href="hdlc.html" class="button next">Next</a>
                     </div>
 
                 </div>
