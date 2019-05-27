@@ -16,6 +16,9 @@
 
     <!-- google fonts -->
     <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+
+    <!-- prettify.js -->
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?lang=ruby&amp;skin=sunburst"></script>
 </head>
 <body>
     <!-- main navigation bar at top of window -->
@@ -90,7 +93,7 @@
                         </div>
                     </li>
 
-                    <li class="active panel panel-default" id="dropdown">
+                    <li class="panel panel-default" id="dropdown">
                         <a data-toggle="collapse" href="#physical-dropdown">
                             2. Physical Layer
                             <span class="caret"></span>                            
@@ -112,44 +115,34 @@
                         </div>
                     </li>
                     
-                    <li class="panel panel-default" id="dropdown">
+                    <li class="active panel panel-default" id="dropdown">
                         <a data-toggle="collapse" href="#datalink-dropdown">
                             3. Data-Link Layer
                             <span class="caret"></span>
                         </a>
-                        <!-- Dropdown level 1 -->
                         <div id="datalink-dropdown" class="panel-collapse collapse">
                             <div class="panel-body">
                                 <ul class="nav navbar-nav">
-                                    <li><a href="#">Mail</a></li>
-                                    <li><a href="#">Calendar</a></li>
-                                    <li><a href="#">Ecommerce</a></li>
-                                    <li><a href="#">User</a></li>
-                                    <li><a href="#">Social</a></li>
-
-                                    <!-- Dropdown level 2 -->
-                                    <li class="panel panel-default" id="dropdown">
-                                        <a data-toggle="collapse" href="#dropdown-lvl2">
-                                            <i class="glyphicon glyphicon-off"></i> Sub Level <span class="caret"></span>
-                                        </a>
-                                        <div id="dropdown-lvl2" class="panel-collapse collapse">
-                                            <div class="panel-body">
-                                                <ul class="nav navbar-nav">
-                                                    <li><a href="#">Link</a></li>
-                                                    <li><a href="#">Link</a></li>
-                                                    <li><a href="#">Link</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </li>
+                                    <li><a href="introduction-to-datalink-layer.html">3.1 Introduction to the Data-Link Layer</a></li>
+                                    <li><a href="byte-count.html">3.2 Byte Count</a></li>
+                                    <li><a href="byte-stuffing.html">3.3 Byte Stuffing</a></li>
+                                    <li><a href="bit-stuffing.html">3.4 Bit Stuffing</a></li>
+                                    <li><a href="parity-bit.html">3.5 Parity Bit</a></li>
+                                    <li><a href="crc.html">3.6 Cyclic Redundancy Check (CRC)</a></li>
+                                    <li><a href="hamming-distance.html">3.7 Hamming Distance</a></li>
+                                    <li><a href="flow-control.html">3.8 Flow Control</a></li>
+                                    <li><a href="hdlc.html">3.9 High Level Data Link Control (HDLC)</a></li>
+                                    <li><a href="ppp.html">3.10 Point to Point Protocol (PPP)</a></li>
                                 </ul>
                             </div>
                         </div>
                     </li>
+
                     <li><a href="#"></span> 4. MAC sublayer</a></li>
                     <li><a href="#"></span> 5. Transport Layer</a></li>
                     <li><a href="#"></span> 6. Network Layer</a></li>
                     <li><a href="../acronyms.html">Acronyms</a></li>
+                    <li><a href="../terms.html">Terms</a></li>
 
                 </ul> <!-- end of ul.navbar -->
 
@@ -167,24 +160,24 @@
                 
                 </div>
                 <div class="inbox-bx container-fluid">
-                    <h1>Introduction to the Physical Layer</h1>
+                    <h1>Byte Count</h1>
                     <hr>
 
-                    <p><b>Layer 1</b> - The Physical Layer deals with <b>bit-level transmission</b> between different devices.</p>
-                    <p>However, that binary data is kind of an abstraction from what they are in reality.</p>
-                    <p>If you cut open a fibre optic cable you wouldn't see 1's and 0's pouring out of the wire.</p>
-                    <p>There are signals travelling through the wire.</p>
-                    <p>Those signals have voltage levels.</p>
-                    <p>Then what we'll do is choose a <b>reliability margin</b>:</p>
-                    <ul>
-                        <li>a number that says everything above it = 1, and everything below it = 0</li>
-                        <li>a reliability margin of 5V is common</li>
-                        <ul> <li>so 1V=0; 2V=0; 3V=0; 4V=0; 5V=0; 6V=1; 7V=1; 8V=1, etc...</li> </ul>
-                    </ul>
+                    <p>The simplest (but most error prone) way to get the first and last byte of the frame is to count the bytes...</p>
+                    <p>Calculating the byte count is pretty simple... <b>byte count = number of bytes in frame + 1</b></p>
+                    <p>Why +1 ? Because we <b>include the byte count as part of the frame</b>.</p>
+                    <div class="example-question"> <b>Example 1</b> <br>---------<br>
+                    frame = 01000111 11100011 11100000 01111110 <br>
+                    number of bytes in frame = 4 <br>
+                    ∴ byte count = 4 + 1 <br>
+                    ∴ byte count = 5
+                    </div>
+
+                    <p>That's literally all there is to it, but it is a very error prone solution...</p>
 
                     <div class="button-bar">
-                        <a href="../intro/osi-model.html" class="button prev">Previous</a>
-                        <a href="transmission-media.html" class="button next">Next</a>
+                        <a href="introduction-to-datalink-layer.html" class="button prev">Previous</a>
+                        <a href="byte-stuffing.html" class="button next">Next</a>
                     </div>
 
                 </div>

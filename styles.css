@@ -3,6 +3,16 @@
 /* sidebar variables */
 /* font variables */
 /* button variables */
+.example-question {
+  background: #eeeeee;
+  color: #2e2e2e;
+  font-family: 'consolas';
+  padding: 10px;
+  border-radius: 5px;
+  max-width: 100vw;
+  margin-bottom: 20px;
+}
+
 .important-tablecell {
   background: #ffeaea;
 }
@@ -187,8 +197,8 @@ table .dataTable td {
 }
 
 .mcw a:hover {
-  color: #1eff00;
-  text-decoration: none;
+  color: #bd0016;
+  text-decoration: underline;
 }
 
 /* ----------------------------------<CUSTOM SCROLLBAR>----------------------------------*/

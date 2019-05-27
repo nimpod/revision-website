@@ -83,8 +83,9 @@
                                     <li><a href="intro/what-is-a-computer-network.html">1.1. What is a computer network?</a></li>
                                     <li><a href="intro/circuit-packet-switch.html">1.2. Circuit Switch/Packet Switch</a></li>
                                     <li><a href="intro/network-topology.html">1.3. Network Topology</a></li>
-                                    <li><a href="intro/network-types.html">1.4. Types of networks</a></li>
+                                    <li><a href="network-types.html">1.4. Types of networks</a></li>
                                     <li><a href="intro/osi-model.html">1.5. OSI model</a></li>
+                                    <li><a href="intro/summary.html">1.6. Summary</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -111,13 +112,12 @@
                             </div>
                         </div>
                     </li>
-                                        
-                    <li class="panel panel-default" id="dropdown">
+                    
+                    <li class="active panel panel-default" id="dropdown">
                         <a data-toggle="collapse" href="#datalink-dropdown">
                             3. Data-Link Layer
                             <span class="caret"></span>
                         </a>
-                        <!-- Dropdown level 1 -->
                         <div id="datalink-dropdown" class="panel-collapse collapse">
                             <div class="panel-body">
                                 <ul class="nav navbar-nav">
@@ -131,29 +131,14 @@
                                     <li><a href="datalink/flow-control.html">3.8 Flow Control</a></li>
                                     <li><a href="datalink/hdlc.html">3.9 High Level Data Link Control (HDLC)</a></li>
                                     <li><a href="datalink/ppp.html">3.10 Point to Point Protocol (PPP)</a></li>
-
-                                    <!-- Dropdown level 2 
-                                    <li class="panel panel-default" id="dropdown">
-                                        <a data-toggle="collapse" href="#dropdown-lvl2">
-                                            <i class="glyphicon glyphicon-off"></i> Sub Level <span class="caret"></span>
-                                        </a>
-                                        <div id="dropdown-lvl2" class="panel-collapse collapse">
-                                            <div class="panel-body">
-                                                <ul class="nav navbar-nav">
-                                                    <li><a href="#">Link</a></li>
-                                                    <li><a href="#">Link</a></li>
-                                                    <li><a href="#">Link</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </li>-->
                                 </ul>
                             </div>
                         </div>
                     </li>
-                    <li><a href="#"></span> 4. MAC sublayer</a></li>
-                    <li><a href="#"></span> 5. Transport Layer</a></li>
-                    <li><a href="#"></span> 6. Network Layer</a></li>
+
+                    <li><a href="#"> 4. MAC sublayer</a></li>
+                    <li><a href="#"> 5. Transport Layer</a></li>
+                    <li><a href="#"> 6. Network Layer</a></li>
                     <li><a href="acronyms.html">Acronyms</a></li>
                     <li><a href="terms.html">Terms</a></li>
 
@@ -174,14 +159,37 @@
                 </div>
                 <div class="inbox-bx container-fluid">
                     <h1>Computer Networks</h1>
-                    <div class="grid">
-                        <div class="grid-item"></div>
-                        <div class="grid-item"></div>
-                        <div class="grid-item"></div>
-                        <div class="grid-item"></div>
-                        <div class="grid-item"></div>
-
+                    <p>Pink cells like this...</p>
+                    <div class="col-xs-12"><table class="table table-bordered table-hover dt-responsive" >
+                        <tbody style="font-size: 14px;"><tr class="important-tablecell"><td>Hippopotomonstrosesquipedaliophobia</td> <td>Fear of long words.</td><td>Lecture 15: Wednesday 24th Febuary, 10:30</td></tr></tbody>
+                    </table></div>
+                    <p>...are (in my opinion) the most important acronyms to learn.</p>
+                    <p>I would recommend studying the pink acronyms in more detail than white acronyms.</p>
+                    
+                    <div class="col-xs-12">
+                        <table class="table table-bordered table-hover dt-responsive">
+                            <caption class="text-center">Every acronym that has been mentioned in a lecture</caption> 
+                            <thead>
+                                <tr> <th><span>Term</span></th> <th><span>What does it do?</span></th> <th><span>When was it mentioned?</span></th></tr>
+                            </thead>
+                            <tbody style="font-size: 14px;">                           
+                                <tr> <td>Adaptive Routing algorithms</td>  <td>Adaptive algorithms attempt to change routing decisions to adjust to traffic changes or topology changes. (e.g. Distance Routing Vector algorithm, Dijkstra's Algorithm, etc...)</td>  <td></td> </tr>
+                                <tr> <td>Backpressure</td>  <td>If a router has no free buffers, it must ignore newly arriving packets. When a packet is discarded, the sending router times out and retransmits, until the packets get through. This router must then keep the packets longer in its queues, so it becomes itself congested and the problem spreads (called backpressure).</td>  <td></td> </tr>
+                                <tr> <td>Border router</td>  <td>A router than connects two networks together. It sits on the border of a network, holding onto a connection with another network.</td>  <td></td> </tr>
+                                <tr class="important-tablecell"> <td>Choke Packet</td>  <td>Used in the congestion control approach called 'Traffic Throttling'.<br>If a router thinks the network is too congested, the router will send a choke packet to the original sender. <br>The choke packet is a way of telling the sender to lower its transmission rate.<br> This process may be repeated several times, until the router is satisfied with the state of congestion in the network.</td>  <td></td> </tr>
+                                <tr> <td>Congestion Collapse</td>  <td>When too large of a buffer is used, if the time taken for a packet to travel from the beginning -> end of the buffer is > timeout period (which is more likely with a larger buffer), packets will be lost.</td>  <td></td> </tr>
+                                <tr class="important-tablecell"> <td>Downward Multiplexing</td>  <td>Multiple network addresses are available to 1 host application. The host application can spread its data to each network address. (Network connections share a host application). This type of multiplexing is Implemented using the SCTP protocol.</td>  <td></td> </tr>
+                                <tr> <td>Home agent vs. Foreign agent</td>  <td>The Home agent keeps track of the devices that are leaving the network.<br> The Foreign agent keeps track of the devices coming into its network.</td>  <td></td> </tr>
+                                <tr class="important-tablecell"> <td>Internetworking</td>  <td>This is when you combine different networks that use different technologies. They are connected using border routers.</td>  <td></td> </tr>
+                                <tr> <td>Jitter</td>  <td>When an unreliable network is supplying a real-time service, and packets are streamed by their arrival time, the video stream will jitter <br>Jitter means the video and audio could be jumpy, stopping and starting, and displaying packets out of order. <br>We use buffers to reduce jitter in real-time transport protocols.</td>  <td></td> </tr>
+                                <tr class="important-tablecell"> <td>Piggy backing</td>  <td>Piggy backing is when you combine the data and acknowledgement into one dataframe. The ACK literally gets 'piggy-backed' on the data. <br>Means there are less dataframes going backwards and forwards, resulting in a better channel utilisation. Also more optimal computation. <br>It is used to improve the ARQ protocol.</td>  <td></td> </tr>
+                                <tr class="important-tablecell"> <td>Time to live (TTL) field</td>  <td>One of the fields in the IPv4 header. It determines the amount of time that a packet should remain in a network for. <br>TTL is a number that is decremented by 1 each time it arrives at a new router. <br>When TTL = 0, the packet is discarded forever. <br>The TTL field reduces congestion because packets will not roam around the network forever.</td>  <td></td> </tr>
+                                <tr> <td>Upward Multiplexing</td>  <td>If only one network address is available on a host, all transport layer connections have to use it (Transport connections share a network address).</td>  <td></td> </tr>
+                                <tr> <td></td>  <td></td>  <td></td> </tr>
+                            </tbody>
+                        </table>
                     </div>
+
                 </div>
             </div>
             </div>

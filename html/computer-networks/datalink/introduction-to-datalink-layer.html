@@ -1,0 +1,309 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Revision website</title>
+
+    <!-- include css stylesheets -->
+    <link rel="stylesheet" href="../../../styles.css">
+
+    <!-- include bootstrap CDN -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+    <!-- google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+
+    <!-- prettify.js -->
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?lang=ruby&amp;skin=sunburst"></script>
+</head>
+<body>
+    <!-- main navigation bar at top of window -->
+    <nav class="mnb navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <i class="ic fa fa-bars"></i>
+                </button>
+                <div style="padding: 15px 0;">
+                    <a href="#" id="msbo"><i class="ic fa fa-bars"></i></a>
+                </div>
+            </div> <!-- end of div.navbar-header -->
+
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">More revision<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">CSC2023</a></li>
+                            <li><a href="../computer-networks.html">CSC2026</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">CSC1024</a></li>
+                            <li><a href="#">CSC1021</a></li>
+                            <li><a href="#">CSC1022</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#"><i class="fa fa-bell-o"></i></a></li>
+                    <li><a href="#"><i class="fa fa-comment-o"></i></a></li>
+                </ul>
+            </div> <!-- end of div.navbar-collapse -->
+            
+        </div> <!-- end of div.container-fluid -->
+    </nav> <!-- end of main nav-bar -->
+
+    <div class="msb" id="msb">
+        <nav class="navbar navbar-default" role="navigation">
+
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <div class="brand-wrapper">
+                    <!-- Brand -->
+                    <div class="brand-name-wrapper">
+                        <a class="navbar-brand" href="../../../index.html">
+                            NIMPOD
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Menu -->
+            <div class="side-menu-container">
+                <ul class="nav navbar-nav">
+
+                    <li class="panel panel-default" id="dropdown">
+                        <a data-toggle="collapse" href="#intro-dropdown">
+                            1. Introduction to Computer Networks
+                            <span class="caret"></span>                            
+                        </a>
+                        <div id="intro-dropdown" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <ul class="nav navbar-nav">
+                                    <li><a href="../intro/what-is-a-computer-network.html">1.1. What is a computer network?</a></li>
+                                    <li><a href="../intro/circuit-packet-switch.html">1.2. Circuit Switch/Packet Switch</a></li>
+                                    <li><a href="../intro/network-topology.html">1.3. Network Topology</a></li>
+                                    <li><a href="../intro/network-types.html">1.4. Types of networks</a></li>
+                                    <li><a href="../intro/osi-model.html">1.5. OSI model</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="panel panel-default" id="dropdown">
+                        <a data-toggle="collapse" href="#physical-dropdown">
+                            2. Physical Layer
+                            <span class="caret"></span>                            
+                        </a>
+                        <div id="physical-dropdown" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <ul class="nav navbar-nav">
+                                    <li><a href="introduction-to-physical-layer.html">2.1. Introduction to the Physical Layer</a></li>
+                                    <li><a href="transmission-media.html">2.2. Trasmission Media</a></li>
+                                    <li><a href="communication-satellites.html">2.3. Communication Satellites</a></li>
+                                    <li><a href="transmission-impairment.html">2.4. Transmission Impairment</a></li>
+                                    <li><a href="encoding-modulation.html">2.5. Encoding and Modulation</a></li>
+                                    <li><a href="simplex-duplex.html">2.6. Simplex and Duplex</a></li>
+                                    <li><a href="parallel-serial.html">2.7. Parallel and Serial</a></li>
+                                    <li><a href="multiplexing.html">2.8. Multiplexing</a></li>
+                                    <li><a href="communication-systems.html">2.9. Communication Systems</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li class="active panel panel-default" id="dropdown">
+                        <a data-toggle="collapse" href="#datalink-dropdown">
+                            3. Data-Link Layer
+                            <span class="caret"></span>
+                        </a>
+                        <div id="datalink-dropdown" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <ul class="nav navbar-nav">
+                                    <li><a href="introduction-to-datalink-layer.html">3.1 Introduction to the Data-Link Layer</a></li>
+                                    <li><a href="byte-count.html">3.2 Byte Count</a></li>
+                                    <li><a href="byte-stuffing.html">3.3 Byte Stuffing</a></li>
+                                    <li><a href="bit-stuffing.html">3.4 Bit Stuffing</a></li>
+                                    <li><a href="parity-bit.html">3.5 Parity Bit</a></li>
+                                    <li><a href="crc.html">3.6 Cyclic Redundancy Check (CRC)</a></li>
+                                    <li><a href="hamming-distance.html">3.7 Hamming Distance</a></li>
+                                    <li><a href="flow-control.html">3.8 Flow Control</a></li>
+                                    <li><a href="hdlc.html">3.9 High Level Data Link Control (HDLC)</a></li>
+                                    <li><a href="ppp.html">3.10 Point to Point Protocol (PPP)</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li><a href="#"></span> 4. MAC sublayer</a></li>
+                    <li><a href="#"></span> 5. Transport Layer</a></li>
+                    <li><a href="#"></span> 6. Network Layer</a></li>
+                    <li><a href="../acronyms.html">Acronyms</a></li>
+                    <li><a href="../terms.html">Terms</a></li>
+
+                </ul> <!-- end of ul.navbar -->
+
+            </div><!--  end of div.side-menu-container -->
+        </nav>
+    </div> <!-- end of main side-bar (msb) div -->
+
+    <div class="mcw">
+        <!--navigation here-->
+        <!--main content view-->
+        <div class="cv">
+            <div>
+            <div class="inbox">
+                <div class="inbox-sb">
+                
+                </div>
+                <div class="inbox-bx container-fluid">
+                    <h1>Introduction to the Data-Link Layer</h1>
+                    <hr>
+
+                    <p><b>Layer 2</b> - The Data-Link Layer <b>detects damaged or lost frames</b> and <b>recovers</b> from the problem.</p>
+                    <p>The two main <b>features</b> of the Data-Link Layer are:</p>
+                    <ol>
+                        <li>To detect damage/loss of frames and recover</li>
+                        <li>To never let a damaged frame pass through the network</li>
+                    </ol><br>
+
+                    <p>The bits we talked about in the Physical layer are of no interest to us anymore. Instead they are grouped into <b>frames</b>. The frame is now the transmitted element, in the form of a block of bytes.</p>
+                    <p>Put more formally, <i>"The transmitted element in the Data-Link Layer is called a frame, which is regarded a block of bytes"</i>.</p>
+
+                    <br>
+                    <p>The three main <b>responsibilities</b> of the data-link layer are:</p>
+                    <ol>
+                        <li>Framing - <span style="font-size: 13px; color: rgb(180,180,180);">delimiting data units flowing on the channel.</span></li>
+                        <li>Error control - <span style="font-size: 13px; color: rgb(180,180,180);">detecting and correcting errors introduced from the physical layer (see section 4.2 on why frames go wrong)</span></li>
+                        <li>Flow control - <span style="font-size: 13px; color: rgb(180,180,180);">prevents a fast sender from out-pacing a slow receiver</span></li>
+                    </ol><br>
+
+                    <p>The Data-Link Layer provides two <b>services</b>:</li>
+                    <ol>
+                        <li>connection-orientated services</li>
+                        <li>connectionless services</li>
+                    </ol> <br>
+
+                    <h3>When frames go wrong...</h1>
+                    <hr>
+
+                    <p>Frames can be lost in many ways. Here are four examples:</p>
+                    <ol>
+                        <li>Short periods of disconnection <span style="font-size: 13px; color: rgb(180,180,180);"> - disconnection by a few milliseconds is enough to loose the entire frame.</span></li>
+                        <li>Address of frame is damaged</li>
+                        <li>Software bugs</li>
+                        <li>Computer crash</li>
+                    </ol><br>
+
+                    <p>Lot's of things can go wrong when sending frames and acknowledgements over a network. Here are 6 sequential scenarios in the form of questions:</p>
+                    <br>
+                                        
+                    <div class="col-xs-12">
+                        <table class="table table-bordered table-hover dt-responsive">
+                            <caption class="text-center">Every acronym that has been mentioned in a lecture</caption> 
+                            <thead>
+                                <tr> <th><span>#</span></th>  <th><span>Question</span></th> <th><span>Answer</span></th> </tr>
+                            </thead>
+                            <tbody style="font-size: 14px;">   
+                                <tr> 
+                                    <td>Q1</td>
+                                    <td>Suppose sender(A) sends a frame to receiver(B) How will B be able to tell that the frame has been damaged during transmission?</td>
+                                    <td> <ul>
+                                        <li>A has to append error check bits to the frame.</li>
+                                        <li>These error check bits allow B to calculate whether the frame is correct or not.</li>
+                                    </ul> </td>
+                                </tr>
+                                <tr> 
+                                    <td>Q2</td>
+                                    <td>How will sender(A) know that receiver(B) has received the frame correctly</td>
+                                    <td> <ul>
+                                        <li>Along with the error check bits, B must also send some sort of acknowledgement to A.</li>
+                                        <li> -> ACK indicates correct arrival of the frame</li>
+                                        <li> -> NAK indicates frame corruption.</li>
+                                    </ul> </td>
+                                </tr>
+                                <tr> 
+                                    <td>Q3</td>
+                                    <td>What happens if sender(A) sends a frame to receiver(B), and the frame disappears during transfer? (in other words, we loose the frame...)</td>
+                                    <td> <ul>
+                                        <li>Deadlock...</li>
+                                        <li>Deadlock happens because B is waiting for a frame to arrive, but A is waiting for ACK or NAK.</li>
+                                    </ul> </td>
+                                </tr>
+                                <tr> 
+                                    <td>Q4</td>
+                                    <td>How can we avoid deadlock?</td>
+                                    <td> <ul>
+                                        <li>A must use a timer.</li>
+                                        <li>Make A wait a limited amount of time (we call this the timeout interval)</li>
+                                        <li>if (timeout interval completes without arrival of an ACK) --> assume frame is lost --> re-transmit frame</li>
+                                    </ul> </td>
+                                </tr>
+                                <tr> 
+                                    <td>Q5</td>
+                                    <td>What happens if we loose an ACK?</td>
+                                    <td> <ul>
+                                        <li>We recover using the timeout interval.</li>
+                                        <li>if (a timeout is detected) --> re-transmit the frame.</li>
+                                        <li> -> There is a problem with re-transmitting the frame in this case...</li>
+                                        <li> -> B will receive a duplicate frame. Duplicate frames are NOT a good thing!</li>
+                                    </ul> </td>
+                                </tr>
+                                <tr> 
+                                    <td>Q6</td>
+                                    <td>How can we recover from a duplicate frame?</td>
+                                    <td> <ul>
+                                        <li>Use ID's so that we can easily discard any duplicate frames.</li>
+                                        <li>Then resend an ACK back to A.</li>
+                                        <li>If we didn't resend an ACK back to A, it would keep sending duplicate frames forever...</li>
+                                    </ul> </td>
+                                </tr>             
+                            </tbody>
+                        </table>
+                    </div>
+                    <p>In Q5, the length of the timeout interval is IMPORTANT!</p>
+                    <p><b>Too long</b> of a timeout interval does not cause protocol failure, rather it wastes bandwidth.</p>
+
+<pre class="prettyprint">
+if (timeout interval is too long) {
+    the sender will be waiting for too long
+    therefore the data link will become idle
+}
+</pre>
+
+                    <p><b>Too short</b> of a timeout interval may cause the protocol to fail, which is a lot worse than just wasting bandwidth!</p>
+<pre class="prettyprint">
+if (timeout interval is too short) {
+    duplicate acknowledgements
+    therefore the protocol fails
+}
+</pre>
+                    <p>The solution to a short timeout interval, is to <b>send the acknowledgement and the ID together</b> (aka. <b>Piggy-Backing</b>)</p>
+                    <br><br>
+
+                    <h4>Summary of 'When frames go wrong...'</h4>
+                    <ul>
+                        <li>All links are unreliable.</li>
+                        <li>To recover from damaged frame --> use error check bits or ACK or NAK</li>
+                        <li>To recover from lost frames or lost ACK or lost NAK --> use timeout.</li>
+                        <li>To prevent duplicate frames or duplicate ACK or duplicate NAK --> use ID in frames, ACK's and NAK's</li>
+                        <li>Use Piggy-Backing if the timeout interval is too short.</p>
+                    </ul>
+
+                    <div class="button-bar">
+                        <a href="../physical/communication-systems.html" class="button prev">Previous</a>
+                        <a href="byte-count.html" class="button next">Next</a>
+                    </div>
+
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="../../../funky.js"></script>
+</body>
+</html>

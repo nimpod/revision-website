@@ -24,6 +24,15 @@ $button-text-color: white;
 $button-height: 22px;
 $button-text-size: 14px;
 
+.example-question {
+  background: rgb(238, 238, 238);
+  color: rgb(46, 46, 46);
+  font-family: 'consolas';
+  padding: 10px;
+  border-radius: 5px;
+  max-width: 100vw;
+  margin-bottom: 20px;
+}
 
 .important-tablecell {
   background: rgb(255, 234, 234);
@@ -187,7 +196,6 @@ table {
     }
 }
 
-
 /* ----------------------------------<MCW STYLING>----------------------------------*/
 .mcw {
     margin-left: $width-sidebar;
@@ -200,8 +208,8 @@ table {
       
     }*/
     a:hover {
-        color: rgb(30, 255, 0);
-        text-decoration: none;
+        color: rgb(189,0,22);
+        text-decoration: underline;
     }
   }
   
