@@ -195,7 +195,7 @@
 
                     <p>Like I said, we have to break each station down into groups.</p>
                     <p>In the following binary tree diagram below, you can think of the leaves as the actual stations.</p>
-                    <img src="../../../img/adaptive-tree-walk.png">
+                    <img src="../../../img/adaptive-tree-walk.png" width="300">
 
                     <div class="col-xs-12">
                         <table class="table table-bordered table-hover dt-responsive">
@@ -244,25 +244,32 @@
                     <h3>Examples</h3>
                     <hr>
 
-                    <p><b>Example 1</b>: What is the probability that <b>2 messages</b> are <b>never successfully sent</b> if no messages are involved?</p>
+                    <p>Example 1:</p>
                     <div class="example-question">
-                    = 2<sup>-1</sup> * 2<sup>-2</sup> * 2<sup>-3</sup> * 2<sup>-4</sup> * 2<sup>-5</sup> * 2<sup>-6</sup> * 2<sup>-7</sup> * 2<sup>-8</sup> * 2<sup>-9</sup> * 2<sup>-10</sup> * 2<sup>-10</sup> * 2<sup>-10</sup> * 2<sup>-10</sup> * 2<sup>-10</sup> * 2<sup>-10</sup> * 2<sup>-10</sup><br>
-                      &emsp;  1 &emsp;&emsp;&emsp;  2 &emsp;&emsp;&emsp;  3 &emsp;&emsp;&emsp; 4 &emsp;&emsp;&emsp; 5 &emsp;&emsp;  6  &emsp;&emsp; 7  &emsp;&emsp; 8 &emsp;&emsp;  9  &emsp;&emsp;&emsp; 10 &emsp;&emsp; 11 &emsp;&emsp; 12 &emsp;&emsp; 13 &emsp;&emsp; 14 &emsp;&emsp; 15 &emsp;&emsp; 16 <br>
-                    <br>
-                    =  2<sup>-115</sup>
+                    What is the probability that 2 messages are never successfully sent if no messages are involved? <br>
+<pre class="prettyprint">
+= 2<sup>-1</sup> * 2<sup>-2</sup> * 2<sup>-3</sup> * 2<sup>-4</sup> * 2<sup>-5</sup> * 2<sup>-6</sup> * 2<sup>-7</sup> * 2<sup>-8</sup> * 2<sup>-9</sup> * 2<sup>-10</sup> * 2<sup>-10</sup> * 2<sup>-10</sup> * 2<sup>-10</sup> * 2<sup>-10</sup> * 2<sup>-10</sup> * 2<sup>-10</sup>
+  1 &emsp;&emsp; 2 &emsp;&emsp;  3 &emsp;&emsp;  4 &emsp;&emsp;  5 &emsp;&emsp; 6 &emsp;&emsp; 7  &emsp;&emsp; 8 &emsp;&emsp; 9 &emsp;&emsp;  10 &emsp;&emsp; 11 &emsp;&emsp; 12 &emsp;&emsp; 13 &emsp;&emsp; 14 &emsp;&emsp; 15 &emsp;&emsp; 16 <br>
+
+=  2<sup>-115</sup>
+</pre>
                     </div>
+
                     <p><b>Why did I go up to 16?</b></p>
                     <li>The question stated that the messages are never successfully sent. This (always) implies it reached 16 collisions.</li> <br>
                     <p><b>Why did the exponent stop increasing after 10?</b></p>
                     <li>Because we freeze the number after 10 collisions. <span style="font-size: 13px; color: rgb(180,180,180);"> - I mentioned this in the description of how the algorithm works</span></li>
 
                     <br><br>
-                    <p><b>Example 2</b>: What is the probability that 2 messages are successfully sent after 8 collisions?</p>
+                    <p>Example 2:</p>
                     <div class="example-question">
-                    = 2<sup>-1</sup> * 2<sup>-2</sup> * 2<sup>-3</sup> * 2<sup>-4</sup> * 2<sup>-5</sup> * 2<sup>-6</sup> * 2<sup>-7</sup> * 2<sup>-8</sup><br>
-                      &emsp;  1 &emsp;&emsp;&emsp;  2 &emsp;&emsp;&emsp;  3 &emsp;&emsp;&emsp; 4 &emsp;&emsp;&emsp; 5 &emsp;&emsp;  6  &emsp;&emsp; 7  &emsp;&emsp; 8 <br>
-                    <br>
-                    =  2<sup>-36</sup>
+                    What is the probability that 2 messages are successfully sent after 8 collision? <br>
+<pre class="prettyprint">
+= 2<sup>-1</sup> * 2<sup>-2</sup> * 2<sup>-3</sup> * 2<sup>-4</sup> * 2<sup>-5</sup> * 2<sup>-6</sup> * 2<sup>-7</sup> * 2<sup>-8</sup>
+  1 &emsp;&emsp; 2 &emsp;&emsp;  3 &emsp;&emsp;  4 &emsp;&emsp;  5 &emsp;&emsp; 6 &emsp;&emsp; 7  &emsp;&emsp; 8 <br>
+
+=  2<sup>-36</sup>
+</pre>
                     </div>
 
                     <div class="button-bar">

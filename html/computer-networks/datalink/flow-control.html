@@ -152,9 +152,9 @@
                                     <li><a href="../mac/csma.html">4.4. CSMA</a></li>
                                     <li><a href="../mac/collision-free.html">4.5. Collision-free protocols</a></li>
                                     <li><a href="../mac/limited-contention.html">4.6. Limited Contention protocols</a></li>
-                                    <li><a href="../mac/wireless-lan.html">4.7. Wireless LAN protocols</a></li>
+                                    <li><a href="../mac/wireless-lan-protocols.html">4.7. Wireless LAN protocols</a></li>
                                     <li><a href="../mac/wired-lan.html">4.8. Wired LAN</a></li>
-                                    <li><a href="../mac/communication-systems.html">4.9. Wireless LAN</a></li>
+                                    <li><a href="../mac/wireless-lan.html">4.9. Wireless LAN</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -315,7 +315,7 @@ reject(duplicate frame, duplicate ACK, frames with CRC errors)
                     <hr>
 
                     <p>Improvement on the One-bit Sliding Window protocol.</p>
-                    <p><b>Where N = sizeof(window), there must be at least N+1 sequence numbers.</b></p>
+                    <p>There must be at least <b>N+1 sequence numbers</b> (Where N = sizeof(window))</b></p>
                     <ul>
                         <li>sizeof(sender window) > 1</li>
                         <li>sizeof(receiver window) = 1</li>
@@ -344,7 +344,7 @@ reject(duplicate frame, duplicate ACK, frames with CRC errors)
                     <hr>
 
                     <p>Improvement on the Go Back N protocol.</p>
-                    <p><b>Where N = sizeof(window), there must be at least 2N sequence numbers.</b></p>
+                    <p>There must be at least <b>2N sequence numbers</b> (Where N = sizeof(window))</b></p>
                     <ul>
                         <li>sizeof(sender window) > 1</li>
                         <li>sizeof(receiver window) > 1</li>
@@ -371,6 +371,48 @@ reject(duplicate frame, duplicate ACK, frames with CRC errors)
 
                     <p>Selective Repeat only acknowledges the highest in-order frame. What do I mean by '<i>highest in-order frame?</i>'</p>
                     <ul><li>Acknowledging frame 5 means you acknowledge the buffered frames 2,3,4 in one go!</li></ul>
+                    <br>
+
+                    <h3>Example:</h3>
+                    <hr>
+
+                    <p>Example 1</p>
+                    <p>This example will use 2 formulas: TT and Optimum Window Size</p>
+                    <div class="example-question">
+                    Suppose we have a data link with a 0.25s round trip time, a transmission rate of 1 Mbit per second, and a frame length of 2000 bits. <br>
+                    a) Calculate an optimum window size for this protocol. <br>
+                    b) Calculate and explain the minimum range of sequence numbers that must be used for: <br>
+                     &emsp;&emsp;&emsp;  i) Go Back N <br>
+                     &emsp;&emsp;&emsp;  ii) Selective Repeat <br>
+                    <br>
+
+<pre class="prettyprint">
+a) 
+    // convert TR into bits
+    TR = 1 Mbit/s
+       = 1,000,000 bits/s
+
+    // So these are the values we will use
+    RTT = 0.25
+    len(frame) = 2000
+    TR = 1,000,000
+    
+    // now everything is in bits, we are ready to calculate TT and RTT...
+    TT = 2000 / 1,000,000
+       = 0.002
+    
+    ∴ optimum window size = 0.25 / 0.002
+                          = 125
+
+b) i)
+    Go Back N requires at least N+1 sequence numbers to recover from duplicate frames.
+    ∴ in this case Go Back N requires 126 sequence numbers to recover from duplicate frames.
+
+   ii)
+    Selective Repeat requires at least 2N sequence numbers to recover from duplicate frames.
+    ∴ in this case Selective Repeat requires 250 sequence numbers to reocver from duplicate frames.
+</pre>
+                    </div>
                     <br>
 
                     <h3>Summary of Flow Control protocols:</h3>

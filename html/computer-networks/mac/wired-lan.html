@@ -272,6 +272,7 @@ b)
                     <img src="../../../img/ethernet-bridges.png" width="400">
                     <p>Figure 4.8b</p> <br>
 
+                    <p>Let's break down each component in <i>Figure 4.8b</i>:</p>
                     <ul>
                         <li>There are 4 segments, each of which contains 5 devices.</li>
                         <li>The hexagonal nodes labelled B are the bridges.</li>
@@ -292,6 +293,9 @@ b)
                     <p>In summary... if <b>any device sends a frame</b>, it is <b>received by all devices</b> and the <b>bridge</b> in the <b>local segment</b> we are currently in.</p>
                     
                     <br>
+                    <h4>Forwading Tables</h4>
+                    <hr>
+
                     <p>How is this all possible? Because bridges know their shit.</p>
                     <p>Ethernet bridges learn and relearn MAC addresses using a <b>'Forwading Table'</b>. We call this ability Backward Learning.</p>
                     <p>Forwarding tables have <b>1 entry per network address</b>.</p>
@@ -300,7 +304,6 @@ b)
                         <li><b>MAC addresses</b> - the MAC address for each device in the network</li>
                         <li><b>Port number</b> - every bridge has ports on it. Each device in a network connects to a port on the bridge.</li>                        
                     </ul> <br>
-                    <p>Visit <a href="http://cs.mvnu.edu/classes/CSC3013/NetAnimations/switch.html">this webpage</a> to see a great animation of how bridges work.</p>
 
                     <br>
                     <h3>Switched Ethernet</h3>
@@ -316,7 +319,7 @@ b)
                         <li>Reduced contention on individual segments</li>
                         <li>Easy to add/remove new hosts to the network</li>
                         <li>Reliability (if one cable dies, the entire network no longer dies! Yay!)</li>
-                    </ul>
+                    </ul> <br>
 
                     <p>The reliability of Switched Ethernet is good because we use <b>Hubs</b>:</p>
                     <ul>
