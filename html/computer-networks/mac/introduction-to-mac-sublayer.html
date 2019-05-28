@@ -16,6 +16,9 @@
 
     <!-- google fonts -->
     <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+
+    <!-- prettify.js -->
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?lang=ruby&amp;skin=sunburst"></script>
 </head>
 <body>
     <!-- main navigation bar at top of window -->
@@ -90,7 +93,7 @@
                         </div>
                     </li>
 
-                    <li class="active panel panel-default" id="dropdown">
+                    <li class="panel panel-default" id="dropdown">
                         <a data-toggle="collapse" href="#physical-dropdown">
                             2. Physical Layer
                             <span class="caret"></span>                            
@@ -98,15 +101,15 @@
                         <div id="physical-dropdown" class="panel-collapse collapse">
                             <div class="panel-body">
                                 <ul class="nav navbar-nav">
-                                    <li><a href="introduction-to-physical-layer.html">2.1. Introduction to the Physical Layer</a></li>
-                                    <li><a href="transmission-media.html">2.2. Trasmission Media</a></li>
-                                    <li><a href="communication-satellites.html">2.3. Communication Satellites</a></li>
-                                    <li><a href="transmission-impairment.html">2.4. Transmission Impairment</a></li>
-                                    <li><a href="encoding-modulation.html">2.5. Encoding and Modulation</a></li>
-                                    <li><a href="simplex-duplex.html">2.6. Simplex and Duplex</a></li>
-                                    <li><a href="parallel-serial.html">2.7. Parallel and Serial</a></li>
-                                    <li><a href="multiplexing.html">2.8. Multiplexing</a></li>
-                                    <li><a href="communication-systems.html">2.9. Communication Systems</a></li>
+                                    <li><a href="../physical/introduction-to-physical-layer.html">2.1. Introduction to the Physical Layer</a></li>
+                                    <li><a href="../physical/transmission-media.html">2.2. Trasmission Media</a></li>
+                                    <li><a href="../physical/communication-satellites.html">2.3. Communication Satellites</a></li>
+                                    <li><a href="../physical/transmission-impairment.html">2.4. Transmission Impairment</a></li>
+                                    <li><a href="../physical/encoding-modulation.html">2.5. Encoding and Modulation</a></li>
+                                    <li><a href="../physical/simplex-duplex.html">2.6. Simplex and Duplex</a></li>
+                                    <li><a href="../physical/parallel-serial.html">2.7. Parallel and Serial</a></li>
+                                    <li><a href="../physical/multiplexing.html">2.8. Multiplexing</a></li>
+                                    <li><a href="../physical/communication-systems.html">2.9. Communication Systems</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -135,7 +138,7 @@
                         </div>
                     </li>
 
-                    <li class="panel panel-default" id="dropdown">
+                    <li class="active panel panel-default" id="dropdown">
                         <a data-toggle="collapse" href="#mac-dropdown">
                             4. MAC Sublayer
                             <span class="caret"></span>                            
@@ -143,15 +146,15 @@
                         <div id="mac-dropdown" class="panel-collapse collapse">
                             <div class="panel-body">
                                 <ul class="nav navbar-nav">
-                                    <li><a href="../mac/introduction-to-mac-sublayer.html">4.1. Introduction to the MAC Sublayer</a></li>
-                                    <li><a href="../mac/mac-address.html">4.2. MAC Address</a></li>
-                                    <li><a href="../mac/aloha.html">4.3. Aloha</a></li>
-                                    <li><a href="../mac/csma.html">4.4. CSMA</a></li>
-                                    <li><a href="../mac/collision-free.html">4.5. Collision-free protocols</a></li>
-                                    <li><a href="../mac/limited-contention.html">4.6. Limited Contention protocols</a></li>
-                                    <li><a href="../mac/wireless-lan.html">4.7. Wireless LAN protocols</a></li>
-                                    <li><a href="../mac/wired-lan.html">4.8. Wired LAN</a></li>
-                                    <li><a href="../mac/communication-systems.html">4.9. Wireless LAN</a></li>
+                                    <li><a href="introduction-to-mac-sublayer.html">4.1. Introduction to the MAC Sublayer</a></li>
+                                    <li><a href="mac-address.html">4.2. MAC Address</a></li>
+                                    <li><a href="aloha.html">4.3. Aloha</a></li>
+                                    <li><a href="csma.html">4.4. CSMA</a></li>
+                                    <li><a href="collision-free.html">4.5. Collision-free protocols</a></li>
+                                    <li><a href="limited-contention.html">4.6. Limited Contention protocols</a></li>
+                                    <li><a href="wireless-lan.html">4.7. Wireless LAN protocols</a></li>
+                                    <li><a href="wired-lan.html">4.8. Wired LAN</a></li>
+                                    <li><a href="communication-systems.html">4.9. Wireless LAN</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -161,7 +164,6 @@
                     <li><a href="#"></span> 6. Network Layer</a></li>
                     <li><a href="../acronyms.html">Acronyms</a></li>
                     <li><a href="../terms.html">Terms</a></li>
-                    <li><a href="../formulas.html">Formulas</a></li>
                     <li><a href="../formulas.html">Formulas</a></li>
 
                 </ul> <!-- end of ul.navbar -->
@@ -180,36 +182,43 @@
                 
                 </div>
                 <div class="inbox-bx container-fluid">
-                    <h1>Transmission Impairment</h1>
+                    <h1>Introduction to the MAC Sublayer</h1>
                     <hr>
-                    
-                    <p>Unfortunately, things go wrong with transmission medias. Sometimes, there is a mismatch between the sent signal and the received signal.</p>
-                    <p>Why do things like this happen? There are 3 possible causes:</p>
-                    <ul>
-                        <li><b>Attenuation</b></li>
-                        <li><b>Distortion</b></li>
-                        <li><b>Noise</b></li>
-                    </ul>
 
-                    <div class="col-xs-12">
-                        <table class="table table-bordered table-hover dt-responsive">
-                            <caption class="text-center">Types of transmission impairment</caption> 
-                            <thead>
-                                <tr> <th><span>Impairment</span></th>  <th><span>Basic diagram</span></th>  <th><span>What happens?</span></th>  </tr>
-                            </thead>
-                            <tbody style="font-size: 14px;">
-                                <tr> <td>Attenuation</td> <td><img src="../../../img/attenuation.PNG"></td> <td>Loss of signal <b>strength</b></td>                           </tr>
-                                <tr> <td>Distortion</td>  <td><img src="../../../img/distortion.PNG"></td> <td>Alteration of signal <b>shape</b></td>                         </tr>
-                                <tr> <td>Noise</td>       <td><img src="../../../img/noise.PNG"></td> <td>Some other random signal <b>interrupts</b> the original signal</td> </tr>
-                            </tbody>
-                        </table>
-                    </div>
+                    <p><b>Layer 2.1</b> - The MAC sublayer is responsible for moving data packets to and from one Network Interface Card (NIC) to another across a shared channel</p>
+                    <p>MAC = Medium Access Control</p>
+                    <p>The MAC sublayer is one of two sublayers that make up the Data Link Layer of the OSI model. There is so much content to cover in MAC that I thought it deserved it's own section.</p>
+                    <img src="../../../img/mac-and-llc-osi.png" width="200"> <br><br>
+                    <p>What is the difference between the MAC and LLC sublayers?</p>
+                    <ul>
+                        <li><b>MAC</b> - moves data across a shared channel and does part of the framing.</li>
+                        <li><b>LLC</b> - connects different LAN's together. Does error handling, flow control and does part of the framing.</li>
+                    </ul> <br>
+
+                    <p>It might not make any sense to you right now, but the MAC sublayer uses the <b>1-persistent</b> <b>CSMA/CD</b> protocol with the <b>Binary Exponential Backoff</b> (<b>BEB</b>) Algorithm.</b>
+                    <ul>
+                        <li><b>1-persistent</b>: stations send as soon as link is idle</li>
+                        <li><b>CSMA/CD</b>: stations can detect collisions whilst transmitting</li>
+                        <li><b>BEB</b>: used to decide how long to wait until next retransmission</li>
+                    </ul> <br>
+
+                    <h3>Channel Allocation Problem</h3>
+                    <hr>
+
+                    <p>Network links can be <b>PTP</b> or <b>broadcast</b>.</p>
+                    <p>In broadcast networks, there is a single shared transmission medium in which everyone communicates via.</p>
+                    <p>Adding new hosts to the network is easy. (eg. quickly connecting to your home WiFi, quickly connecting to the uni WiFi , etc...)</p>
+                    <p>The Channel Allocation Problem asks <i>'how do you allocate a single broadcast channel amongst other competing users?'</i>.</p>
+                    <p>There are two solutions to the problem.</p>
+                    <ol>
+                        <li><b>Static Channel Allocation</b> - if (traffic is quiet and predictable) -> channel is split equally among users.</li>
+                        <li><b>Dynamic Channel Allocation</b> - if (traffic is busy and unpredictable) -> use <a href="aloha.html">Multiple Access Protocols</a>.</li> 
+                    </ol>
                     
-                    <p>A common solution to impairment issues, is to <b>use repeaters to amplify the signal</b>.</p>
 
                     <div class="button-bar">
-                        <a href="communication-satellites.html" class="button prev">Previous</a>
-                        <a href="encoding-modulation.html" class="button next">Next</a>
+                        <a href="../datalink/ppp.html" class="button prev">Previous</a>
+                        <a href="mac-address.html" class="button next">Next</a>
                     </div>
 
                 </div>

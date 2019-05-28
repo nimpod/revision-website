@@ -1,0 +1,337 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Revision website</title>
+
+    <!-- include css stylesheets -->
+    <link rel="stylesheet" href="../../../styles.css">
+
+    <!-- include bootstrap CDN -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+    <!-- google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+
+    <!-- prettify.js -->
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?lang=ruby&amp;skin=sunburst"></script>
+</head>
+<body>
+    <!-- main navigation bar at top of window -->
+    <nav class="mnb navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <i class="ic fa fa-bars"></i>
+                </button>
+                <div style="padding: 15px 0;">
+                    <a href="#" id="msbo"><i class="ic fa fa-bars"></i></a>
+                </div>
+            </div> <!-- end of div.navbar-header -->
+
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">More revision<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">CSC2023</a></li>
+                            <li><a href="../computer-networks.html">CSC2026</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">CSC1024</a></li>
+                            <li><a href="#">CSC1021</a></li>
+                            <li><a href="#">CSC1022</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#"><i class="fa fa-bell-o"></i></a></li>
+                    <li><a href="#"><i class="fa fa-comment-o"></i></a></li>
+                </ul>
+            </div> <!-- end of div.navbar-collapse -->
+            
+        </div> <!-- end of div.container-fluid -->
+    </nav> <!-- end of main nav-bar -->
+
+    <div class="msb" id="msb">
+        <nav class="navbar navbar-default" role="navigation">
+
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <div class="brand-wrapper">
+                    <!-- Brand -->
+                    <div class="brand-name-wrapper">
+                        <a class="navbar-brand" href="../../../index.html">
+                            NIMPOD
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Menu -->
+            <div class="side-menu-container">
+                <ul class="nav navbar-nav">
+
+                    <li class="panel panel-default" id="dropdown">
+                        <a data-toggle="collapse" href="#intro-dropdown">
+                            1. Introduction to Computer Networks
+                            <span class="caret"></span>                            
+                        </a>
+                        <div id="intro-dropdown" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <ul class="nav navbar-nav">
+                                    <li><a href="../intro/what-is-a-computer-network.html">1.1. What is a computer network?</a></li>
+                                    <li><a href="../intro/circuit-packet-switch.html">1.2. Circuit Switch/Packet Switch</a></li>
+                                    <li><a href="../intro/network-topology.html">1.3. Network Topology</a></li>
+                                    <li><a href="../intro/network-types.html">1.4. Types of networks</a></li>
+                                    <li><a href="../intro/osi-model.html">1.5. OSI model</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="panel panel-default" id="dropdown">
+                        <a data-toggle="collapse" href="#physical-dropdown">
+                            2. Physical Layer
+                            <span class="caret"></span>                            
+                        </a>
+                        <div id="physical-dropdown" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <ul class="nav navbar-nav">
+                                    <li><a href="../physical/introduction-to-physical-layer.html">2.1. Introduction to the Physical Layer</a></li>
+                                    <li><a href="../physical/transmission-media.html">2.2. Trasmission Media</a></li>
+                                    <li><a href="../physical/communication-satellites.html">2.3. Communication Satellites</a></li>
+                                    <li><a href="../physical/transmission-impairment.html">2.4. Transmission Impairment</a></li>
+                                    <li><a href="../physical/encoding-modulation.html">2.5. Encoding and Modulation</a></li>
+                                    <li><a href="../physical/simplex-duplex.html">2.6. Simplex and Duplex</a></li>
+                                    <li><a href="../physical/parallel-serial.html">2.7. Parallel and Serial</a></li>
+                                    <li><a href="../physical/multiplexing.html">2.8. Multiplexing</a></li>
+                                    <li><a href="../physical/communication-systems.html">2.9. Communication Systems</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li class="panel panel-default" id="dropdown">
+                        <a data-toggle="collapse" href="#datalink-dropdown">
+                            3. Data-Link Layer
+                            <span class="caret"></span>
+                        </a>
+                        <div id="datalink-dropdown" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <ul class="nav navbar-nav">
+                                    <li><a href="../datalink/introduction-to-datalink-layer.html">3.1 Introduction to the Data-Link Layer</a></li>
+                                    <li><a href="../datalink/byte-count.html">3.2 Byte Count</a></li>
+                                    <li><a href="../datalink/byte-stuffing.html">3.3 Byte Stuffing</a></li>
+                                    <li><a href="../datalink/bit-stuffing.html">3.4 Bit Stuffing</a></li>
+                                    <li><a href="../datalink/parity-bit.html">3.5 Parity Bit</a></li>
+                                    <li><a href="../datalink/crc.html">3.6 Cyclic Redundancy Check (CRC)</a></li>
+                                    <li><a href="../datalink/hamming-distance.html">3.7 Hamming Distance</a></li>
+                                    <li><a href="../datalink/flow-control.html">3.8 Flow Control</a></li>
+                                    <li><a href="../datalink/hdlc.html">3.9 High Level Data Link Control (HDLC)</a></li>
+                                    <li><a href="../datalink/ppp.html">3.10 Point to Point Protocol (PPP)</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="active panel panel-default" id="dropdown">
+                        <a data-toggle="collapse" href="#mac-dropdown">
+                            4. MAC Sublayer
+                            <span class="caret"></span>                            
+                        </a>
+                        <div id="mac-dropdown" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <ul class="nav navbar-nav">
+                                    <li><a href="introduction-to-mac-sublayer.html">4.1. Introduction to the MAC Sublayer</a></li>
+                                    <li><a href="mac-address.html">4.2. MAC Address</a></li>
+                                    <li><a href="aloha.html">4.3. Aloha</a></li>
+                                    <li><a href="csma.html">4.4. CSMA</a></li>
+                                    <li><a href="collision-free.html">4.5. Collision-free protocols</a></li>
+                                    <li><a href="limited-contention.html">4.6. Limited Contention protocols</a></li>
+                                    <li><a href="wireless-lan.html">4.7. Wireless LAN protocols</a></li>
+                                    <li><a href="wired-lan.html">4.8. Wired LAN</a></li>
+                                    <li><a href="communication-systems.html">4.9. Wireless LAN</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li><a href="#"></span> 5. Transport Layer</a></li>
+                    <li><a href="#"></span> 6. Network Layer</a></li>
+                    <li><a href="../acronyms.html">Acronyms</a></li>
+                    <li><a href="../terms.html">Terms</a></li>
+                    <li><a href="../formulas.html">Formulas</a></li>
+
+                </ul> <!-- end of ul.navbar -->
+
+            </div><!--  end of div.side-menu-container -->
+        </nav>
+    </div> <!-- end of main side-bar (msb) div -->
+
+    <div class="mcw">
+        <!--navigation here-->
+        <!--main content view-->
+        <div class="cv">
+            <div>
+            <div class="inbox">
+                <div class="inbox-sb">
+                
+                </div>
+                <div class="inbox-bx container-fluid">
+                    <h1>CSMA (Multiple Access Protocol)</h1>
+                    <hr>
+
+                    <p>There is <b>1 big disadvantage to ALOHA protocols</b>, and I did try to make it pretty obvious:</p>
+                    <li><b>USERS CANNOT SENSE THE NETWORK IN ALOHA</b>.</li> <br>
+                    <p>Thing is, it is very difficult to listen to a satellite network before sending, because of the enormous distances signals must travel.</p>
+                    <li><i>enter ... the ... Carrier Sense Multiple Access (<b>CSMA</b>) protocol. The thick-boi of CSC2026.</i></li> <br>
+                    <p>CSMA is another class of Multiple Access Protocols that is used in LAN's, and <b>allows users to listen before sending</b>.</p>
+                    <p>Some people refer to CSMA as a <b>polite protocol</b>, because it <b>listens before it talks</b>.</p>
+                    <p>CSMA in a nutshell, <b>verifies the absence of other network traffic before transmitting data on a shared medium. This prevents bit collisions from occurring</b>.</p>
+
+                    <br>
+                    <p>Remember the 'Critical Time' thing in the <a href="aloha.html">previous section</a> on ALOHA?</p>
+                    <p>In CSMA, the critical time is exactly the same as it was in ALOHA - (Critical Time = 2T, where T = time taken to send a frame)</p>
+                    <p>In fact, for all collision detection methods, this will always be the critical time. <span style="font-size: 13px; color: rgb(180,180,180);">Don't confuse collision detection with collision prevention. Preventing collisions is a totally different story, and it would not be 2T</span></p>
+                    
+                    <br>
+                    <p>There are 4 types of CSMA:</p>
+                    <ol>
+                        <li>1-Persistent</li>
+                        <li>Non-Persistent</li>
+                        <li>P-Persistent</li>
+                        <li>CSMA/CD</li>
+                    </ol>
+
+                    <h3>1-Persistent</h1>
+                    <hr>
+
+                    <p>This CSMA variant has a <b>probability of 1</b> to transmit the <b>complete frame when it can</b>.<span style="font-size: 13px; color: rgb(180,180,180);"> - hence the name 1-Persistent</span></p>
+                    <p>As soon as the idle channel has been detected, boom, transmission is done.</p>
+                    <p>Here is the algorithm in my '<i>wavy-arm</i>' pseudo-code:</p>
+
+<pre class="prettyprint">
+if (there is data to send) {
+    listen to channel...
+
+    if (channel is busy) {
+        wait until idle...
+    }
+
+    if (idle channel is detected) {
+        transmit the complete frame     // transmit with a probability of 1, hence the name 1-
+    }
+
+    if (frame is damaged) {
+        wait random amount of time and start again      // the time is decided by the Binary Exponential Backoff algorithm
+    } 
+}
+</pre>                    
+                    <p>The algorithm is greedy, it sends everything as soon as idle.</p>
+                    <p><b>Disadvantages</b> of 1-Persistent:</p>
+                    <ul>
+                        <li>If 2 users are waiting, both will detect that it has become idle and then transmit at the same time -> bad utilisation under high load where potentially hundreds of users are waiting.</li>
+                    </ul> <br>
+                    <img src="../../../img/multiple-access-protocols-1-persistent.PNG" width="400"> <br><br>
+
+                    <h3>Non-Persistent</h1>
+                    <hr>
+
+                    <p>This CSMA variant is less greedy than 1-persistent.</p>
+                    <p>Users are very patient in Non-persistent. No two users will be allowed to talk at the same time. This reflects CSMA's polite nature.</p>
+                    <p>Here is the algorithm in my '<i>wavy-arm</i>' pseudo-code:</p>
+<pre class="prettyprint">
+if (there is data to send) {
+    listen to channel...
+
+    if (channel is busy) {
+        wait random amount of time. Once that time is over, go to beginning again.      // the time is decided by the Binary Exponential Backoff algorithm
+    }
+}
+</pre>   
+                    <p>The algorithm provides fantastic utilisation, which results in fewer collisions.</p>
+                    <p><b>Disadvantages</b> of Non-Persistent:</p>
+                    <ul>
+                        <li>There will naturally be long delays when dealing with random waiting time.</li>
+                    </ul> <br>
+                    <img src="../../../img/multiple-access-protocols-non-persistent.PNG" width="400"> <br><br>
+
+                    <h3>P-Persistent</h1>
+                    <hr>
+
+                    <p>This CSMA variant applies only to 'slotted' channels (channels that are divided into slots)</p>
+                    <p>1 slot = 1 frame transmission time</p>
+                    <p>Here is the algorithm in my '<i>wavy-arm</i>' pseudo-code:</p>
+<pre class="prettyprint">
+if (there is data to send) {
+    listen to channel...
+
+    if (channel is idle) {
+        transmit with probability P      // so it will either do the transmission, or defer the transmission
+    }
+}
+</pre>
+                    <ul>
+                        <li>Probability that the transmission occurs = P</li>
+                        <li>Probability that it defers transmission = 1 - P</li>
+                    </ul><br>
+                    <p>For example...</p>
+                    <div class="example-question">Calculate the probability of the transmission of a frame being deferred when P = 0.25 <br> <br>
+                    1 - P <br>
+                    = 1 - 0.25 <br>
+                    = 0.75<br>
+                    <br>
+                    So there is a 25% chance the data will be sent immediately <br>
+                    And there is a 75% chance the data will be deferred.
+                    </div>
+                    <img src="../../../img/multiple-access-protocols-p-persistent.PNG" width="400"> <br><br>
+
+                    <p>Here's a cool graph that compares the utilisation of each Multiple Access Protocol we have looked at so far:</p>
+                    <img src="../../../img/multiple-access-protocols-graph.PNG" width="500"> <br><br>
+
+                    <p>And here is a summary table of the utilisations of each protocol.</p>
+                    <img src="../../../img/multiple-access-protocols-table.PNG" width="400"> <br><br>
+
+                    <h3>CSMA/CD</h1>
+                    <hr>
+
+                    <p>This is <b>CSMA</b> with <b>Collision Detection</b>.</p>
+                    <p>It is the most sophisticated variation of the CSMA protocol we have looked at so far.</p>
+                    <p>Widely used on LAN's especially in classic Ethernet.</p>
+                    <p>With CSMA/CD we <b>listen whilst transmitting</b>. That is something we have not been able to do with any of the previous protocols.</p>
+                    <p>This is hugely advantageous because it means we can <b>transmit data and check for collisions</b> all at the same time.</p>
+                    <p>Also there is no need for ACK's or NAK's in CSMA/CD.</p>
+
+                    <br>
+                    <p>CSMA/CD can be in one of the following three states:</p>
+                    <ol>
+                        <li>Contention</li>
+                        <li>Transmission</li>
+                        <li>Idle</li>
+                    </ol>
+                    <p>Here is some '<i>wavy-arm</i>' pseudo-code for CSMA/CD:</p>
+<pre class="prettyprint">
+if (station detects collision) {
+    abort transmission!
+    wait a random period of time until next re-transmission     // time decided by the Binary Exponential Backoff algorithm
+}
+</pre>
+
+                    <div class="button-bar">
+                        <a href="aloha.html" class="button prev">Previous</a>
+                        <a href="collision-free.html" class="button next">Next</a>
+                    </div>
+
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="../../../funky.js"></script>
+</body>
+</html>

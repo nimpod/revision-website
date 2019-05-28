@@ -138,7 +138,28 @@
                         </div>
                     </li>
 
-                    <li><a href="#"></span> 4. MAC sublayer</a></li>
+                    <li class="panel panel-default" id="dropdown">
+                        <a data-toggle="collapse" href="#mac-dropdown">
+                            4. MAC Sublayer
+                            <span class="caret"></span>                            
+                        </a>
+                        <div id="mac-dropdown" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <ul class="nav navbar-nav">
+                                    <li><a href="../mac/introduction-to-mac-sublayer.html">4.1. Introduction to the MAC Sublayer</a></li>
+                                    <li><a href="../mac/mac-address.html">4.2. MAC Address</a></li>
+                                    <li><a href="../mac/aloha.html">4.3. Aloha</a></li>
+                                    <li><a href="../mac/csma.html">4.4. CSMA</a></li>
+                                    <li><a href="../mac/collision-free.html">4.5. Collision-free protocols</a></li>
+                                    <li><a href="../mac/limited-contention.html">4.6. Limited Contention protocols</a></li>
+                                    <li><a href="../mac/wireless-lan.html">4.7. Wireless LAN protocols</a></li>
+                                    <li><a href="../mac/wired-lan.html">4.8. Wired LAN</a></li>
+                                    <li><a href="../mac/communication-systems.html">4.9. Wireless LAN</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    
                     <li><a href="#"></span> 5. Transport Layer</a></li>
                     <li><a href="#"></span> 6. Network Layer</a></li>
                     <li><a href="../acronyms.html">Acronyms</a></li>
@@ -183,6 +204,13 @@
 
                     <h3>Examples</h3>
                     <hr>
+                    <p>In the following examples there are some highlighting standards to help visualise what's going on:</p>
+                    <ul>                    
+                        <li>Stuffed 0's are highlighted in <span style="color: b51956">red</span>.</li>
+                        <li>As the 1's build up their colour changes from <span style="color: #14ffa3;">light green</span> -> <span style="color: #00ad69;">dark green</span>.</li>
+                        <li>Already existing non-stuffed 0's remain <span style="color: blue;">blue</span>.</li>
+                    </ul>
+
                     <div class="example-question"> <b>Example 1</b> <br>---------<br>
                     payload = <span class="not-stuffed">00111111 10000111 11100111</span> <br>
                     payload = <span class="not-stuffed">00<span style="color: #14ffa3;">1</span><span style="color: #00f998;">1</span><span style="color: #00e088;">1</span><span style="color: #00c679;">1</span><span style="color: #00ad69;">1</span><span style="color: #b51956;">0</span><span style="color: #00945a;">1</span> <span style="color: #00ad69;">1</span>0000<span style="color: #14ffa3;">1</span><span style="color: #00f998;">1</span><span style="color: #00e088;">1</span> <span style="color: #00c679;">1</span><span style="color: #00ad69;">1</span><span style="color: #b51956;">0</span>0<span style="color: #14ffa3;">1</span>00<span style="color: #14ffa3;">1</span><span style="color: #00f998;">1</span><span style="color: #00e088;">1</span></span>

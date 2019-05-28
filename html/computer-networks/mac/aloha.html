@@ -16,6 +16,9 @@
 
     <!-- google fonts -->
     <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+
+    <!-- prettify.js -->
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?lang=ruby&amp;skin=sunburst"></script>
 </head>
 <body>
     <!-- main navigation bar at top of window -->
@@ -90,7 +93,7 @@
                         </div>
                     </li>
 
-                    <li class="active panel panel-default" id="dropdown">
+                    <li class="panel panel-default" id="dropdown">
                         <a data-toggle="collapse" href="#physical-dropdown">
                             2. Physical Layer
                             <span class="caret"></span>                            
@@ -98,15 +101,15 @@
                         <div id="physical-dropdown" class="panel-collapse collapse">
                             <div class="panel-body">
                                 <ul class="nav navbar-nav">
-                                    <li><a href="introduction-to-physical-layer.html">2.1. Introduction to the Physical Layer</a></li>
-                                    <li><a href="transmission-media.html">2.2. Trasmission Media</a></li>
-                                    <li><a href="communication-satellites.html">2.3. Communication Satellites</a></li>
-                                    <li><a href="transmission-impairment.html">2.4. Transmission Impairment</a></li>
-                                    <li><a href="encoding-modulation.html">2.5. Encoding and Modulation</a></li>
-                                    <li><a href="simplex-duplex.html">2.6. Simplex and Duplex</a></li>
-                                    <li><a href="parallel-serial.html">2.7. Parallel and Serial</a></li>
-                                    <li><a href="multiplexing.html">2.8. Multiplexing</a></li>
-                                    <li><a href="communication-systems.html">2.9. Communication Systems</a></li>
+                                    <li><a href="../physical/introduction-to-physical-layer.html">2.1. Introduction to the Physical Layer</a></li>
+                                    <li><a href="../physical/transmission-media.html">2.2. Trasmission Media</a></li>
+                                    <li><a href="../physical/communication-satellites.html">2.3. Communication Satellites</a></li>
+                                    <li><a href="../physical/transmission-impairment.html">2.4. Transmission Impairment</a></li>
+                                    <li><a href="../physical/encoding-modulation.html">2.5. Encoding and Modulation</a></li>
+                                    <li><a href="../physical/simplex-duplex.html">2.6. Simplex and Duplex</a></li>
+                                    <li><a href="../physical/parallel-serial.html">2.7. Parallel and Serial</a></li>
+                                    <li><a href="../physical/multiplexing.html">2.8. Multiplexing</a></li>
+                                    <li><a href="../physical/communication-systems.html">2.9. Communication Systems</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -135,7 +138,7 @@
                         </div>
                     </li>
 
-                    <li class="panel panel-default" id="dropdown">
+                    <li class="active panel panel-default" id="dropdown">
                         <a data-toggle="collapse" href="#mac-dropdown">
                             4. MAC Sublayer
                             <span class="caret"></span>                            
@@ -143,15 +146,15 @@
                         <div id="mac-dropdown" class="panel-collapse collapse">
                             <div class="panel-body">
                                 <ul class="nav navbar-nav">
-                                    <li><a href="../mac/introduction-to-mac-sublayer.html">4.1. Introduction to the MAC Sublayer</a></li>
-                                    <li><a href="../mac/mac-address.html">4.2. MAC Address</a></li>
-                                    <li><a href="../mac/aloha.html">4.3. Aloha</a></li>
-                                    <li><a href="../mac/csma.html">4.4. CSMA</a></li>
-                                    <li><a href="../mac/collision-free.html">4.5. Collision-free protocols</a></li>
-                                    <li><a href="../mac/limited-contention.html">4.6. Limited Contention protocols</a></li>
-                                    <li><a href="../mac/wireless-lan.html">4.7. Wireless LAN protocols</a></li>
-                                    <li><a href="../mac/wired-lan.html">4.8. Wired LAN</a></li>
-                                    <li><a href="../mac/communication-systems.html">4.9. Wireless LAN</a></li>
+                                    <li><a href="introduction-to-mac-sublayer.html">4.1. Introduction to the MAC Sublayer</a></li>
+                                    <li><a href="mac-address.html">4.2. MAC Address</a></li>
+                                    <li><a href="aloha.html">4.3. Aloha</a></li>
+                                    <li><a href="csma.html">4.4. CSMA</a></li>
+                                    <li><a href="collision-free.html">4.5. Collision-free protocols</a></li>
+                                    <li><a href="limited-contention.html">4.6. Limited Contention protocols</a></li>
+                                    <li><a href="wireless-lan.html">4.7. Wireless LAN protocols</a></li>
+                                    <li><a href="wired-lan.html">4.8. Wired LAN</a></li>
+                                    <li><a href="communication-systems.html">4.9. Wireless LAN</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -161,7 +164,6 @@
                     <li><a href="#"></span> 6. Network Layer</a></li>
                     <li><a href="../acronyms.html">Acronyms</a></li>
                     <li><a href="../terms.html">Terms</a></li>
-                    <li><a href="../formulas.html">Formulas</a></li>
                     <li><a href="../formulas.html">Formulas</a></li>
 
                 </ul> <!-- end of ul.navbar -->
@@ -180,36 +182,74 @@
                 
                 </div>
                 <div class="inbox-bx container-fluid">
-                    <h1>Transmission Impairment</h1>
+                    <h1>Aloha (Multiple Access Protocol)</h1>
                     <hr>
-                    
-                    <p>Unfortunately, things go wrong with transmission medias. Sometimes, there is a mismatch between the sent signal and the received signal.</p>
-                    <p>Why do things like this happen? There are 3 possible causes:</p>
-                    <ul>
-                        <li><b>Attenuation</b></li>
-                        <li><b>Distortion</b></li>
-                        <li><b>Noise</b></li>
-                    </ul>
 
-                    <div class="col-xs-12">
-                        <table class="table table-bordered table-hover dt-responsive">
-                            <caption class="text-center">Types of transmission impairment</caption> 
-                            <thead>
-                                <tr> <th><span>Impairment</span></th>  <th><span>Basic diagram</span></th>  <th><span>What happens?</span></th>  </tr>
-                            </thead>
-                            <tbody style="font-size: 14px;">
-                                <tr> <td>Attenuation</td> <td><img src="../../../img/attenuation.PNG"></td> <td>Loss of signal <b>strength</b></td>                           </tr>
-                                <tr> <td>Distortion</td>  <td><img src="../../../img/distortion.PNG"></td> <td>Alteration of signal <b>shape</b></td>                         </tr>
-                                <tr> <td>Noise</td>       <td><img src="../../../img/noise.PNG"></td> <td>Some other random signal <b>interrupts</b> the original signal</td> </tr>
-                            </tbody>
-                        </table>
-                    </div>
+                    <p>To be able to control the access to a shared medium, we need protocols. Specifically, we need <b>Multiple Access Protocols</b>.</p>
+                    <p>We will be covering 5 types of Multiple Access Protocols. These are:</p>
+                    <ol>
+                        <li>ALOHA - <span style="font-size: 13px; color: rgb(180,180,180);">(pure, slotted)</span></li>
+                        <li>CSMA - <span style="font-size: 13px; color: rgb(180,180,180);">(1-persistent, non-persistent , p-persistent, CSMA/CD)</span></li>
+                        <li>Collision-Free - <span style="font-size: 13px; color: rgb(180,180,180);">(Bit-map protocol)</span></li>
+                        <li>Limited-Contention - <span style="font-size: 13px; color: rgb(180,180,180);">(Binary Exponential Backoff protocol, Adaptive Tree Walk protocol)</span></li>
+                        <li>Wireless LAN - <span style="font-size: 13px; color: rgb(180,180,180);">(MACA protocol)</span></li>
+                    </ol> <br><br>
+
+                    <p>ALOHA is a class of Multiple Access Protocols used in <b>satellite networks</b>.</p>
+                    <p>ALOHA protocols are the <b>only case</b> where <b>broadcast networks</b> are used in a <b>WAN</b>.</p>
+
+                    <p>A bit of history behind ALOHA...</p>
+                    <ul>
+                        <li>ALOHA protocols were developed in Hawaii, 1971.</li>
+                        <li>People on separate islands wanted to communicate with each other, but wired connections were too expensive.</li>
+                        <li>They designed a ground-based radio system using satellite networks and ALOHA protocols.</li>
+                    </ul> <br>
+
+                    <p>There are two types of ALOHA protocols.</p>
+                    <ol>
+                        <li><b>Pure ALOHA</b></li>
+                        <li><b>Slotted ALOHA</b></li>
+                    </ol> <br>
+
+                    <h3>Pure ALOHA</h3>
+                    <hr>
+
+                    <p>Users transmits frame <b>whenever the data is ready to go.</b></p>
+                    <p>Users <b>cannot sense the network</b>.</p>
+<pre class="prettyprint">
+if (frame is destroyed) {
+    sender waits a random amount of time and sends frame again
+}
+</pre>
+                    <p><b>Disadvantages</b> of Pure ALOHA</p>
+                    <ul>
+                        <li><b>Channels are used very poorly used</b> because all frames have the same size.</li>
+                        <li><b>Collisions</b> happen when other users transmit during a vulnerable period (the '<b>Critical Time'</b>) that is twice the frame time (Critical Time = 2T, where T = time taken to send a frame). <span style="font-size: 13px; color: rgb(180,180,180);">solution - no user should start sending during the T second period.</span></li>
+                    </ul><br>
+
+                    <img src="../../../img/multiple-access-protocols-pure-aloha.PNG" width="400"> <br><br>
                     
-                    <p>A common solution to impairment issues, is to <b>use repeaters to amplify the signal</b>.</p>
+                    <h3>Slotted ALOHA</h3>
+                    <hr>
+
+                    <p>Utilisation is improved with Slotted ALOHA.</p>
+                    <p>Users can still transmit frame <b>whenever the data is ready to go.</b></p>
+                    <p>Users still <b>cannot sense the network</b>.</p>
+                    <p>So <b>why is Slotted ALOHA better than Pure ALOHA?</b> It makes 2 changes:</p>
+                    <ol>
+                        <li>Divide the time into slots. Each slot corresponds to 1 frame. <span style="font-size: 13px; color: rgb(180,180,180);"> (ie. Time Division Multiplexing)</span> </li>
+                        <li>Users start sending at the begining of their own time-slot.</li>
+                    </ol>
+                    <img src="../../../img/multiple-access-protocols-slotted-aloha.PNG" width="400"> <br><br>
+                    
+                    <p><b>Disadvantages</b> of Slotted ALOHA</p>
+                    <ul>
+                        <li>Same as Pure ALOHA.</li>
+                    </ul><br>
 
                     <div class="button-bar">
-                        <a href="communication-satellites.html" class="button prev">Previous</a>
-                        <a href="encoding-modulation.html" class="button next">Next</a>
+                        <a href="macaddress.html" class="button prev">Previous</a>
+                        <a href="csma.html" class="button next">Next</a>
                     </div>
 
                 </div>
