@@ -138,7 +138,7 @@
                         </div>
                     </li>
 
-                    <li class="active panel panel-default" id="dropdown">
+                    <li class="panel panel-default" id="dropdown">
                         <a data-toggle="collapse" href="#mac-dropdown">
                             4. MAC Sublayer
                             <span class="caret"></span>                            
@@ -146,39 +146,39 @@
                         <div id="mac-dropdown" class="panel-collapse collapse">
                             <div class="panel-body">
                                 <ul class="nav navbar-nav">
-                                    <li><a href="introduction-to-mac-sublayer.html">4.1. Introduction to the MAC Sublayer</a></li>
-                                    <li><a href="mac-address.html">4.2. MAC Address</a></li>
-                                    <li><a href="aloha.html">4.3. Aloha</a></li>
-                                    <li><a href="csma.html">4.4. CSMA</a></li>
-                                    <li><a href="collision-free.html">4.5. Collision-free protocols</a></li>
-                                    <li><a href="limited-contention.html">4.6. Limited Contention protocols</a></li>
-                                    <li><a href="wireless-lan-protocols.html">4.7. Wireless LAN protocols</a></li>
-                                    <li><a href="wired-lan.html">4.8. Wired LAN</a></li>
-                                    <li><a href="wireless-lan.html">4.9. Wireless LAN</a></li>
+                                    <li><a href="../mac/introduction-to-mac-sublayer.html">4.1. Introduction to the MAC Sublayer</a></li>
+                                    <li><a href="../mac/mac-address.html">4.2. MAC Address</a></li>
+                                    <li><a href="../mac/aloha.html">4.3. Aloha</a></li>
+                                    <li><a href="../mac/csma.html">4.4. CSMA</a></li>
+                                    <li><a href="../mac/collision-free.html">4.5. Collision-free protocols</a></li>
+                                    <li><a href="../mac/limited-contention.html">4.6. Limited Contention protocols</a></li>
+                                    <li><a href="../mac/wireless-lan-protocols.html">4.7. Wireless LAN protocols</a></li>
+                                    <li><a href="../mac/wired-lan.html">4.8. Wired LAN</a></li>
+                                    <li><a href="../mac/wireless-lan.html">4.9. Wireless LAN</a></li>
                                 </ul>
                             </div>
                         </div>
                     </li>
                     
-                    <li class="panel panel-default" id="dropdown">
+                    <li class="active panel panel-default" id="dropdown">
                         <a data-toggle="collapse" href="#network-dropdown">
                             5. Network Layer
-                            <span class="caret"></span>                            
+                            <span class="caret"></span>
                         </a>
                         <div id="network-dropdown" class="panel-collapse collapse">
                             <div class="panel-body">
                                 <ul class="nav navbar-nav">
-                                    <li><a href="../network/introduction-to-network-layer.html">5.1. Introduction to the Network Layer</a></li>
-                                    <li><a href="../network/services.html">5.2. Services</a></li>
-                                    <li><a href="../network/internetworking.html">5.3. Internetworking</a></li>
-                                    <li><a href="../network/tunelling.html">5.4. Tunelling</a></li>
-                                    <li><a href="../network/packet-fragmentation.html">5.5. Packet Fragmentation</a></li>
-                                    <li><a href="../network/dns-server.html">5.6. DNS Server</a></li>
-                                    <li><a href="../network/internet-protocol.html">5.7. Internet Protocol (IP)</a></li>
-                                    <li><a href="../network/mobile-ip.html">5.8. Mobile IP</a></li>
-                                    <li><a href="../network/other-internet-protocols.html">5.9. Other Internet Protocols</a></li>
-                                    <li><a href="../network/routing-algorithms.html">5.10. Routing Algorithms</a></li>
-                                    <li><a href="../network/congestion-control.html">5.11. Congestion Control</a></li>
+                                    <li><a href="introduction-to-network-layer.html">5.1. Introduction to the Network Layer</a></li>
+                                    <li><a href="services.html">5.2. Services</a></li>
+                                    <li><a href="internetworking.html">5.3. Internetworking</a></li>
+                                    <li><a href="tunelling.html">5.4. Tunelling</a></li>
+                                    <li><a href="packet-fragmentation.html">5.5. Packet Fragmentation</a></li>
+                                    <li><a href="dns-server.html">5.6. DNS Server</a></li>
+                                    <li><a href="internet-protocol.html">5.7. Internet Protocol (IP)</a></li>
+                                    <li><a href="mobile-ip.html">5.8. Mobile IP</a></li>
+                                    <li><a href="other-internet-protocols.html">5.9. Other Internet Protocols</a></li>
+                                    <li><a href="routing-algorithms.html">5.10. Routing Algorithms</a></li>
+                                    <li><a href="congestion-control.html">5.11. Congestion Control</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -194,7 +194,7 @@
             </div><!--  end of div.side-menu-container -->
         </nav>
     </div> <!-- end of main side-bar (msb) div -->
-    
+
     <div class="mcw">
         <!--navigation here-->
         <!--main content view-->
@@ -205,44 +205,95 @@
                 
                 </div>
                 <div class="inbox-bx container-fluid">
-                    <h1>MAC Address</h1>
+                    <h1>Services</h1>
                     <hr>
 
-                    <p>Every electronic device has an Network Interface Card (<b>NIC</b>).</p>
-                    <p>And every NIC has a hardware address that's known as a MAC address.</p>
-                    <p>The MAC address is the physical address of an electronic device.</p>
-                    <p>A MAC address is given to the device when it is manufactured. It is hardwired or hard-coded onto your computer's network interface card (NIC) and is unique to it, so it is usually impossible to change a MAC address. That being said, hackers will sometimes spoof their MAC address in the operating system so that they can snoop around places without being identified.</p>
-                    <p>Switches can't read MAC addresses. They only read IP addresses.</p>
+                    <p>The Data-Link layer is the layer below the Network Layer.</p>
+                    <p>The Data-Link layer provides connectionless services to the Network Layer.</p>
+                    <p>Specifically, the Data-Link layer provides the Datagram service to the Network Layer.</p>
 
-                    <h3>Structure of MAC address</h3>
+                    <h3>Connectionless Service - Datagram</h3>
                     <hr>
 
-                    <p>Traditional MAC addresses are 12-digit (6 bytes or 48 bits) hexadecimal numbers.</p>
-                    <p><span style="color: blue">MM : MM : MM :</span> <span style="color: green">SS : SS : SS</span></p>
-                    <ul>
-                        <li>The <span style="color: blue">leftmost digits (the 6 M's)</span> is associated with the adapter manufacturer.</li>
-                        <li>The <span style="color: green">rightmost digits (the 6 S's)</span> represent an identification number for the specific device</li>                        
-                    </ul> <br>
-                    <p>Combining both sides, you get a unique MAC address for every electronic device.</p>
-                    
+                    <p>Datagrams have three important properties:</p>
+                    <ol>
+                        <li><b>Packets are routed independently</b>. So each packet may end up going on a very different journey to another packet...</li>
+                        <li>With datagrams, you <b>don't need to setup a path</b>.</li>
+                        <li>The packet contains the <b>full source</b> and <b>destination address</b> <span style="font-size: 13px; color: rgb(180,180,180);"> - where did the packet come from, and where is it going?</spam></li>
+                    </ol> <br>
+
+                    <p>Here's an example of how the datagram service works and how routing tables work:</p>
+                    <img src="../../../img/connectionless-datagram.png" width="600">
+                    <img src="../../../img/connectionless-datagram-routing-tableA.png">
+                    <img src="../../../img/connectionless-datagram-routing-tableC.png">
+                    <img src="../../../img/connectionless-datagram-routing-tableE.png">
+                    <p>Figure 5.2a</p>
                     <br>
-                    <p>The frame layout for the MAC address varies depending on if your network is Wi-Fi or Ethernet.</p>
+                    <p>Firstly, let's break down <i>Figure 5.2a</i> to figure out what is going on:</p>
+                    <ul>
+                        <li>The original message is broken down into 4 packets, labelled { 1, 2, 3, 4 } in square blocks on the diagram.</li>
+                        <li>Packets { 2, 3, 4 } travel on the same path (A->C->E->F)</li>
+                        <li>But packet { 1 } went on a different path (A->B->D->F). Why? Possibly due to congestion or network failures.</li>
+                    </ul>
 
-                    <div class="col-xs-12">
-                        <table class="table table-bordered table-hover dt-responsive">
-                            <caption class="text-center">Frame layout of MAC address depdning on Wi-Fi or Ethernet network</caption> 
-                            <thead>
-                                <tr> <th><span>Wi-Fi</span></th>  <th><span>Ethernet</span></th> </tr>
-                            </thead>
-                            <tbody style="font-size: 14px;">
-                                <tr> <td><img src="../../../img/mac-address-wifi-structure.png" width="600"></td>  <td><img src="../../../img/mac-address-ethernet-structure.png" width="700"></td> </tr>
-                            </tbody>
-                        </table>
-                    </div>
+                    <br>
+                    <p>Let's suppose P1 wants to send a message to P2, covering the lowest weight possible:</p>
+                    <ul>
+                        <li>Being humans, it's pretty obvious how to send a message from P1 to P2 - just traverse through the nodes in an order which yields the lowest total weight.</li>
+                        <li>Unfortunately for computers it doesn't see the graph like us humans. Hence the need for routing tables.</li>
+                        <br>
+                        <li>Luckily <b>reading the routing table</b> is fairly inuitive:</li>
+                        <ol>
+                            <li>Starting at table A: <span style="color: #e1b74c; font-weight: bold">to get to router F</span>, <span style="color: #6288e5; font-weight: bold">we must go through router C</span>...</li>
+                            <li>Continue from table C: <span style="color: #e1b74c; font-weight: bold">to get to router F</span>, <span style="color: #6288e5; font-weight: bold">we must go through router E</span>...</li>
+                            <li>Continue from table E: <span style="color: #e1b74c; font-weight: bold">to get to router F</span>, <span style="color: #6288e5; font-weight: bold">we must go through router F</span>...</li>
+                            <li>And we have arrived at router F!</li>
+                        </ol>
+                    </ul><br>
+
+                    <p>Once the message arrives at P2, it will read the MAC address of P1.</p>
+                    <p>We can read a MAC address using the Address Resolution Protocol (<b>ARP</b>), which simply maps IP addresses to MAC addresses.</p>
+                    <br>
+
+                    <h3>Connection-Orientated Service - Virtual Circuit</h3>
+                    <hr>
                     
+                    <p>Virtual circuits have three important properties:</p>
+                    <ol>
+                        <li><b>Packets follow the same path</b>.</li>
+                        <li>With virtual circuits, you must <b>setup a path</b>.</li>
+                        <li>Each packet contains its own <b>vc_id</b>.</li>
+                    </ol> <br>
+
+                    <p>The Multi-Protocol Label Switching (<b>MPLS</b>) protocol makes virtual circuits.</p>
+
+                    <p>Here's an example of how the virtual circuit service works and how routing tables work:</p>
+                    <img src="../../../img/connection-orientated-vc.png" width="600">
+                    <img src="../../../img/connection-orientated-vc-routing-tableA.png">
+                    <img src="../../../img/connection-orientated-vc-routing-tableC.png">
+                    <img src="../../../img/connection-orientated-vc-routing-tableE.png">
+                    <p>Figure 5.2b</p>
+                    <br>
+                    <p>Firstly, let's break down <i>Figure 5.2b</i> to figure out what is going on:</p>
+                    <ul>
+                        <li><span style="color: red;">P1</span> and <span style="color: #6288e5;">P3</span> both decide to send data to P2.</li>
+                        <li>Initially, both <span style="color: red;">P1</span> and <span style="color: #6288e5;">P3</span> have vc_id = 1</li>
+                        <li>This is because they do not know that each other exist yet, so having the same vc_id is no problem.</li>
+                        <li>When they come onto the same path at router A, the vc_id for one of the virtual circuits must change.</li>
+                        <li>We do this by just changing <span style="color: #6288e5;">P3</span>'s vc_id = 2</li>
+                        <li>Then <span style="color: red;">P1</span> and <span style="color: #6288e5;">P3</span>'s virtual circuits continue on the same path towards P2.</li>
+                        <br>
+                        <li><b>Reading the routing table</b> is fairly inuitive:</li>
+                        <ul>
+                            <li><span style="color: #e1b74c;"><b>in</b> - what was the previous router, and what was the vc_id for this virtual circuit?</span></li>
+                            <li><span style="color: #6288e5;"><b>out</b> - what is the next router, and what was the vc_id for this virtual circuit?</span></li>
+                        </ul>                        
+                    </ul>
+
+
                     <div class="button-bar">
-                        <a href="introduction-to-mac-sublayer.html" class="button prev">Previous</a>
-                        <a href="aloha.html" class="button next">Next</a>
+                        <a href="../mac/wireless-lan.html" class="button prev">Previous</a>
+                        <a href="services.html" class="button next">Next</a>
                     </div>
 
                 </div>
