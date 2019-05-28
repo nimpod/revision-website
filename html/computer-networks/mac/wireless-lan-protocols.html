@@ -152,9 +152,9 @@
                                     <li><a href="csma.html">4.4. CSMA</a></li>
                                     <li><a href="collision-free.html">4.5. Collision-free protocols</a></li>
                                     <li><a href="limited-contention.html">4.6. Limited Contention protocols</a></li>
-                                    <li><a href="wireless-lan.html">4.7. Wireless LAN protocols</a></li>
+                                    <li><a href="wireless-lan-protocols.html">4.7. Wireless LAN protocols</a></li>
                                     <li><a href="wired-lan.html">4.8. Wired LAN</a></li>
-                                    <li><a href="communication-systems.html">4.9. Wireless LAN</a></li>
+                                    <li><a href="wireless-lan.html">4.9. Wireless LAN</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -171,7 +171,7 @@
             </div><!--  end of div.side-menu-container -->
         </nav>
     </div> <!-- end of main side-bar (msb) div -->
-    
+
     <div class="mcw">
         <!--navigation here-->
         <!--main content view-->
@@ -182,44 +182,104 @@
                 
                 </div>
                 <div class="inbox-bx container-fluid">
-                    <h1>MAC Address</h1>
+                    <h1>Wireless LAN protocols</h1>
                     <hr>
 
-                    <p>Every electronic device has an Network Interface Card (<b>NIC</b>).</p>
-                    <p>And every NIC has a hardware address that's known as a MAC address.</p>
-                    <p>The MAC address is the physical address of an electronic device.</p>
-                    <p>A MAC address is given to the device when it is manufactured. It is hardwired or hard-coded onto your computer's network interface card (NIC) and is unique to it, so it is usually impossible to change a MAC address. That being said, hackers will sometimes spoof their MAC address in the operating system so that they can snoop around places without being identified.</p>
-                    <p>Switches can't read MAC addresses. They only read IP addresses.</p>
-
-                    <h3>Structure of MAC address</h3>
-                    <hr>
-
-                    <p>Traditional MAC addresses are 12-digit (6 bytes or 48 bits) hexadecimal numbers.</p>
-                    <p><span style="color: blue">MM : MM : MM :</span> <span style="color: green">SS : SS : SS</span></p>
+                    <p>Wireless LAN protocols don't need to deal with ACK's or NAK's.</p>
                     <ul>
-                        <li>The <span style="color: blue">leftmost digits (the 6 M's)</span> is associated with the adapter manufacturer.</li>
-                        <li>The <span style="color: green">rightmost digits (the 6 S's)</span> represent an identification number for the specific device</li>                        
+                        <li>wireless LAN's have a short radio range, meaning a station cannot necessarily listen to every station in the network.</li>
+                        <li>In wired LAN's there is a larger radio range, meaning ACK's and NAK's were needed.</li>
                     </ul> <br>
-                    <p>Combining both sides, you get a unique MAC address for every electronic device.</p>
-                    
+                    <p>Carrier sensing is still possible in wireless LAN's, but kinda useless due to something called the Hidden Terminal Problem.</p>
+
                     <br>
-                    <p>The frame layout for the MAC address varies depending on if your network is Wi-Fi or Ethernet.</p>
+                    <h3>Hidden Terminal Problem</h3>
+                    <hr>
+
+                    <p>Sender terminal(A) wants to send some data to receiver terminal(C).</p>
+                    <p>In the diagram, <b>A and C are outside each others range</b>. An intermediate terminal(B) is required in order to transmit A's signal to C.</p>
+                    <p>This means <b>A and C</b> are <b>hidden terminals</b> when <b>transmitting to B</b>.</p>
+                    <p>When there are hidden terminals, there is the <b>possibility of collisions occurring</b>, because terminals will transmit data without realising that another terminal also transmitted data towards the same terminal.</p>
+                    <img src="../../../img/hidden-terminal-problem.png" width="300">
+
+                    <br><br>
+                    <h3>Exposed Terminal Problem</h3>
+                    <hr>
+
+                    <p>Sender terminal(B) wants to send some data to receiver terminal(A).</p>
+                    <p>Also, sender terminal(C) wants to send some data to receiver terminal(D).</p>
+                    <p>In the diagram, <b>B is within C's range</b>.</p>
+                    <p>This is bad news because C will falsely conclude that it cannot send its data to D, because it detected noise coming from B.</p>
+                    <p>This means <b>B and C are exposed terminals</b> when <b>transmitting to A and D</b> respectively.</p>
+                    <img src="../../../img/exposed-terminal-problem.png" width="300">
+                                        
+                    <br><br>
+                    <h3>MACA Protocol</h3>
+                    <hr>
+
+                    <p>The Multiple Access Collision Avoidance (<b>MACA</b>) protocol is the solution to the Hidden Terminal Problem<span style="font-size: 13px; color: rgb(180,180,180);"> - MACA (apparently) doesn't solve the Exposed Terminal Problem.</span></p>
+                    <p>It's important to remember that the MACA protocol is a <b>collision avoidance protocol</b>:</p>
+                    <li>DON'T DETECT COLLISIONS, <b>AVOID COLLISIONS</b></li>
+
+                    <br>
+                    <p>When a station says to another station <i>'hey wanna talk?'</i>, they must send send a Request To Send (<b>RTS</b>)</p>
+                    <p>If the other station says <i>'yeah sure lets talk'</i> they must send a Clear To Send (<b>CTS</b>)</p>
+                    <p>Now the two stations are able to freely communicate with each other.</p>
+
+                    <br>
+                    <p>Suppose we have 4 stations (<span style="color: blue;">A</span>, <span style="color: orange;">B</span>, <span style="color: red;">C</span>, <span style="color: green;">D</span>)</p>
+                    <p>I will do some examples where the terminals try and talk to each other:</p>
 
                     <div class="col-xs-12">
                         <table class="table table-bordered table-hover dt-responsive">
-                            <caption class="text-center">Frame layout of MAC address depdning on Wi-Fi or Ethernet network</caption> 
+                            <caption class="text-center">Hidden Terminal Problem</caption> 
                             <thead>
-                                <tr> <th><span>Wi-Fi</span></th>  <th><span>Ethernet</span></th> </tr>
+                                <tr> <th>(A -&gt; B) and (B &lt;- D)</th> <th>(C -&gt; A) and (A &lt;- B)</th> </tr>
                             </thead>
                             <tbody style="font-size: 14px;">
-                                <tr> <td><img src="../../../img/mac-address-wifi-structure.png" width="600"></td>  <td><img src="../../../img/mac-address-ethernet-structure.png" width="700"></td> </tr>
+                                <tr> <td><img src="../../../img/MACA-hidden-1.png" width="300"></td> <td><img src="../../../img/MACA-hidden-2.png" width="300"></td>  </tr>
+                                <tr>
+                                    <td>
+                                    A sends an RTS to B<br>
+                                    D sends an RTS to B<br>
+                                    But A and D are outside of each others range. They are hidden terminals when transmitting to B.<br>
+                                    Therefore they will both falsely conclude it is safe to send, and will collide at B.
+                                    </td>
+
+                                    <td>
+                                    C sends an RTS to A<br>
+                                    B sends an RTS to A<br>
+                                    But C and B are outside each other's range. They are hidden terminals when transmitting to A.<br>
+                                    Therefore they will both falsely conclude it is safe to send, and will collide at A.
+                                    </td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>
-                    
+
+                    <div class="col-xs-12">
+                        <table class="table table-bordered table-hover dt-responsive">
+                            <caption class="text-center">Exposed Terminal Problem</caption> 
+                            <thead>
+                                <tr> <th>(C &lt;- A) and (B -&gt; D)</th> </tr>
+                            </thead>
+                            <tbody style="font-size: 14px;">
+                                <tr> <td><img src="../../../img/MACA-exposed-1.png" width="300"></td> </tr>
+                                <tr>
+                                    <td>
+                                    A sends a CTS to C<br>
+                                    B sends a CTS to D<br>
+                                    From the perspective of B, A is within range. But B is not sending anything to A. Terminals B and A are exposed terminals when transmitting to C and D respectively.<br>
+                                    Therefore B will falsely conclude that it is not safe to send to D because it detected noise coming from A.
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
                     <div class="button-bar">
-                        <a href="introduction-to-mac-sublayer.html" class="button prev">Previous</a>
-                        <a href="aloha.html" class="button next">Next</a>
+                        <a href="limited-contention.html" class="button prev">Previous</a>
+                        <a href="wired-lan.html" class="button next">Next</a>
                     </div>
 
                 </div>

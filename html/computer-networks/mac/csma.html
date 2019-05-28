@@ -197,7 +197,7 @@
                     <p>Remember the 'Critical Time' thing in the <a href="aloha.html">previous section</a> on ALOHA?</p>
                     <p>In CSMA, the critical time is exactly the same as it was in ALOHA - (Critical Time = 2T, where T = time taken to send a frame)</p>
                     <p>In fact, for all collision detection methods, this will always be the critical time. <span style="font-size: 13px; color: rgb(180,180,180);">Don't confuse collision detection with collision prevention. Preventing collisions is a totally different story, and it would not be 2T</span></p>
-                    
+                                        
                     <br>
                     <p>There are 4 types of CSMA:</p>
                     <ol>
@@ -223,7 +223,7 @@ if (there is data to send) {
     }
 
     if (idle channel is detected) {
-        transmit the complete frame     // transmit with a probability of 1, hence the name 1-
+        transmit the complete frame     // transmit with a probability of 1
     }
 
     if (frame is damaged) {

@@ -152,9 +152,9 @@
                                     <li><a href="csma.html">4.4. CSMA</a></li>
                                     <li><a href="collision-free.html">4.5. Collision-free protocols</a></li>
                                     <li><a href="limited-contention.html">4.6. Limited Contention protocols</a></li>
-                                    <li><a href="wireless-lan.html">4.7. Wireless LAN protocols</a></li>
+                                    <li><a href="wireless-lan-protocols.html">4.7. Wireless LAN protocols</a></li>
                                     <li><a href="wired-lan.html">4.8. Wired LAN</a></li>
-                                    <li><a href="communication-systems.html">4.9. Wireless LAN</a></li>
+                                    <li><a href="wireless-lan.html">4.9. Wireless LAN</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -171,7 +171,7 @@
             </div><!--  end of div.side-menu-container -->
         </nav>
     </div> <!-- end of main side-bar (msb) div -->
-    
+
     <div class="mcw">
         <!--navigation here-->
         <!--main content view-->
@@ -182,44 +182,92 @@
                 
                 </div>
                 <div class="inbox-bx container-fluid">
-                    <h1>MAC Address</h1>
+                    <h1>Limited Contention Protocols</h1>
                     <hr>
 
-                    <p>Every electronic device has an Network Interface Card (<b>NIC</b>).</p>
-                    <p>And every NIC has a hardware address that's known as a MAC address.</p>
-                    <p>The MAC address is the physical address of an electronic device.</p>
-                    <p>A MAC address is given to the device when it is manufactured. It is hardwired or hard-coded onto your computer's network interface card (NIC) and is unique to it, so it is usually impossible to change a MAC address. That being said, hackers will sometimes spoof their MAC address in the operating system so that they can snoop around places without being identified.</p>
-                    <p>Switches can't read MAC addresses. They only read IP addresses.</p>
+                    <p>Under a high load, limited-contention protocols aren't used (use collision free protocols instead).</p>
+                    <p>Under a low load, limited contention protocols are preferred.</p>
+                    <p>The whole idea of limited contention protocols, is that they divide the stations into groups.</p>
+                    <p>For each group, only members of group i are permitted to compete for slot i.</p>
 
-                    <h3>Structure of MAC address</h3>
+                    <h3>Adaptive Tree Walk protocol</h3>
                     <hr>
 
-                    <p>Traditional MAC addresses are 12-digit (6 bytes or 48 bits) hexadecimal numbers.</p>
-                    <p><span style="color: blue">MM : MM : MM :</span> <span style="color: green">SS : SS : SS</span></p>
-                    <ul>
-                        <li>The <span style="color: blue">leftmost digits (the 6 M's)</span> is associated with the adapter manufacturer.</li>
-                        <li>The <span style="color: green">rightmost digits (the 6 S's)</span> represent an identification number for the specific device</li>                        
-                    </ul> <br>
-                    <p>Combining both sides, you get a unique MAC address for every electronic device.</p>
-                    
-                    <br>
-                    <p>The frame layout for the MAC address varies depending on if your network is Wi-Fi or Ethernet.</p>
+                    <p>Like I said, we have to break each station down into groups.</p>
+                    <p>In the following binary tree diagram below, you can think of the leaves as the actual stations.</p>
+                    <img src="../../../img/adaptive-tree-walk.png">
 
                     <div class="col-xs-12">
                         <table class="table table-bordered table-hover dt-responsive">
-                            <caption class="text-center">Frame layout of MAC address depdning on Wi-Fi or Ethernet network</caption> 
+                            <caption class="text-center">Visual explanation of how the Adaptive Tree Walk protocol works</caption> 
                             <thead>
-                                <tr> <th><span>Wi-Fi</span></th>  <th><span>Ethernet</span></th> </tr>
+                                <tr> <th>time(t)</th> <th>0</th> <th>1</th> <th>2</th> <th>3</th> <th>4</th> </tr>
                             </thead>
                             <tbody style="font-size: 14px;">
-                                <tr> <td><img src="../../../img/mac-address-wifi-structure.png" width="600"></td>  <td><img src="../../../img/mac-address-ethernet-structure.png" width="700"></td> </tr>
+                                <tr> <td>Transmissions</td> <td>-</td> <td>Stations A, D and F transmit at same time</td> <td>-</td> <td>-</td> <td>-</td> </tr>
+                                <tr> <td>Sub-tree</td> <td>All stations under node 1 can transmit</td> <td>All nodes under node 2 can transmit</td> <td>All stations under node 4 can transmit</td> <td>All stations under node 5 can transmit</td> <td>All stations under node 3 can transmit</td> </tr>
+                                <tr> <td>Diagram</td> <td><img src="../../../img/adaptive-tree-walk-1.png" width="200"></td> <td><img src="../../../img/adaptive-tree-walk-2.png" width="200"></td> <td><img src="../../../img/adaptive-tree-walk-3.png" width="200"></td> <td><img src="../../../img/adaptive-tree-walk-4.png" width="200"></td> <td><img src="../../../img/adaptive-tree-walk-5.png" width="200"></td> </tr>
+                                <tr> <td>Reachable stations</td> <td>ABCDEFGH</td> <td>ABCD</td> <td>AB</td> <td>CD</td> <td>EFGH</td> </tr>
                             </tbody>
                         </table>
                     </div>
-                    
+
+                    <p>And this is a wordy explanation of the same scenario:</p>
+                    <div class="example-question">
+                    At time t=0, all hosts under node 1 (A,B,C,D,E,F,G,H) can transmit. A, D and F collide. <br>
+                    At time t=1, all hosts under node 2 (A,B,C,D) can transmit. A and D will collide. <br>
+                    At time t=2, all hosts under node 4 (A,B) can transmit. Transmission from A is successful. <br>
+                    At time t=3, all hosts under node 5 (C,D) can transmit. Transmission from D is successful. <br>
+                    At time t=4, all hosts under node 3 (E,F,G,H) can transmit. Transmission from F is successful. <br>
+                    Hosts A,D and F have all transmitted their data safely.
+                    </div> <br>
+
+                    <h3>Binary Exponential Backoff Protocol</h3>
+                    <hr>
+
+                    <p>This is the other limited contention protocol.</p>
+                    <p>In addition to grouping up stations, we also group up time into slots<span style="font-size: 13px; color: rgb(180,180,180);"> - ie. Time Division Multiplexing</span></p>
+                    <p>if (collision occurs) -> time is divided into slots whose length = worst case round-trip propagation time on LAN cable.</p>
+                    <p>So we keep dividing the time slots to reduce the probability of collision (2 stations sending at same time).</p>
+                    <p>Here is a wordy explanation of how the protocol works:</p>
+                    <div class="example-question">
+				    After 1st collision: each station waits either 0 or 1 time slot before retransmission.  <br>
+                    After 2nd collision: each station waits either 0,1,2 or 3 time slots before retransmission. <br>
+                    After 3rd collision: each station waits either 0,1,2,3,4,5,6, or 7 time slots before retransmission. <br>
+                    <br>
+                    In general, the number of slots to wait is somewhere in the interval [ 0 to (2^n) -1 ]. <br>
+                    <br>
+                    After 10th collision, we cannot go any further and the number is frozen at 2^10 -1. <br>
+                    After 16th collision, report failure to computer. Further recovery handled by higher layers.
+                    </div> <br>
+
+                    <h3>Examples</h3>
+                    <hr>
+
+                    <p><b>Example 1</b>: What is the probability that <b>2 messages</b> are <b>never successfully sent</b> if no messages are involved?</p>
+                    <div class="example-question">
+                    = 2<sup>-1</sup> * 2<sup>-2</sup> * 2<sup>-3</sup> * 2<sup>-4</sup> * 2<sup>-5</sup> * 2<sup>-6</sup> * 2<sup>-7</sup> * 2<sup>-8</sup> * 2<sup>-9</sup> * 2<sup>-10</sup> * 2<sup>-10</sup> * 2<sup>-10</sup> * 2<sup>-10</sup> * 2<sup>-10</sup> * 2<sup>-10</sup> * 2<sup>-10</sup><br>
+                      &emsp;  1 &emsp;&emsp;&emsp;  2 &emsp;&emsp;&emsp;  3 &emsp;&emsp;&emsp; 4 &emsp;&emsp;&emsp; 5 &emsp;&emsp;  6  &emsp;&emsp; 7  &emsp;&emsp; 8 &emsp;&emsp;  9  &emsp;&emsp;&emsp; 10 &emsp;&emsp; 11 &emsp;&emsp; 12 &emsp;&emsp; 13 &emsp;&emsp; 14 &emsp;&emsp; 15 &emsp;&emsp; 16 <br>
+                    <br>
+                    =  2<sup>-115</sup>
+                    </div>
+                    <p><b>Why did I go up to 16?</b></p>
+                    <li>The question stated that the messages are never successfully sent. This (always) implies it reached 16 collisions.</li> <br>
+                    <p><b>Why did the exponent stop increasing after 10?</b></p>
+                    <li>Because we freeze the number after 10 collisions. <span style="font-size: 13px; color: rgb(180,180,180);"> - I mentioned this in the description of how the algorithm works</span></li>
+
+                    <br><br>
+                    <p><b>Example 2</b>: What is the probability that 2 messages are successfully sent after 8 collisions?</p>
+                    <div class="example-question">
+                    = 2<sup>-1</sup> * 2<sup>-2</sup> * 2<sup>-3</sup> * 2<sup>-4</sup> * 2<sup>-5</sup> * 2<sup>-6</sup> * 2<sup>-7</sup> * 2<sup>-8</sup><br>
+                      &emsp;  1 &emsp;&emsp;&emsp;  2 &emsp;&emsp;&emsp;  3 &emsp;&emsp;&emsp; 4 &emsp;&emsp;&emsp; 5 &emsp;&emsp;  6  &emsp;&emsp; 7  &emsp;&emsp; 8 <br>
+                    <br>
+                    =  2<sup>-36</sup>
+                    </div>
+
                     <div class="button-bar">
-                        <a href="introduction-to-mac-sublayer.html" class="button prev">Previous</a>
-                        <a href="aloha.html" class="button next">Next</a>
+                        <a href="collision-free.html" class="button prev">Previous</a>
+                        <a href="wireless-lan-protocols.html" class="button next">Next</a>
                     </div>
 
                 </div>

@@ -152,9 +152,9 @@
                                     <li><a href="csma.html">4.4. CSMA</a></li>
                                     <li><a href="collision-free.html">4.5. Collision-free protocols</a></li>
                                     <li><a href="limited-contention.html">4.6. Limited Contention protocols</a></li>
-                                    <li><a href="wireless-lan.html">4.7. Wireless LAN protocols</a></li>
+                                    <li><a href="wireless-lan-protocols.html">4.7. Wireless LAN protocols</a></li>
                                     <li><a href="wired-lan.html">4.8. Wired LAN</a></li>
-                                    <li><a href="communication-systems.html">4.9. Wireless LAN</a></li>
+                                    <li><a href="wireless-lan.html">4.9. Wireless LAN</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -171,7 +171,7 @@
             </div><!--  end of div.side-menu-container -->
         </nav>
     </div> <!-- end of main side-bar (msb) div -->
-    
+
     <div class="mcw">
         <!--navigation here-->
         <!--main content view-->
@@ -182,44 +182,157 @@
                 
                 </div>
                 <div class="inbox-bx container-fluid">
-                    <h1>MAC Address</h1>
+                    <h1>Wired LAN</h1>
                     <hr>
 
-                    <p>Every electronic device has an Network Interface Card (<b>NIC</b>).</p>
-                    <p>And every NIC has a hardware address that's known as a MAC address.</p>
-                    <p>The MAC address is the physical address of an electronic device.</p>
-                    <p>A MAC address is given to the device when it is manufactured. It is hardwired or hard-coded onto your computer's network interface card (NIC) and is unique to it, so it is usually impossible to change a MAC address. That being said, hackers will sometimes spoof their MAC address in the operating system so that they can snoop around places without being identified.</p>
-                    <p>Switches can't read MAC addresses. They only read IP addresses.</p>
-
-                    <h3>Structure of MAC address</h3>
+                    <h3>Classic Ethernet</h3>
                     <hr>
 
-                    <p>Traditional MAC addresses are 12-digit (6 bytes or 48 bits) hexadecimal numbers.</p>
-                    <p><span style="color: blue">MM : MM : MM :</span> <span style="color: green">SS : SS : SS</span></p>
+                    <p>The Classic Ethernet is a typical example of a <b>broadcast network</b>.</p>
+                    <p>Classic Ethernet is a generic term for the family of <b>10 Mbit/s</b> Ethernet standards, which is the <b>first generation of Ethernet standards</b> <span style="font-size: 13px; color: rgb(180,180,180);"> - 10 Mbit/s is pretty slow! Classic Ethernet is pretty old now, and we have much better Ethernet now.</span></p>
+                    <p>Usually a bus topology - there's one shared coaxial cable to which all hosts are attached. We call it <b>'The Ether'</b> (hence the name Ethernet)</p>
+
+                    <br>
+                    <h3>Transmission Time (TT) >= Round Trip Time (RTT)</h3>
+                    <hr>
+
+                    <p>For any given LAN, <b>if this condition is True</b>, it means that the network <b>can be used as an Ethernet</b>.</p>
+                    <p>If you can't remember what TT and RTT are, do not fear. It's the same stuff that I introduced back in <a href="https://nimpod.github.io/revision-website/html/computer-networks/datalink/flow-control.html">Flow Control</a></p>
+                    <img src="../../../img/mac-flow-control.png" width="500">
+                    <p>Figure 4.8a</p><br>
+
+                    <p>Soooo <b>why does the TT have to be >= RTT</b> ?</p>
                     <ul>
-                        <li>The <span style="color: blue">leftmost digits (the 6 M's)</span> is associated with the adapter manufacturer.</li>
-                        <li>The <span style="color: green">rightmost digits (the 6 S's)</span> represent an identification number for the specific device</li>                        
-                    </ul> <br>
-                    <p>Combining both sides, you get a unique MAC address for every electronic device.</p>
+                        <li>If a collision happens on this Ethernet network, if we want station A to be able to detect the collision as it happens, we need the frame to be transmitting for long enough for the frame to reach B and for the corrupted frame to go back to A.</li>
+                    </ul><br>
+
+                    <p>Also, you might notice in <i>Figure 4.8a</i> it says that the 'Minimum frame length = 64 bytes'. <b>Why is this?</b></p>
+                    <ul>
+                        <li>Ensures that collisions can be detected during transmission.</li>
+                        <li>It also prevents what we call <b>'chaos'</b> and saves time.</li>
+                    </ul>
+
+                    <br>
+                    <h3>Examples</h3>
+                    <hr>
+
+                    <div class="example-question">
+                    a) Why do Ethernet frames must have a minimum length of 64 bytes. <br> <br>
+                    b) Suppose we have a LAN with the following characeristics: <br>
+                     &emsp;&emsp;&emsp;   Length = 1000 metres <br>
+                     &emsp;&emsp;&emsp;   Signal Propogation Speed = 2 * 10<sup>8</sup> metres/ps <br>
+                     &emsp;&emsp;&emsp;   Transmission Rate = 10 Mbps <br>
+                    Could this LAN be used as an Ethernet? Explain your answer: <br><br>
+
+<pre class="prettyprint">
+a) To ensure that collisions can be detected during transmission.
+
+b)
+    // convert length of frame into bits
+    len(frame) = 64 bytes
+               = 512 bits
+
+    // convert TR into bits
+    TR = 10 Mbps
+       = 10,000,000 Bps
+    
+    // So these are the values we will use
+    len(frame) = 512
+    TR = 10,000,000
+    RTD = 2000
+    PS = 2*10<sup>8</sup>
+
+    // now everything is in bits, we are ready to calculate TT and RTT...
+    TT = 512 / 10,000,000
+       = 0.0000512
+
+    RTT = 2000 / 2*10<sup>8</sup>
+        = 0.00001
+
+    TT &gt;= RTT
+    ∴ this can be used as an Ethernet network, because the Transmission Time is >= the Round Trip Time.
+</pre>
+                    </div>
+
+                    <p>The length of the cable (1000 meters) is a <b>critical number</b>. By that I mean depending on the length of the cable things can change dramatically.</p>
+                    <p>Imagine the cable length was 5000 meters. Frames of length 64 bytes are no longer long enough to detect collisions.</p>
+                    <p>Intuitively, you should just increase the length of the frame. Right?</p>
+                    <p><b>NO</b> - we should never change the len(frame) under any circumstance. When building Ethernet networks, it is best practice to keep the len(frame) to 64 bytes.</p>
+                    <p>Instead, we should <b>break down the Ethernet network into sub-networks</b>. We connect the sub-networks using <b>Ethernet bridges</b>.</p>
+
+                    <br>
+                    <h3>Ethernet Bridges</h3>
+                    <hr>
+
+                    <p>Bridges are the answers to many things in life.</p>
+                    <p>Too build a larger Ethernet network, we must use Ethernet bridges.</p>
+                    <p>Bridges <b>read and learn MAC addresses</b> of the devices in the network.</p>
+
+                    <p>Here's an example of an Ethernet network that uses bridges to connect 4 local segments:</p>
+                    <img src="../../../img/ethernet-bridges.png" width="400">
+                    <p>Figure 4.8b</p> <br>
+
+                    <ul>
+                        <li>There are 4 segments, each of which contains 5 devices.</li>
+                        <li>The hexagonal nodes labelled B are the bridges.</li>
+                        <li>The backbone is a fibre optic cable connecting the bridges together.</li>
+                    </ul><br>
+
+                    <p>Suppose the orange device wants to talk to the blue device...</p>
+                    <ul>
+                        <li>Orange will broadcast a frame to all devices in its local segment.</li>
+                        <li>The 1st bridge will read the destination MAC address, and thus know that the blue is not in the 1st bridges local segment..</li>
+                        <li>Send frame along the backbone...</li>
+                        <li>The 2nd bridge will read the destination MAC address, and thus know that the blue is not in the 2nd bridges local segment..</li>
+                        <li>Send frame along the backbone...</li>
+                        <li>The 3rd bridge will read the destination MAC address, and thus know that the blue IS IN THE 3rd bridges local segment!</li>
+                        <li>The 3rd bridge will broadcast the frame into this local segment, and then the blue device receives the frame.                        
+                    </ul><br>
+
+                    <p>In summary... if <b>any device sends a frame</b>, it is <b>received by all devices</b> and the <b>bridge</b> in the <b>local segment</b> we are currently in.</p>
                     
                     <br>
-                    <p>The frame layout for the MAC address varies depending on if your network is Wi-Fi or Ethernet.</p>
+                    <p>How is this all possible? Because bridges know their shit.</p>
+                    <p>Ethernet bridges learn and relearn MAC addresses using a <b>'Forwading Table'</b>. We call this ability Backward Learning.</p>
+                    <p>Forwarding tables have <b>1 entry per network address</b>.</p>
+                    <p>Forwading tables <b>keeps track of two things</b>:</p>
+                    <ul>
+                        <li><b>MAC addresses</b> - the MAC address for each device in the network</li>
+                        <li><b>Port number</b> - every bridge has ports on it. Each device in a network connects to a port on the bridge.</li>                        
+                    </ul> <br>
+                    <p>Visit <a href="http://cs.mvnu.edu/classes/CSC3013/NetAnimations/switch.html">this webpage</a> to see a great animation of how bridges work.</p>
 
-                    <div class="col-xs-12">
-                        <table class="table table-bordered table-hover dt-responsive">
-                            <caption class="text-center">Frame layout of MAC address depdning on Wi-Fi or Ethernet network</caption> 
-                            <thead>
-                                <tr> <th><span>Wi-Fi</span></th>  <th><span>Ethernet</span></th> </tr>
-                            </thead>
-                            <tbody style="font-size: 14px;">
-                                <tr> <td><img src="../../../img/mac-address-wifi-structure.png" width="600"></td>  <td><img src="../../../img/mac-address-ethernet-structure.png" width="700"></td> </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    
+                    <br>
+                    <h3>Switched Ethernet</h3>
+                    <hr>
+
+                    <p>At the top of this page I said that we don't use Classic Ethernet anymore.</p>
+                    <p>We use 'Switched Ethernet' more often nowadays.</p>
+                    <p>Switched Ethernet uses <a href="https://nimpod.github.io/revision-website/html/computer-networks/physical/simplex-duplex.html">full-duplex</a> communication.</p>                    
+                    <p>There are many advantage to using a Switched Ethernet instead of a Classic Ethernet:</p>
+                    <ul>
+                        <li>Increased capacity</li>
+                        <li>Increased speed (10Gbit/s)</li>
+                        <li>Reduced contention on individual segments</li>
+                        <li>Easy to add/remove new hosts to the network</li>
+                        <li>Reliability (if one cable dies, the entire network no longer dies! Yay!)</li>
+                    </ul>
+
+                    <p>The reliability of Switched Ethernet is good because we use <b>Hubs</b>:</p>
+                    <ul>
+                        <li>A hub is a device in the network containing a number of ports.</li>
+                        <li>Each computer in the network is connected to the hub by a twisted pair PTP link.</li>
+                    </ul> <br>
+
+                    <p>Unfortunately there are some disadvantages to hubs:</p>
+                    <ul>
+                        <li>hubs don't learn MAC addresses.</li>
+                        <li>Hubs do broadcasting, meaning collisions can stil occur.</li>
+                    </ul>
+
                     <div class="button-bar">
-                        <a href="introduction-to-mac-sublayer.html" class="button prev">Previous</a>
-                        <a href="aloha.html" class="button next">Next</a>
+                        <a href="wireless-lan-protocols.html" class="button prev">Previous</a>
+                        <a href="wireless-lan.html" class="button next">Next</a>
                     </div>
 
                 </div>

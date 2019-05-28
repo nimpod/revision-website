@@ -152,9 +152,9 @@
                                     <li><a href="csma.html">4.4. CSMA</a></li>
                                     <li><a href="collision-free.html">4.5. Collision-free protocols</a></li>
                                     <li><a href="limited-contention.html">4.6. Limited Contention protocols</a></li>
-                                    <li><a href="wireless-lan.html">4.7. Wireless LAN protocols</a></li>
+                                    <li><a href="wireless-lan-protocols.html">4.7. Wireless LAN protocols</a></li>
                                     <li><a href="wired-lan.html">4.8. Wired LAN</a></li>
-                                    <li><a href="communication-systems.html">4.9. Wireless LAN</a></li>
+                                    <li><a href="wireless-lan.html">4.9. Wireless LAN</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -171,7 +171,7 @@
             </div><!--  end of div.side-menu-container -->
         </nav>
     </div> <!-- end of main side-bar (msb) div -->
-    
+
     <div class="mcw">
         <!--navigation here-->
         <!--main content view-->
@@ -182,44 +182,103 @@
                 
                 </div>
                 <div class="inbox-bx container-fluid">
-                    <h1>MAC Address</h1>
+                    <h1>Wireless LAN protocols</h1>
                     <hr>
 
-                    <p>Every electronic device has an Network Interface Card (<b>NIC</b>).</p>
-                    <p>And every NIC has a hardware address that's known as a MAC address.</p>
-                    <p>The MAC address is the physical address of an electronic device.</p>
-                    <p>A MAC address is given to the device when it is manufactured. It is hardwired or hard-coded onto your computer's network interface card (NIC) and is unique to it, so it is usually impossible to change a MAC address. That being said, hackers will sometimes spoof their MAC address in the operating system so that they can snoop around places without being identified.</p>
-                    <p>Switches can't read MAC addresses. They only read IP addresses.</p>
-
-                    <h3>Structure of MAC address</h3>
-                    <hr>
-
-                    <p>Traditional MAC addresses are 12-digit (6 bytes or 48 bits) hexadecimal numbers.</p>
-                    <p><span style="color: blue">MM : MM : MM :</span> <span style="color: green">SS : SS : SS</span></p>
+                    <p>There are two ways to build a wireless LAN:</p>
                     <ul>
-                        <li>The <span style="color: blue">leftmost digits (the 6 M's)</span> is associated with the adapter manufacturer.</li>
-                        <li>The <span style="color: green">rightmost digits (the 6 S's)</span> represent an identification number for the specific device</li>                        
-                    </ul> <br>
-                    <p>Combining both sides, you get a unique MAC address for every electronic device.</p>
-                    
-                    <br>
-                    <p>The frame layout for the MAC address varies depending on if your network is Wi-Fi or Ethernet.</p>
+                        <li>Wi-Fi</li>
+                        <li>Ethernet</li>
+                    </ul>
+
+                    <h3>CSMA/CA</h3>
+                    <hr>
+
+                    <p>CSMA/CA is the protocol uses in <b>Wi-Fi networks</b>.</p>
+                    <p>What exactly is the <b>difference between CSMA/CA and CSMA/CD?</b></p>
 
                     <div class="col-xs-12">
                         <table class="table table-bordered table-hover dt-responsive">
-                            <caption class="text-center">Frame layout of MAC address depdning on Wi-Fi or Ethernet network</caption> 
+                            <caption class="text-center">CSMA/CA vs. CSMA/CD</caption> 
                             <thead>
-                                <tr> <th><span>Wi-Fi</span></th>  <th><span>Ethernet</span></th> </tr>
+                                <tr> <th>CSMA/CD</th> <th>CSMA/CA</th> </tr>
                             </thead>
                             <tbody style="font-size: 14px;">
-                                <tr> <td><img src="../../../img/mac-address-wifi-structure.png" width="600"></td>  <td><img src="../../../img/mac-address-ethernet-structure.png" width="700"></td> </tr>
+                                <tr><td>Does not use ACK's and NAK'S</td> <td>Uses ACK's and NAK's</td></tr>
+                                <tr>
+                                    <td>Stations listen to the network <br>Send frame <br>if (collision) -> abort transmission -> use Binary Exponential Backoff protocol</td>
+                                    <td>Stations listen to the network <br>if (idle) -> use BEB protocol <br>send frame <br> (reduces chances of 2 stations sending at same time)</td>
+                                </tr>
+                                <tr><td>Uses RTS/CTS</td><td>Optionally use RTS/CTS</td></tr>
                             </tbody>
                         </table>
-                    </div>
+                    </div><br><br>
+
+                    <h3>Dealing with the Hidden Stations Problem in a wireless LAN</h3>
+                    <hr>
+
+                    <p>In a wireless LAN, the hidden stations problem can happen in a similar fashion to how I described it back in the <a href="https://nimpod.github.io/revision-website/html/computer-networks/mac/wired-lan.html">Wired LAN</a> section.</p>
+                    <p>Only difference being is that now <b>it's wireless</b> technology being used.</p>
+                    <p>To overcome the Hidden Stations Problem in a wireless network, we need <b>'Channel Sensing'</b>.</p>
+                    <p>There are two types of channel sensing:</p>
+                    <ol>
+                        <li><b>Physical Sensing</b></li>
+                        <li><b>Virtual Sensing</b></li>
+                    </ol>
+
+                    <div class="col-xs-12">
+                        <table class="table table-bordered table-hover dt-responsive">
+                            <caption class="text-center">Physical Sensing vs. Virtual Sensing</caption> 
+                            <thead>
+                                <tr> <th>Physical Sensing</th> <th>Virtual Sensing</th> </tr>
+                            </thead>
+                            <tbody style="font-size: 14px;">
+                                <tr>
+                                    <td>
+                                    Sense the channel before transmitting<br>
+                                    Stations shouldn't send if the link is idle.
+                                    </td>
+
+                                    <td>
+                                    RTS/CTS handshake <br>
+                                    Each station keeps a logical record of when the channel is in use by tracking the Network Allocation Vector (<b>NAV</b>). <br>
+                                    NAV is a number that indicates the time that the frame needs in order to have a successful transmission. <br>
+                                    We can get that number by looking at the duration field in Wi-Fi MAC frame. (NAV = duration field) <br>
+<pre class="prettyprint">
+if (NAV != 0) {
+    station will not attempt to transmit
+} else if (NAV == 0) {
+    station can transmit
+}
+</pre>
+                                    </td>
+                                </tr>
+                                <tr><td>Uses RTS/CTS</td><td>Optionally use RTS/CTS</td></tr>
+                            </tbody>
+                        </table>
+                    </div><br>
+
+                    <br>
+                    <h3>Bluetooth Networks</h3>
+                    <hr>
                     
+                    <p>Bluetooth networks have very small range.</p>
+                    <p>The diagram below is an example of a <b>'scatternet'</b> - a combinations of bluetooth networks:</p>
+
+                    <img src="../../../img/bluetooth-network.png" width="500">
+                    <p>Figure 4.9a</p><br>
+                    
+                    <p>Let's breakdown the components of the scatternet shown in <i>Figure 4.9a</i>:</p>
+                    <ul>
+                        <li>Bluetooth networks are made up of <b>Piconets</b> (each one of those big bubbles in the diagram is a piconet).</li>
+                        <li>The center of each piconet is the <b>M</b> which stands for <b>Master</b>. The master station controls the entire network using TDM techniques. (Master could be a phone, PC, etc...).</li>
+                        <li>The <b>active slaves</b> are the devices connected to your bluetooth network (Active slaves could be wireless keyboard, bluetooth headphones, wireless speaker, etc...).</li>
+                        <li>Multiple piconets can be connected to each other by a <b>bridge slave</b> - one slave that overlaps between two piconets will connect them together.</li>
+                    </ul>
+
                     <div class="button-bar">
-                        <a href="introduction-to-mac-sublayer.html" class="button prev">Previous</a>
-                        <a href="aloha.html" class="button next">Next</a>
+                        <a href="wireless-lan-protocols.html" class="button prev">Previous</a>
+                        <a href="wireless-lan.html" class="button next">Next</a>
                     </div>
 
                 </div>

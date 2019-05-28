@@ -171,7 +171,7 @@
             </div><!--  end of div.side-menu-container -->
         </nav>
     </div> <!-- end of main side-bar (msb) div -->
-    
+
     <div class="mcw">
         <!--navigation here-->
         <!--main content view-->
@@ -182,44 +182,21 @@
                 
                 </div>
                 <div class="inbox-bx container-fluid">
-                    <h1>MAC Address</h1>
+                    <h1>Collision-free Protocols</h1>
                     <hr>
 
-                    <p>Every electronic device has an Network Interface Card (<b>NIC</b>).</p>
-                    <p>And every NIC has a hardware address that's known as a MAC address.</p>
-                    <p>The MAC address is the physical address of an electronic device.</p>
-                    <p>A MAC address is given to the device when it is manufactured. It is hardwired or hard-coded onto your computer's network interface card (NIC) and is unique to it, so it is usually impossible to change a MAC address. That being said, hackers will sometimes spoof their MAC address in the operating system so that they can snoop around places without being identified.</p>
-                    <p>Switches can't read MAC addresses. They only read IP addresses.</p>
+                    <p>With these types of protocols, the channel is divided up between the hosts. Each host has their own private slot.</p>
+                    <p>Using the private slots is how we get 0 collisions.</p>
+                    <p>Good for high loads (i.e. lots of stations)</p>
+                    <p>Bad for low loads, because it wastes some slots.</p>
 
-                    <h3>Structure of MAC address</h3>
+                    <h3>Bit-map Protocol</h3>
                     <hr>
-
-                    <p>Traditional MAC addresses are 12-digit (6 bytes or 48 bits) hexadecimal numbers.</p>
-                    <p><span style="color: blue">MM : MM : MM :</span> <span style="color: green">SS : SS : SS</span></p>
-                    <ul>
-                        <li>The <span style="color: blue">leftmost digits (the 6 M's)</span> is associated with the adapter manufacturer.</li>
-                        <li>The <span style="color: green">rightmost digits (the 6 S's)</span> represent an identification number for the specific device</li>                        
-                    </ul> <br>
-                    <p>Combining both sides, you get a unique MAC address for every electronic device.</p>
                     
-                    <br>
-                    <p>The frame layout for the MAC address varies depending on if your network is Wi-Fi or Ethernet.</p>
 
-                    <div class="col-xs-12">
-                        <table class="table table-bordered table-hover dt-responsive">
-                            <caption class="text-center">Frame layout of MAC address depdning on Wi-Fi or Ethernet network</caption> 
-                            <thead>
-                                <tr> <th><span>Wi-Fi</span></th>  <th><span>Ethernet</span></th> </tr>
-                            </thead>
-                            <tbody style="font-size: 14px;">
-                                <tr> <td><img src="../../../img/mac-address-wifi-structure.png" width="600"></td>  <td><img src="../../../img/mac-address-ethernet-structure.png" width="700"></td> </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    
                     <div class="button-bar">
-                        <a href="introduction-to-mac-sublayer.html" class="button prev">Previous</a>
-                        <a href="aloha.html" class="button next">Next</a>
+                        <a href="csma.html" class="button prev">Previous</a>
+                        <a href="limited-contention.html" class="button next">Next</a>
                     </div>
 
                 </div>
