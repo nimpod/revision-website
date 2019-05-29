@@ -1,0 +1,299 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Revision website</title>
+
+    <!-- include css stylesheets -->
+    <link rel="stylesheet" href="../../../styles.css">
+
+    <!-- include bootstrap CDN -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+    <!-- google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+
+    <!-- prettify.js -->
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?lang=ruby&amp;skin=sunburst"></script>
+</head>
+<body>
+    <!-- main navigation bar at top of window -->
+    <nav class="mnb navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <i class="ic fa fa-bars"></i>
+                </button>
+                <div style="padding: 15px 0;">
+                    <a href="#" id="msbo"><i class="ic fa fa-bars"></i></a>
+                </div>
+            </div> <!-- end of div.navbar-header -->
+
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">More revision<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">CSC2023</a></li>
+                            <li><a href="../computer-networks.html">CSC2026</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">CSC1024</a></li>
+                            <li><a href="#">CSC1021</a></li>
+                            <li><a href="#">CSC1022</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#"><i class="fa fa-bell-o"></i></a></li>
+                    <li><a href="#"><i class="fa fa-comment-o"></i></a></li>
+                </ul>
+            </div> <!-- end of div.navbar-collapse -->
+            
+        </div> <!-- end of div.container-fluid -->
+    </nav> <!-- end of main nav-bar -->
+
+    <div class="msb" id="msb">
+        <nav class="navbar navbar-default" role="navigation">
+
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <div class="brand-wrapper">
+                    <!-- Brand -->
+                    <div class="brand-name-wrapper">
+                        <a class="navbar-brand" href="../../../index.html">
+                            NIMPOD
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Menu -->
+            <div class="side-menu-container">
+                <ul class="nav navbar-nav">
+
+                    <li class="panel panel-default" id="dropdown">
+                        <a data-toggle="collapse" href="#intro-dropdown">
+                            1. Introduction to Computer Networks
+                            <span class="caret"></span>                            
+                        </a>
+                        <div id="intro-dropdown" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <ul class="nav navbar-nav">
+                                    <li><a href="../intro/what-is-a-computer-network.html">1.1. What is a computer network?</a></li>
+                                    <li><a href="../intro/circuit-packet-switch.html">1.2. Circuit Switch/Packet Switch</a></li>
+                                    <li><a href="../intro/network-topology.html">1.3. Network Topology</a></li>
+                                    <li><a href="../intro/network-types.html">1.4. Types of networks</a></li>
+                                    <li><a href="../intro/osi-model.html">1.5. OSI model</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="panel panel-default" id="dropdown">
+                        <a data-toggle="collapse" href="#physical-dropdown">
+                            2. Physical Layer
+                            <span class="caret"></span>                            
+                        </a>
+                        <div id="physical-dropdown" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <ul class="nav navbar-nav">
+                                    <li><a href="../physical/introduction-to-physical-layer.html">2.1. Introduction to the Physical Layer</a></li>
+                                    <li><a href="../physical/transmission-media.html">2.2. Trasmission Media</a></li>
+                                    <li><a href="../physical/communication-satellites.html">2.3. Communication Satellites</a></li>
+                                    <li><a href="../physical/transmission-impairment.html">2.4. Transmission Impairment</a></li>
+                                    <li><a href="../physical/encoding-modulation.html">2.5. Encoding and Modulation</a></li>
+                                    <li><a href="../physical/simplex-duplex.html">2.6. Simplex and Duplex</a></li>
+                                    <li><a href="../physical/parallel-serial.html">2.7. Parallel and Serial</a></li>
+                                    <li><a href="../physical/multiplexing.html">2.8. Multiplexing</a></li>
+                                    <li><a href="../physical/communication-systems.html">2.9. Communication Systems</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li class="panel panel-default" id="dropdown">
+                        <a data-toggle="collapse" href="#datalink-dropdown">
+                            3. Data-Link Layer
+                            <span class="caret"></span>
+                        </a>
+                        <div id="datalink-dropdown" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <ul class="nav navbar-nav">
+                                    <li><a href="../datalink/introduction-to-datalink-layer.html">3.1 Introduction to the Data-Link Layer</a></li>
+                                    <li><a href="../datalink/byte-count.html">3.2 Byte Count</a></li>
+                                    <li><a href="../datalink/byte-stuffing.html">3.3 Byte Stuffing</a></li>
+                                    <li><a href="../datalink/bit-stuffing.html">3.4 Bit Stuffing</a></li>
+                                    <li><a href="../datalink/parity-bit.html">3.5 Parity Bit</a></li>
+                                    <li><a href="../datalink/crc.html">3.6 Cyclic Redundancy Check (CRC)</a></li>
+                                    <li><a href="../datalink/hamming-distance.html">3.7 Hamming Distance</a></li>
+                                    <li><a href="../datalink/flow-control.html">3.8 Flow Control</a></li>
+                                    <li><a href="../datalink/hdlc.html">3.9 High Level Data Link Control (HDLC)</a></li>
+                                    <li><a href="../datalink/ppp.html">3.10 Point to Point Protocol (PPP)</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="panel panel-default" id="dropdown">
+                        <a data-toggle="collapse" href="#mac-dropdown">
+                            4. MAC Sublayer
+                            <span class="caret"></span>                            
+                        </a>
+                        <div id="mac-dropdown" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <ul class="nav navbar-nav">
+                                    <li><a href="../mac/introduction-to-mac-sublayer.html">4.1. Introduction to the MAC Sublayer</a></li>
+                                    <li><a href="../mac/mac-address.html">4.2. MAC Address</a></li>
+                                    <li><a href="../mac/aloha.html">4.3. Aloha</a></li>
+                                    <li><a href="../mac/csma.html">4.4. CSMA</a></li>
+                                    <li><a href="../mac/collision-free.html">4.5. Collision-free protocols</a></li>
+                                    <li><a href="../mac/limited-contention.html">4.6. Limited Contention protocols</a></li>
+                                    <li><a href="../mac/wireless-lan-protocols.html">4.7. Wireless LAN protocols</a></li>
+                                    <li><a href="../mac/wired-lan.html">4.8. Wired LAN</a></li>
+                                    <li><a href="../mac/wireless-lan.html">4.9. Wireless LAN</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li class="active panel panel-default" id="dropdown">
+                        <a data-toggle="collapse" href="#network-dropdown">
+                            5. Network Layer
+                            <span class="caret"></span>
+                        </a>
+                        <div id="network-dropdown" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <ul class="nav navbar-nav">
+                                    <li><a href="introduction-to-network-layer.html">5.1. Introduction to the Network Layer</a></li>
+                                    <li><a href="services.html">5.2. Services</a></li>
+                                    <li><a href="internetworking.html">5.3. Internetworking</a></li>
+                                    <li><a href="tunelling.html">5.4. Tunelling</a></li>
+                                    <li><a href="packet-fragmentation.html">5.5. Packet Fragmentation</a></li>
+                                    <li><a href="dns-server.html">5.6. DNS Server</a></li>
+                                    <li><a href="internet-protocol.html">5.7. Internet Protocol (IP)</a></li>
+                                    <li><a href="mobile-ip.html">5.8. Mobile IP</a></li>
+                                    <li><a href="other-internet-protocols.html">5.9. Other Internet Protocols</a></li>
+                                    <li><a href="routing-algorithms.html">5.10. Routing Algorithms</a></li>
+                                    <li><a href="congestion-control.html">5.11. Congestion Control</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li><a href="#"></span> 6. Transport Layer</a></li>
+                    <li><a href="../acronyms.html">Acronyms</a></li>
+                    <li><a href="../terms.html">Terms</a></li>
+                    <li><a href="../formulas.html">Formulas</a></li>
+
+                </ul> <!-- end of ul.navbar -->
+
+            </div><!--  end of div.side-menu-container -->
+        </nav>
+    </div> <!-- end of main side-bar (msb) div -->
+
+    <div class="mcw">
+        <!--navigation here-->
+        <!--main content view-->
+        <div class="cv">
+            <div>
+            <div class="inbox">
+                <div class="inbox-sb">
+                
+                </div>
+                <div class="inbox-bx container-fluid">
+                    <h1>Congestion Control</h1>
+                    <hr>
+                    
+                    <p>Congestion occurs when too many packets are present in the subnet.</p>
+                    <p>If congestion is too high, routers begin loosing packets.</p>
+                    <p>The routers loose packets because they are forced to throw away packets without inspecting them because there are no buffers left to store them.</p>
+                    <p>Congestion may be caused by 2 things:</p>
+                    <ul>
+                        <li>Network topology</li>
+                        <li>Hardware</li>
+                    </ul> <br>
+
+                    <h3>Congestion that is caused by network topology</h3>
+                    <hr>
+
+                    <p>Suppose we have a star topology network like the one shown below:</p>
+                    <img src="../../../img/congestion-control-topology.png" width="500">
+                    <br>
+                    <p>In such a network, it might be hard to predict data rate coming towards the central router.</p>
+                    <p>This is because there are 3 routers that could all potentially send data at the same time.</p>
+                    <p>This means the buffer could fill up very quickly, meaning packets will got lost quicker, resulting in congestion.</p>
+                    <p>Most people will say "why not use a bigger buffer?"...</p>
+                    <ul>
+                        <li>For a given router, if the time taken for a packet to travel from the back of the buffer to the front of the buffer is > timeout period, the router will resend the packet.</li>
+                        <li>This results in duplicate packets.</li>
+                        <li>Causing '<b>Congestion Collapse</b>' (when a network cannot send or receive anymore packets)</li>
+                        <li>So by using a bigger buffer, we managed to make congestion even worse!</li>
+                    </ul> <br>
+
+                    <p>Congestion tends to <b>feed upon itself and become worse</b>. Like a <b>rotting corpse</b>, you can't stop it from rotting when it's off.</p>
+                    <p>Let's suppose we add 4 more routers to this network (Router 5, Router, 6, Router 7 and Router 8):</p>
+                    <img src="../../../img/congestion-control-topology-2.png" width="500">
+                    <br>
+                    <p>Router 7 sends data to Router 6, which sends data to Router 5, which sends data to Router 4.</p>
+                    <p>So if Router 4 becomes congested routers 5, 6 and 7 will also become congested.</p>
+                    <p>Those red numbers indicate how many packets each router wants to send (e.g. Router 2 wants to send 14 packets)</p>
+                    <p>Router 4 will send all 10 packets at once, and will then wait for an ACK (assuming Router 4 uses a sliding window protocol)</p>
+                    <p>Router 4 will save a copy of these 10 packets in its own buffer.</p>
+                    <p>Buffer of Router 4 becomes congested.</p>
+                    <p>Therefore, Routers 5, 6 and 7 become congested.</p>
+                    <p>The congestion has spread through the network causing 'Backpressure' (when a router becomes congested, the congestion feeds upon itself and spreads in the network)</p>
+
+                    <h3>Congestion that is caused by hardware</h3>
+                    <hr>
+
+                    <p>Slow processors in routers can also cause congestion.</p>
+                    <p>It is a common issue in networks that have machines of varying processing speeds (some slow, some fast, some normal)</p>
+                    <p>Network engineers usually try to make the network speed &lt; backbone speed</p>
+                    <li>This is why the network uses twisted pair cables, and the backbone uses fibre optic cables.</li>
+                    <img src="../../../img/congestion-control-hardware.png" width="500">
+
+                    <h3>Visualising Congestion</h3>
+                    <hr>
+                    
+                    <p>The following graph shows that the number of packets sent (aka. offered load), is proportional to the number of packets delivered (aka. goodput), atleast when the data rate is &lt; max capacity.</p>
+                    <img src="../../../img/congestion-graph.png" width="500">
+                    <br>
+                    <p>The max capacity of the network indicates how many packets can be in the network at one time.</p>
+                    <p>The graph shows us 3 different scenarios:</p>
+                    <ol>
+                        <li><b>BEST CASE</b>: Ideal - when there is no congestion</li>
+                        <li><b>AVERAGE CASE</b>: Desirable response - when the data rate approaches the max capacity, the number of packets delivered will fall behind the ideal curve slightly. There is still no congestion, but we might loose a bit of data, nothing dramatic though.
+                        <li><b>WORST CASE</b>: Congestion Collase - congestion occurred because there were too many duplicate packets. You can see the curve continues to get progressivley worse, because congestion feeds upon itself.</li>
+                    </ol>
+                    
+                    <h3>Policies that affect congestion</h3>
+                    <hr>
+
+                    <p>There are policies from the Data-Link, Network and Transport layer that affect congestion:</p>
+                    <img src="../../../img/congestion-policies.png" width="400">
+
+                    <br>
+                    <p>These policies I have mentioned in this table are what we call 'Open Loop' solutions...</p>
+
+                    <h3>Open Loop vs. Closed loop</h3>
+                    <hr>
+
+
+                    <div class="button-bar">
+                        <a href="other-internet-protocols.html" class="button prev">Previous</a>
+                        <a href="congestion-control.html" class="button next">Next</a>
+                    </div>
+
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="../../../funky.js"></script>
+</body>
+</html>

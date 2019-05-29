@@ -313,16 +313,139 @@
                     <h3>Link State Routing</h1>
                     <hr>
 
-                    <p>Link State Routing (LSR) uses Dijkstra's Algorithm to build a routing table.</p>
+                    <p>Link State Routing (<b>LSR</b>) uses Dijkstra's Algorithm to build a routing table.</p>
                     <p>It uses Dijkstra's Algorithm because it knows the topology of the entire network.</p>
-                    <p>LSR is an Adaptive Routing Algorithm.</p>
+                    <p>LSR is an <b>Adaptive Routing Algorithm</b>.</p>
                     <p>LSR is an algorithm to find the shortest path in a network.</p>
                     <p>Fun fact: The OSPF algorithm (which is used in the Internet) is a variant of this LSR algorithm. Exciting!</p>
 
+                    <P>Example 1</p>
+                    <img src="../../../img/lsr-1.PNG" width="900">
+                    <br><br>
+
+                    <P>Example 2</p>
+                    <img src="../../../img/lsr-2.PNG" width="900">
+                    <br><br>
+
+                    <h3>Distance Vector Routing</h1>
+                    <hr>
+
+                    <p>Distance Vector Routing (<b>DVR</b>) is an <b>Adaptive Routing Algorithm</b>.</p>
+                    <p>This means that DVR has no problems adding new routers to the network.</p>
+                    <p>However this doesn't mean that DVR is good at removing routers.</p>
+                    <p>DVR was used in the ARPANET, the predecessor to the Internet.</p>
+                    <p>In the DVR algorithm, routers only know their neighbours. The routers do not necessarily understand the whole network at the beginning (ie. at round 1).</p>
+<br>
+                    <h3>Count-To-Infinity (C2I)</h1>
+
+                    <p>A major concern that DVR has to deal with is the 'Count-to-infinity' (C2I) problem:</p>
+                    <ul>
+                        <li><span style="color: green;">DVR reacts rapidly to <b>good news</b> (new better route)</span></li>
+                        <li><span style="color: red;">DVR reacts slowly to <b>bad news</b> (best route goes down</span>li>
+                        <li>When a router goes down, the distance from all routers to it tends to infinity, increasing with each cycle.</li>
+                        <li>It will take lots of cycles before a router is declared unreachable.</li>
+                        <li>The amount of time it takes for a router to become unnreachable is called the 'Convergence time'.</li>
+                        <img src="../../../img/c2i-badnews.png" width="400">
+                        <img src="../../../img/c2i-goodnews.png" width="400">
+                        <li><span style="color: green;">With good news, the delay between a router and its neighbor is only 1 (ie: good news travels fast)</span></li>
+                        <li><span style="color: red;">With bad news, the delay between a router and its neighbor propagates through the network and will diverge to infinity (ie: bad news travels slowly)</span></li>
+                    </ul> <br>
+
+                    <p>Solution to C2I problem:</p>
+                    <ul>
+                        <li>How do we solve the issue of bad news diverging to infinity?</li>
+                        <li>Set inf to a number...</li>
+                        <li>inf = 'longest path' + 1</li>
+                        <li>**also equivalent to**</li>
+                        <li>inf = 'number of routers'</li>
+                        <li>Whatever the number is, it will now represent the longest path in the network.</li>
+                        <li>If a routers counter reaches this number, it means that this router is no longer reachable.</li>
+                        <li>Therefore, every other router will delete the entry for this unreachable router.</li>
+                    </ul><br>
+
+                    <p>DVR Example 1</p>
+                    <img src="../../../img/dvr-1.PNG" width="900">
+                    <br><br>
+
+                    <h3>Hierarchical Routing</h1>
+                    <hr>    
+
+                    <p>The examples we have been doing have a small number of routers (between 4 and 6 routers).</p>
+                    <p>But in reality most networks contain way more routers than this.</p>
+                    <p>As networks grow in size, the routing tables grow proportionally.</p>
+                    <p>Large routing tables are hard to manage, and could slow the network down because each router will have to do a tedious search on a very big table!</p>
+                    <p>The obvious solution might be to split up this 1 really big routing table into separate sub-tables?</p>
+                    <p>Generally, when you have a large network with lots of routers, you do this splitting into sub-tables using hierarchical routing.</p>
+                    <ul>
+                        <li>The routers are divided into regions.</li>
+                        <li>Each router knows all the details about how to route packets to destinations within its own region.</li>
+                        <li>Each router knows nothing about the internal structure of other regions.</li>
+                    </ul> <br>
+                    <p>For example, suppose we have the following network with 5 regions. I will do a routing table for region 1A using hierarchical routing, and not using hierarchical routing, because it is a lot easier to show it visually rather than trying to explain it in words:</p>
+                    <img src="../../../img/hierarcihcal-routing.png" width="300">
+                    <br><br>
+
+                    <h3>Internetwork Routing</h1>
+                    <hr>    
+
+                    <p>Just to recap what an Internetwork is... <i>"An internetwork is a combination of multiple networks that use different technologies. They are connected using border routers"</i></p>
+                    <p>To do routing in an internetwork, there are 2 levels to the routing algorithm:</p>
+                    <ol>
+                        <li>Within each network, an Interior Gateway Protocol (IGP) is used for routing.</li>
+                        <li>Across the networks that make up the Internet, and Exterior Gateway Protocol (EGP) is used.</li>     
+                        <ul>
+                            <li>The networks in an internetwork can use different IGP's</li>
+                            <li>But the networks MUST use the same EGP.</li>
+                        </ul>                   
+                    </ol> <br>
+
+                    <h3>Routing in the Internet</h1>
+                    <hr>
+
+                    <h4>IGP</h4>
+                    <p>A common IGP distance vector protocol is the Open Shortest Path First (<b>OSPF</b>).</p>
+                    <p>OSPF uses an LSR algorithm, and falls into the IGP group of protocols.</p>
+                    <p>OSPF replaces an old distance vector protocol called the Routing Information Protocol (<b>RIP</b>).</p>
+                    <p>RIP was not a great protocol because:</p>
+                    <ul>
+                        <li>it doesn't cope well with changes to network topology.</li>
+                        <li>used the hop counter to calculate distance between 2 routers.</li>
+                    </ul> <br>
+
+                    <p>OSPF is a great protocol because:</li>
+                    <ul>
+                        <li>dynamic to changes in network topology.</li>
+                        <li>can handle real-time traffic.</li>
+                        <li>does load balancing - splits load over multiple lines to prevent congestion.</li>
+                        <li>supports hierarchical routing.</li>
+                        <li>incorporates security measures - routers are vulnerable to attacks, but using a good protocol like OSPF you can mitigate security concerns.</li>
+                    </ul> <br>
+                    <br>
+
+                    <h4>EGP</h4>
+                    <p>The main Internet EGP distance vector protocol we use is the Border Gateway Protocol (BGP).</p>
+                    <p>Here are the main things that all EGP's do:</p>
+                    <ul>
+                        <li>Politics - where in the world is the network traffic going? It may not allow local traffic to be routed through certain other networks or countries.</li>
+                        <li>BGP provides another solution to the C2I problem:</li>
+                        <ul>
+                            <li>Inform its neighbours about the paths it is using.</li>
+                            <li>It does this by exchanging the path to the destination. Then the destination knows where to route it!</li>
+                        </ul>
+                    </ul> <br>
+
+                    <h3>Summary</h3>
+                    <hr>  
+                    
+                    <p>LSR uses Dijkstra.</p>
+                    <p>DVR uses flooding.</p>
+                    <br>
+                    <p>DVR doesn't use Dijkstra because it doesn't know the entire topology beforehand. Only its neighbours.</p>
+                    <p>DVR suffers from the C2I problem.</p>
 
                     <div class="button-bar">
-                        <a href="internet-protocol.html" class="button prev">Previous</a>
-                        <a href="routing-algorithms.html" class="button next">Next</a>
+                        <a href="other-internet-protocols.html" class="button prev">Previous</a>
+                        <a href="congestion-control.html" class="button next">Next</a>
                     </div>
 
                 </div>
