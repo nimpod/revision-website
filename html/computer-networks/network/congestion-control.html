@@ -221,7 +221,7 @@
                     <hr>
 
                     <p>Suppose we have a star topology network like the one shown below:</p>
-                    <img src="../../../img/congestion-control-topology.png" width="500">
+                    <img src="../../../img/congestion-control-topology.png" width="200">
                     <br>
                     <p>In such a network, it might be hard to predict data rate coming towards the central router.</p>
                     <p>This is because there are 3 routers that could all potentially send data at the same time.</p>
@@ -236,7 +236,7 @@
 
                     <p>Congestion tends to <b>feed upon itself and become worse</b>. Like a <b>rotting corpse</b>, you can't stop it from rotting when it's off.</p>
                     <p>Let's suppose we add 4 more routers to this network (Router 5, Router, 6, Router 7 and Router 8):</p>
-                    <img src="../../../img/congestion-control-topology-2.png" width="500">
+                    <img src="../../../img/congestion-control-topology-2.png" width="400">
                     <br>
                     <p>Router 7 sends data to Router 6, which sends data to Router 5, which sends data to Router 4.</p>
                     <p>So if Router 4 becomes congested routers 5, 6 and 7 will also become congested.</p>
@@ -254,13 +254,13 @@
                     <p>It is a common issue in networks that have machines of varying processing speeds (some slow, some fast, some normal)</p>
                     <p>Network engineers usually try to make the network speed &lt; backbone speed</p>
                     <li>This is why the network uses twisted pair cables, and the backbone uses fibre optic cables.</li>
-                    <img src="../../../img/congestion-control-hardware.png" width="500">
+                    <img src="../../../img/congestion-contro-hardware.png" width="500"> <br> <br>
 
                     <h3>Visualising Congestion</h3>
                     <hr>
                     
                     <p>The following graph shows that the number of packets sent (aka. offered load), is proportional to the number of packets delivered (aka. goodput), atleast when the data rate is &lt; max capacity.</p>
-                    <img src="../../../img/congestion-graph.png" width="500">
+                    <img src="../../../img/congestion-graph.png" width="400">
                     <br>
                     <p>The max capacity of the network indicates how many packets can be in the network at one time.</p>
                     <p>The graph shows us 3 different scenarios:</p>
@@ -268,23 +268,195 @@
                         <li><b>BEST CASE</b>: Ideal - when there is no congestion</li>
                         <li><b>AVERAGE CASE</b>: Desirable response - when the data rate approaches the max capacity, the number of packets delivered will fall behind the ideal curve slightly. There is still no congestion, but we might loose a bit of data, nothing dramatic though.
                         <li><b>WORST CASE</b>: Congestion Collase - congestion occurred because there were too many duplicate packets. You can see the curve continues to get progressivley worse, because congestion feeds upon itself.</li>
-                    </ol>
+                    </ol>  <br>
                     
                     <h3>Policies that affect congestion</h3>
                     <hr>
 
                     <p>There are policies from the Data-Link, Network and Transport layer that affect congestion:</p>
-                    <img src="../../../img/congestion-policies.png" width="400">
+                    <img src="../../../img/congestion-policies.png" width="400">  <br>
 
                     <br>
-                    <p>These policies I have mentioned in this table are what we call 'Open Loop' solutions...</p>
+                    <p>These policies I have mentioned in this table are what we call 'Open Loop' solutions...</p>  <br>
 
                     <h3>Open Loop vs. Closed loop</h3>
                     <hr>
 
+                    <p>Open Loop and Closed Loop are a collection of different solutions to control congestion.</p>
+                    <br>
+                    <h4>Open Loop solutions</h4>
+                    <p>Wait for sender and receiver to sense that there is something wrong in the network.</p>
+                    <br>
+                    <h4>Closed Loop solutions</h4>
+                    <p>Ask the network itself for some feedback on its status.</p>
+                    <ol>
+                        <li>Monitor the network to detect when and where congestion occurs, such as:
+                            <ul>
+                                <li>Percentage of all packets discarded for lack of buffer space.</li>
+                                <li>Average queue lengths.</li>
+                                <li>Number of packets that time out and re-transmitted.</li>
+                                <li>Average packet delay.</li>
+                                <li>Standard deviation of packet delay.</li>
+                            </ul>
+                        </li>
+                        <li>Distribute this information to places where action can be taken:
+                            <ul>
+                                <li>Bad solution - create a choke packet that travels from the congested router to the sender. This is a bad solution because sending another packet through the network will add even more congestion! </li>
+                                <li>Good solution - set the Explicit Congestion Notification (ECN) field in the IP header to 11.</li>
+                            </ul>
+                        </li>
+                        <li>Adjust network operation to correct the problem:
+                            <ul>
+                                <li>there are 5 different approaches to adjusting the network due to congestion...</li>
+                            </ul>
+                        </li>
+                    </ol> <br>
+
+                    <h3>Approaches to Congestion Control:</h3>
+                    <hr>
+
+                    <p>These are the 5 approaches to dealing with congestion control:</p>
+                    <ol> 
+                        <li>Network provisioning - very preventative</li>
+                        <li>Traffic-aware routing - preventive</li>
+                        <li>Admission control - somewhere in the middle</li>
+                        <li>Traffic throttling - reactive</li>
+                        <li>Load shedding - very reactive</li>
+                    </ol> <br>
+                    <p>They are usually applied on different time scales to either prevent congestion or react to it once occurred.</p>
+                    <p>Let's look at each approach in detail:</p>
+
+                    <h4>Network Provisioning</h4>
+                    <hr>
+                    <ul>
+                        <li>Basically asks if 'the network is going to be good?'</li>
+                        <li>(ie. "Is it well matched to the traffic that it carries?")</li>
+                        <li>(ie. "Are the routers fast enough?")</li>
+                    </ul> <br>
+
+                    <h4>Traffic-aware Routing:</h4>
+                    <hr>
+                    <p>If the previous approach failed...</p>
+                    <ul>
+                        <li>Compute best route using Dijkstra's Algorithm, taking into account the traffic.</li>
+                        <li>Shift traffic away from congestion hotspot's by changing the shortest path weights.</li>
+                        <li>Split traffic across multiple paths if necessary.</li>
+                        <li>This approach is called 'Traffic-aware' because of the fact that it considers the network traffic in Dijkstra's Algorithm.</li>
+                    </ul> <br>
+
+                    <h4>Admission Control (traffic shaping):</h4>
+                    <hr>
+                    <p>If the previous approach failed...</p>
+                    <ul>
+                        <li>Allow new traffic to be loaded only if the network has sufficient capacity.</li>
+                        <ul><li>This reduces the overall traffic.</li></ul>
+                        <li>Make hosts transmit at a uniform rate (aka. do traffic shaping)</li>
+                        <ul>
+                            <li>This approach is called 'Traffic-aware' because of the fact that it considers the network traffic in Dijkstra's Algorithm.</li>
+                            <li>This is because one of the main causes of congestion is that traffic is often bursty. Hosts often don't transmit at consistent rates.</li>
+                            <li>This approach is often called 'Traffic Shaping', and is considered part of this Admission Control approach.</li>
+                            <li>There are 2 Traffic Shaping algorithms that I will cover shortly. These are the...
+                                <ul>
+                                    <li>Leaky Bucket Algorithm</li>
+                                    <li>Token Bucket Algorithm</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </ul> <br>
+
+                    <h4>Traffic Throttling (choke packets):</h4>
+                    <hr>
+                    <p>If the previous approach failed...</p>
+                    <ul>
+                        <li>Router creates a choke packet, and sends it back to the sender.</li>
+                        <li>The choke packet is a way of telling all of the senders to 'SLOW DOWN!!! THERE'S TOO MUCH STUFF IN THE NETWORK'</li>
+                        <li>After the sender receives the choke packet, the sender will reduce its TR in attempt to slow down.</li>
+                        <li>This process may be repeated several times until the router is satisfied with the state of congestion in the network.</li>
+                            <li>There are 2 ways of doing this:
+                                <ol>
+                                    <li>A choke packet that affects only the sender. Intermediate routers ignore the choke packet.</li>
+                                    <li>A choke packet that affects each router it passes through. </li>
+                                </ol>
+                            </li>
+                    </ul> <br>
+
+                    <h4>Load Shedding:</h4>
+                    <hr>
+                    <p>If the previous approach failed...</p>
+                    <ul>
+                        <li>The last resort if all other approaches failed is to make routers start dropping packets.</li>
+                        <li>How you drop packets depends on the application being developed.</li>
+                        <li>There are policies you should follow that dictate which packets to drop, how to drop them and when to drop them.</li>
+                            <li>There are 2 ways of doing this:
+                                <ol>
+                                    <li><b>Wine approach</b> - drop the newest packet. Used in applications that require reliability (e.g. email, viewing a webpage, downloading files)</li>
+                                    <li><b>Milk approach</b> - drop the oldest packet. Used in applications that require multimedia (e.g. video games, live-streams, video calling)</li>
+                                </ol>
+                            </li>                        
+                    </ul> <br>
+
+                    <h3>Leaky Bucket Algorithm</h3>
+                    <hr>
+
+                    <p>This is a Traffic Shaping algorithm.</p>
+                    <p>Let's begin with an analogy, using a literal bucket:</p>
+                    <img src="../../../img/leaky-bucket-analogy.png" width="200">
+                    <br>
+                    <ul>
+                        <li>There is a tap which has water coming out of it.</li>
+                        <li>The water falls into the bucket.</li>
+                        <li>The bucket has a hole in it.</li>
+                        <li>The water leaks out of the bucket at a constant rate, regardless of how fast or slow water is going into the bucket.</li>
+                        <li>The leakage rate is dependent on the size of the hole.</li>
+                    </ul> <br>
+
+                    <p>Now let's replicate this analogy in the context of a network:</p>
+                    <img src="../../../img/leaky-bucket-alg.png" width="200">
+                    <br>
+                    <ul>
+                        <li>The host (aka. sender) is equivalent to the tap.</li>
+                        <li>The sender can send packets at any rate it likes.</li>
+                        <ul>
+                            <li>In this diagram, it send 3 packets, then stops, then send 2 more packets.</li>
+                            <li>This is labelled as 'Unregulated flow'.</li>
+                        </ul>
+                        <li>The packets passes through the 'bucket'.</li>
+                        <li>The packets leave the bucket at a constant rate.</li>
+                        <ul>
+                            <li>You can see this constant rate after leaking out of the bucket.</li>
+                            <li>This is labelled as 'Regulated flow'.</li>
+                        </ul>
+                        <li>Depending on your application, you may or may not want a regulated flow.</li>
+                    </ul> <br>
+
+                    <h3>Token Bucket Algorithm</h3>
+                    <hr>
+
+                    <p>This is another Traffic Shaping algorithm, an alternative to the Leaky Bucket Algorithm.</p>
+                    <p>Allows saving up tokens to the maximum size of the bucket, N.</p>
+                    <p>This means that bursts of up to N packets can be sent at once, allowing some burstiness in the output stream, and giving faster response to sudden bursts of input.</p>
+                    <p>This is great, but means the Token algorithm is vulnerable to large bursts if N is too big.</p>
+                    <p>A common solution to this it to use both the Token and Leaky algorithms (in that order).</p>
+                    <p>Sooo in summary, to get the smoothest traffic possible, put a Leaky bucket after the Token bucket.</p>
+                    <br>
+                    <p>In Token Bucket, we are no longer restricted to a regulated flow of data.</p>
+                    <p>Instead, the flow of data can speed up or slow down depending on the size of the burst.</p>
+                    <p>It has the word 'token' in its name because each packet picks up a token on its way through the bucket. The packet can only progress into the network if it picked up one of these tokens.</p>
+
+                    <p>Now let's do an example:</p>
+                    <img src="../../../img/token-bucket-alg.png" width="400">
+                    <br>
+                    <ul>
+                        <li>The host (aka. sender) sends packets at any rate it likes.</li>
+                        <li>The packets passes through the 'bucket'</li>
+                        <li>One token (those black things in the bucket) is added to each packet as it passes through.</li>
+                        <li>According to [diagram a] we have 5 packets, and 3 tokens in the bucket to begin with.</li>
+                        <li>Therefore only 3 of the packets will be given tokens. Those 3 packets will pass through into the networks.</li>
+                        <li>The remaining 2 packets will have to wait behind the bucket for more tokens to be given out.</li>
+                    </ul>
 
                     <div class="button-bar">
-                        <a href="other-internet-protocols.html" class="button prev">Previous</a>
+                        <a href="routing-algorithms.html" class="button prev">Previous</a>
                         <a href="congestion-control.html" class="button next">Next</a>
                     </div>
 
