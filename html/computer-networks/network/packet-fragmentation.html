@@ -205,95 +205,119 @@
                 
                 </div>
                 <div class="inbox-bx container-fluid">
-                    <h1>Services</h1>
+                    <h1>Packet Fragmentation</h1>
                     <hr>
 
-                    <p>The Data-Link layer is the layer below the Network Layer.</p>
-                    <p>The Data-Link layer provides connectionless services to the Network Layer.</p>
-                    <p>Specifically, the Data-Link layer provides the Datagram service to the Network Layer.</p>
-
-                    <h3>Connectionless Service - Datagram</h3>
-                    <hr>
-
-                    <p>Datagrams have three important properties:</p>
+                    <p>In the Internet routers break down packets into smaller fragments. This is known as 'Packet Fragmentation'.</p>
+                    <p>There are two types of packet fragmentation:</p>
                     <ol>
-                        <li><b>Packets are routed independently</b>. So each packet may end up going on a very different journey to another packet...</li>
-                        <li>With datagrams, you <b>don't need to setup a path</b>.</li>
-                        <li>The packet contains the <b>full source</b> and <b>destination address</b> <span style="font-size: 13px; color: rgb(180,180,180);"> - where did the packet come from, and where is it going?</spam></li>
+                        <li><b>Transparent Fragmentation</b> - routers reassembled at boundary</li>
+                        <li><b>Non-transparent Fragmentation</b> - packet is only reassembled at destination.</li>
                     </ol> <br>
 
-                    <p>Here's an example of how the datagram service works and how routing tables work:</p>
-                    <img src="../../../img/connectionless-datagram.png" width="600">
-                    <img src="../../../img/connectionless-datagram-routing-tableA.png">
-                    <img src="../../../img/connectionless-datagram-routing-tableC.png">
-                    <img src="../../../img/connectionless-datagram-routing-tableE.png">
-                    <p>Figure 5.2a</p>
-                    <br>
-                    <p>Firstly, let's break down <i>Figure 5.2a</i> to figure out what is going on:</p>
-                    <ul>
-                        <li>The original message is broken down into 4 packets, labelled { 1, 2, 3, 4 } in square blocks on the diagram.</li>
-                        <li>Packets { 2, 3, 4 } travel on the same path (A->C->E->F)</li>
-                        <li>But packet { 1 } went on a different path (A->B->D->F). Why? Possibly due to congestion or network failures.</li>
-                    </ul>
-
-                    <br>
-                    <p>Let's suppose P1 wants to send a message to P2, covering the lowest weight possible:</p>
-                    <ul>
-                        <li>Being humans, it's pretty obvious how to send a message from P1 to P2 - just traverse through the nodes in an order which yields the lowest total weight.</li>
-                        <li>Unfortunately for computers it doesn't see the graph like us humans. Hence the need for routing tables.</li>
-                        <br>
-                        <li>Luckily <b>reading the routing table</b> is fairly inuitive:</li>
-                        <ol>
-                            <li>Starting at table A: <span style="color: #e1b74c; font-weight: bold">to get to router F</span>, <span style="color: #6288e5; font-weight: bold">we must go through router C</span>...</li>
-                            <li>Continue from table C: <span style="color: #e1b74c; font-weight: bold">to get to router F</span>, <span style="color: #6288e5; font-weight: bold">we must go through router E</span>...</li>
-                            <li>Continue from table E: <span style="color: #e1b74c; font-weight: bold">to get to router F</span>, <span style="color: #6288e5; font-weight: bold">we must go through router F</span>...</li>
-                            <li>And we have arrived at router F!</li>
-                        </ol>
-                    </ul><br>
-
-                    <p>Once the message arrives at P2, it will read the MAC address of P1.</p>
-                    <p>We can read a MAC address using the Address Resolution Protocol (<b>ARP</b>), which simply maps IP addresses to MAC addresses.</p>
-                    <br>
-
-                    <h3>Connection-Orientated Service - Virtual Circuit</h3>
+                    <h3>Transparent Fragmentation</h3>
                     <hr>
-                    
-                    <p>Virtual circuits have three important properties:</p>
+
+                    <p>Routers reassembles the packet at boundary.</p>
+                    <p>Receiver has no idea where the packet was changed, because it only gets the final version and is told nothing about how it was reassembled.</p>
+                    <p>There are three problems with transparent-fragmentation:</p>
                     <ol>
-                        <li><b>Packets follow the same path</b>.</li>
-                        <li>With virtual circuits, you must <b>setup a path</b>.</li>
-                        <li>Each packet contains its own <b>vc_id</b>.</li>
-                    </ol> <br>
+                        <li><b>Computational work</b> - each router does a lot of work - breaks packet into fragments, reassembles fragments into segments.
+                        <li><b>Time delays</b> - each router does a lot of work - breaks packet into fragments, reassembles fragments into segments.
+                        <li><b>Fragments are repeatedly reassembled many times during transmission</b> - each router does a lot of work - breaks packet into fragments, reassembles fragments into segments.
+                    </ol>
 
-                    <p>The Multi-Protocol Label Switching (<b>MPLS</b>) protocol makes virtual circuits.</p>
-
-                    <p>Here's an example of how the virtual circuit service works and how routing tables work:</p>
-                    <img src="../../../img/connection-orientated-vc.png" width="600">
-                    <img src="../../../img/connection-orientated-vc-routing-tableA.png">
-                    <img src="../../../img/connection-orientated-vc-routing-tableC.png">
-                    <img src="../../../img/connection-orientated-vc-routing-tableE.png">
-                    <p>Figure 5.2b</p>
+                    <p>Basically the transparent approach is shit because it is a brute force version of packet fragmentation...</p>
+                    <p>Due to these disadvantages we do not use it in The Internet.</p>
                     <br>
-                    <p>Firstly, let's break down <i>Figure 5.2b</i> to figure out what is going on:</p>
-                    <ul>
-                        <li><span style="color: red;">P1</span> and <span style="color: #6288e5;">P3</span> both decide to send data to P2.</li>
-                        <li>Initially, both <span style="color: red;">P1</span> and <span style="color: #6288e5;">P3</span> have vc_id = 1</li>
-                        <li>This is because they do not know that each other exist yet, so having the same vc_id is no problem.</li>
-                        <li>When they come onto the same path at router A, the vc_id for one of the virtual circuits must change.</li>
-                        <li>We do this by just changing <span style="color: #6288e5;">P3</span>'s vc_id = 2</li>
-                        <li>Then <span style="color: red;">P1</span> and <span style="color: #6288e5;">P3</span>'s virtual circuits continue on the same path towards P2.</li>
-                        <br>
-                        <li><b>Reading the routing table</b> is fairly inuitive:</li>
-                        <ul>
-                            <li><span style="color: #e1b74c;"><b>in</b> - what was the previous router, and what was the vc_id for this virtual circuit?</span></li>
-                            <li><span style="color: #6288e5;"><b>out</b> - what is the next router, and what was the vc_id for this virtual circuit?</span></li>
-                        </ul>                        
-                    </ul>
 
+                    <h3>Non-transparent Fragmentation</h3>
+                    <hr>
+
+                    <p>Packets are only reassembled once at the receiver/end destination.</p>
+                    <p>This gives a more optimal solution compared to the transparent approach, since now we don't have to keep waiting at the router for all the fragments to appear!</p>
+                    <p>There is 1 tiny-weeny problem with non-transparent fragmentation...</p>
+                    <ul>
+                        <li>If one fragment is lost, all fragments will be resent from the beginning again.</li>
+                    </ul> <br>
+                    <p>It's less of a problem really, but more of a solution to a potentially bad situation.</p>
+                    <p>Let's do an example...</p>
+                    <p>But firstly, before we jump straight into the example, we need to know the basic structure and important fields of a datagram</p>
+                    <img src="../../../img/header-datagram.png" width="400">
+                    <p>Figure 5.5a</p><br>
+
+                    <p><i>Figure 5.5a</i> is the structure of a datagram.</p>
+                    <p>The fields circled in red are the important ones and will be used in the example:</p>
+                    <ul>
+                        <li><b><span style="color: red;">Identification</span></b> - some unique packet ID to distinguish between packets.</li>
+                        <li><b><span style="color: red;">DF</span></b> - starting bit-position of payload</li>
+                        <li><b><span style="color: red;">MF</span></b> - 1 if the fragmnt is the final fragment, else 0</li>
+                        <li><b><span style="color: red;">payload</span></b> - the data from the Transport layer</li>
+                    </ul> <br><br>
+
+                    <p><b>Example 1</b></p>
+                    <div class="example-question">
+                    Suppose we have a packet with ID of 27. The payload of the packet is ABCDEFGHIJ. <br>
+                    Calculate and show your answers for fragmentation whn the elementary size is 1 byte: <br>
+                    &emsp;&emsp; a) Original packet, containing 10 bytes <br>
+                    &emsp;&emsp; b) Fragments after passing through a network with maximum size of 8 payload bytes plus header <br>
+                    &emsp;&emsp; c) Fragments after passing through a size 5 gateway <br>
+                    <br>
+                    a) <br>
+                    <img src="../../../img/packet-fragmentation-example-1.png" width="600"> <br>
+                    final answer = 27 0 1 A B C D E F G H I J <br>
+                    <br>
+                    b) <br>
+                    <img src="../../../img/packet-fragmentation-example-2.png" width="850"> <br>
+                    final answer=  27 0 0 A B C D E F G H   27 8 1 I J
+                    <br> <br>
+                    c) <br>
+                    <img src="../../../img/packet-fragmentation-example-3.png" width="1250"> <br>
+                    final answer=  27 0 0 A B C D E   27 5 F G H   27 8 1 I J 
+
+                    </div>
+
+                    <p>In parts b) and c) you may of noticed that the both fragments have the same ID as the original packet.</p>
+                    <ul>
+                        <li>This is intentional.</li>
+                        <li>It makes the reassembling process easier, since we can just group them all up based on their ID.</li>
+                        <li>Also if we loose one of the fragments and have to resend every fragment all over again, since they all have the same ID it'll be easy to do that.</li>
+                    </ul> <br>
+
+                    <p>In part c) all we had to do was truncate the length of each fragment whose length > 5</p>
+                    <ul>
+                        <li>The fragment whose payload was I J is clearly less than 5, so we didn't need to change that one.</li>
+                        <li>But the fragment whose payload was A B C D E F G H is clearly greater than 5, so we truncated it to 5 and created a new fragment to store F G H</li>
+                    </ul> <br> <br>
+
+                    <h3>No-fragmentation: path MTU discovery</h3>
+                    <hr>
+
+                    <p>Sooo apparently packet-fragmentation isn't actually used.</p>
+                    <p>Researchers argued that fragmentation is too slow and tedious (I agree!!!) and that can be detrimental to performance because of:</p>
+                    <ul>
+                        <li>header overheads</li>
+                        <li>a whole packet is lost if any of its fragments are lost</li>
+                    </ul> <br>
+
+                    <p>We can avoid doing fragmentation all together by using Path MTU discovery.</p>
+                    <p>Path MTU Discovery basically determines the max transmission unit (<b>MTU</b>) size on the network path between two IP hosts, usually with the goal of avoiding IP fragmentation.</p>
+                    <p>They are built using the correct size in the first place, meaning we don't need to do fragmentation anymore.</p>
+                    <p>Doing path MTU discovery may cause an extra delay at the beginning, because of all these calculations we have to do.</p>
+                    <p>So basically, path MTU discovery allows us to calculate and use an optimal size.</p>
+                    <p>Here are the steps involved in Path MTU discovery, for IPv4:</p>
+
+                    <div class="example-question">
+                    1) Each IP packet is sent with its header bits set to indicate that no fragmentation is allowed. (and set DF = 1). <br>
+                    2) If a router receives a packet that is too large, it generates an error packet and returns it to the source, and drops the packet. <br>
+                    3) When the source receives the error packet, it uses the information inside to re-fragment the packet into pieces that are small enough for the router to handle. <br>
+                    4) Repeat steps 2 and 3 until the MTU becomes small enough to traverse the entire path without fragmentation. <br>
+                    5) We get an optimal MTU. Yay.
+                    </div>
 
                     <div class="button-bar">
-                        <a href="introduction-to-network-layer.html" class="button prev">Previous</a>
-                        <a href="internetworking.html" class="button next">Next</a>
+                        <a href="tunnelling.html" class="button prev">Previous</a>
+                        <a href="dns-server.html" class="button next">Next</a>
                     </div>
 
                 </div>

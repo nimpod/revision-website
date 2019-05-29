@@ -205,95 +205,73 @@
                 
                 </div>
                 <div class="inbox-bx container-fluid">
-                    <h1>Services</h1>
+                    <h1>Mobile IP</h1>
+                    <hr>
+                    
+                    <p>We learnt from the previous section on IP that the overall IP address changes when you move network.</p>
+                    <p>This is because the overall IP address contains a network address.</p>
+                    <br>
+                    <p>Nowadays we are so dependant on all the IoT technology we have (mobile phones, tablets, computers, smart TV, smart watch, etc...)</p>
+                    <p>Humans are naturally quite mobile mammals - we like to travel around a lot these days.</p>
+                    <p>But you always want your mobile phone to be reachable, even when you change network. <span style="font-size: 13px; color: rgb(180,180,180);"> - when you go on holiday to Belgium, it'd be nice to still be able to use the Internet on your phone!</span></p>
+                    <p>I don't have any other stupid analogies, so I'm just going to use the example from the lecture as that best explains the topic:</p>
+                    <br>
+                    
+                    <h3>Mobile IPv4</h1>
                     <hr>
 
-                    <p>The Data-Link layer is the layer below the Network Layer.</p>
-                    <p>The Data-Link layer provides connectionless services to the Network Layer.</p>
-                    <p>Specifically, the Data-Link layer provides the Datagram service to the Network Layer.</p>
+                    <p>In this example, two mobile phones A and B are trying to communicate using Skype over a network...</p>
+                    <img src="../../../img/mobile-ip-1.png" width="400">
+                    <p>Figure 5.8a</p> <br>
 
-                    <h3>Connectionless Service - Datagram</h3>
+                    <p>Let's study <i>Figure 5.8a</i> in a bit more detail:</p>
+                    <ul>
+                        <li>There is a mobile phone at node A in London.</li>
+                        <li>There is a mobile phone at node B in Paris.</li>
+                        <ul><li><span style="font-size: 13px; color: rgb(180,180,180);">For the communication to work, A must know B's IP address, and B must know A's IP address.</span></li> </ul>
+                    </ul> <br>
+
+                    <p>Then just for shits-and-giggles, mobile phone B moves to New York!</p>
+
+                    <img src="../../../img/mobile-ip-2.png" width="400">
+                    <p>Figure 5.8b</p> <br>
+
+                    <p>Let's study <i>Figure 5.8b</i> in a bit more detail:</p>
+                    <ul>
+                        <li>Home Agent (<b>HA</b>) - <span style="color: blue;">detects if a new host has <b>left</b> the network</span>.</li>
+                        <li>Foreign Agent (<b>FA</b>) - <span style="color: red;">detects if a new host has <b>joined</b> the network</span>.</li>
+                        <li>The FA also gives the new host a 'Careoff IP address'.</li>
+                        <li>Tell HA that the Careoff IP of B has changed.</li>
+                        <li>Because HA knows that B left its network, HA intercepts the packets in the message using Tunnelling.</li>
+                    </ul> <br>
+                    <br>
+
+                    <h3>Mobile IPv6</h3>
                     <hr>
 
-                    <p>Datagrams have three important properties:</p>
-                    <ol>
-                        <li><b>Packets are routed independently</b>. So each packet may end up going on a very different journey to another packet...</li>
-                        <li>With datagrams, you <b>don't need to setup a path</b>.</li>
-                        <li>The packet contains the <b>full source</b> and <b>destination address</b> <span style="font-size: 13px; color: rgb(180,180,180);"> - where did the packet come from, and where is it going?</spam></li>
-                    </ol> <br>
+                    <p>In this example, computer A is trying to send stuff to mobile B across a network...</p>
+                    <img src="../../../img/mobile-ipv6.png" width="500">
+                    <p>Figure 5.8b</p> <br>
 
-                    <p>Here's an example of how the datagram service works and how routing tables work:</p>
-                    <img src="../../../img/connectionless-datagram.png" width="600">
-                    <img src="../../../img/connectionless-datagram-routing-tableA.png">
-                    <img src="../../../img/connectionless-datagram-routing-tableC.png">
-                    <img src="../../../img/connectionless-datagram-routing-tableE.png">
-                    <p>Figure 5.2a</p>
-                    <br>
-                    <p>Firstly, let's break down <i>Figure 5.2a</i> to figure out what is going on:</p>
+                    <p>Let's study <i>Figure 5.8b</i> in a bit more detail:</p>
                     <ul>
-                        <li>The original message is broken down into 4 packets, labelled { 1, 2, 3, 4 } in square blocks on the diagram.</li>
-                        <li>Packets { 2, 3, 4 } travel on the same path (A->C->E->F)</li>
-                        <li>But packet { 1 } went on a different path (A->B->D->F). Why? Possibly due to congestion or network failures.</li>
-                    </ul>
-
-                    <br>
-                    <p>Let's suppose P1 wants to send a message to P2, covering the lowest weight possible:</p>
-                    <ul>
-                        <li>Being humans, it's pretty obvious how to send a message from P1 to P2 - just traverse through the nodes in an order which yields the lowest total weight.</li>
-                        <li>Unfortunately for computers it doesn't see the graph like us humans. Hence the need for routing tables.</li>
-                        <br>
-                        <li>Luckily <b>reading the routing table</b> is fairly inuitive:</li>
+                        <li>There is a mobile host at B somewhere in the south-east of the USA.</li>
+                        <li>The HA is somewhere on the north-east of the USA.</li>
+                        <li>The Sender A is somewhere in the north-west of the USA.</li>
                         <ol>
-                            <li>Starting at table A: <span style="color: #e1b74c; font-weight: bold">to get to router F</span>, <span style="color: #6288e5; font-weight: bold">we must go through router C</span>...</li>
-                            <li>Continue from table C: <span style="color: #e1b74c; font-weight: bold">to get to router F</span>, <span style="color: #6288e5; font-weight: bold">we must go through router E</span>...</li>
-                            <li>Continue from table E: <span style="color: #e1b74c; font-weight: bold">to get to router F</span>, <span style="color: #6288e5; font-weight: bold">we must go through router F</span>...</li>
-                            <li>And we have arrived at router F!</li>
+                            <li>B sends its new careoff IP to HA.</li>
+                            <li>A tries to send to B using the home IP address of, but HA intercepts the packets in the message using Tunnelling.</li>
+                            <li>HA will tunnel B using the careoff IP.</li>
+                            <li>B replies to A</li>
+                            <li>A finds out that B has a new IP address... Therefore A must tunnel the packets in the message to B using Tunnelling.</li>
                         </ol>
                     </ul><br>
 
-                    <p>Once the message arrives at P2, it will read the MAC address of P1.</p>
-                    <p>We can read a MAC address using the Address Resolution Protocol (<b>ARP</b>), which simply maps IP addresses to MAC addresses.</p>
-                    <br>
-
-                    <h3>Connection-Orientated Service - Virtual Circuit</h3>
-                    <hr>
-                    
-                    <p>Virtual circuits have three important properties:</p>
-                    <ol>
-                        <li><b>Packets follow the same path</b>.</li>
-                        <li>With virtual circuits, you must <b>setup a path</b>.</li>
-                        <li>Each packet contains its own <b>vc_id</b>.</li>
-                    </ol> <br>
-
-                    <p>The Multi-Protocol Label Switching (<b>MPLS</b>) protocol makes virtual circuits.</p>
-
-                    <p>Here's an example of how the virtual circuit service works and how routing tables work:</p>
-                    <img src="../../../img/connection-orientated-vc.png" width="600">
-                    <img src="../../../img/connection-orientated-vc-routing-tableA.png">
-                    <img src="../../../img/connection-orientated-vc-routing-tableC.png">
-                    <img src="../../../img/connection-orientated-vc-routing-tableE.png">
-                    <p>Figure 5.2b</p>
-                    <br>
-                    <p>Firstly, let's break down <i>Figure 5.2b</i> to figure out what is going on:</p>
-                    <ul>
-                        <li><span style="color: red;">P1</span> and <span style="color: #6288e5;">P3</span> both decide to send data to P2.</li>
-                        <li>Initially, both <span style="color: red;">P1</span> and <span style="color: #6288e5;">P3</span> have vc_id = 1</li>
-                        <li>This is because they do not know that each other exist yet, so having the same vc_id is no problem.</li>
-                        <li>When they come onto the same path at router A, the vc_id for one of the virtual circuits must change.</li>
-                        <li>We do this by just changing <span style="color: #6288e5;">P3</span>'s vc_id = 2</li>
-                        <li>Then <span style="color: red;">P1</span> and <span style="color: #6288e5;">P3</span>'s virtual circuits continue on the same path towards P2.</li>
-                        <br>
-                        <li><b>Reading the routing table</b> is fairly inuitive:</li>
-                        <ul>
-                            <li><span style="color: #e1b74c;"><b>in</b> - what was the previous router, and what was the vc_id for this virtual circuit?</span></li>
-                            <li><span style="color: #6288e5;"><b>out</b> - what is the next router, and what was the vc_id for this virtual circuit?</span></li>
-                        </ul>                        
-                    </ul>
-
+                    <p>In Mobile IPv6 we can optimise the path for subsequent packets.</p>                
 
                     <div class="button-bar">
-                        <a href="introduction-to-network-layer.html" class="button prev">Previous</a>
-                        <a href="internetworking.html" class="button next">Next</a>
+                        <a href="internet-protocol.html" class="button prev">Previous</a>
+                        <a href="other-internet-protocols.html" class="button next">Next</a>
                     </div>
 
                 </div>

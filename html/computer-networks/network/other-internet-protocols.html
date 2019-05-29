@@ -205,95 +205,134 @@
                 
                 </div>
                 <div class="inbox-bx container-fluid">
-                    <h1>Services</h1>
-                    <hr>
-
-                    <p>The Data-Link layer is the layer below the Network Layer.</p>
-                    <p>The Data-Link layer provides connectionless services to the Network Layer.</p>
-                    <p>Specifically, the Data-Link layer provides the Datagram service to the Network Layer.</p>
-
-                    <h3>Connectionless Service - Datagram</h3>
-                    <hr>
-
-                    <p>Datagrams have three important properties:</p>
-                    <ol>
-                        <li><b>Packets are routed independently</b>. So each packet may end up going on a very different journey to another packet...</li>
-                        <li>With datagrams, you <b>don't need to setup a path</b>.</li>
-                        <li>The packet contains the <b>full source</b> and <b>destination address</b> <span style="font-size: 13px; color: rgb(180,180,180);"> - where did the packet come from, and where is it going?</spam></li>
-                    </ol> <br>
-
-                    <p>Here's an example of how the datagram service works and how routing tables work:</p>
-                    <img src="../../../img/connectionless-datagram.png" width="600">
-                    <img src="../../../img/connectionless-datagram-routing-tableA.png">
-                    <img src="../../../img/connectionless-datagram-routing-tableC.png">
-                    <img src="../../../img/connectionless-datagram-routing-tableE.png">
-                    <p>Figure 5.2a</p>
-                    <br>
-                    <p>Firstly, let's break down <i>Figure 5.2a</i> to figure out what is going on:</p>
-                    <ul>
-                        <li>The original message is broken down into 4 packets, labelled { 1, 2, 3, 4 } in square blocks on the diagram.</li>
-                        <li>Packets { 2, 3, 4 } travel on the same path (A->C->E->F)</li>
-                        <li>But packet { 1 } went on a different path (A->B->D->F). Why? Possibly due to congestion or network failures.</li>
-                    </ul>
-
-                    <br>
-                    <p>Let's suppose P1 wants to send a message to P2, covering the lowest weight possible:</p>
-                    <ul>
-                        <li>Being humans, it's pretty obvious how to send a message from P1 to P2 - just traverse through the nodes in an order which yields the lowest total weight.</li>
-                        <li>Unfortunately for computers it doesn't see the graph like us humans. Hence the need for routing tables.</li>
-                        <br>
-                        <li>Luckily <b>reading the routing table</b> is fairly inuitive:</li>
-                        <ol>
-                            <li>Starting at table A: <span style="color: #e1b74c; font-weight: bold">to get to router F</span>, <span style="color: #6288e5; font-weight: bold">we must go through router C</span>...</li>
-                            <li>Continue from table C: <span style="color: #e1b74c; font-weight: bold">to get to router F</span>, <span style="color: #6288e5; font-weight: bold">we must go through router E</span>...</li>
-                            <li>Continue from table E: <span style="color: #e1b74c; font-weight: bold">to get to router F</span>, <span style="color: #6288e5; font-weight: bold">we must go through router F</span>...</li>
-                            <li>And we have arrived at router F!</li>
-                        </ol>
-                    </ul><br>
-
-                    <p>Once the message arrives at P2, it will read the MAC address of P1.</p>
-                    <p>We can read a MAC address using the Address Resolution Protocol (<b>ARP</b>), which simply maps IP addresses to MAC addresses.</p>
-                    <br>
-
-                    <h3>Connection-Orientated Service - Virtual Circuit</h3>
+                    <h1>Other Internet Protocols</h1>
                     <hr>
                     
-                    <p>Virtual circuits have three important properties:</p>
+                    <p>There are lots of other internet protocols apart from IP, such as:</p>
+                    <ul>
+                        <li>ICMP</li>
+                        <li>ARP</li>
+                        <li>RARP</li>
+                        <li>BOOTP</li>
+                        <li>DHCP</li>
+                    </ul> <br>
+                                        
+                    <h3>ICMP</h1>
+                    <hr>
+
+                    <p>Error-reporting protocol used in the Internet.</p>
+                    <p>Routers use this protocol to generate error messages to the source IP address when network problems prevent delivery of IP packets.</p>
+                    <p>Here is a list of those error messages:</p>
+                    <ul>
+                        <li><b>Destination unreachable</b> - packet could not be delivered</li>
+                        <li><b>Time exceeded</b> - the TTL field hit 0</li>
+                        <li><b>Parameter problem</b> - invalid header field</li>
+                        <li><b>Source quench</b> - choke packet</li>
+                        <li><b>Redirect</b> - teach a router about geography</li>
+                        <li><b>Echo request</b> - ask a machine if it is alive</li>
+                        <li><b>Echo reply</b> - ye brah I'm alive</li>
+                        <li><b>Timestamp request</b> - Echo request + timestamp</li>
+                        <li><b>Timestamp reply</b> - Echo reply + timestamp</li>
+                    </ul> <br>
+                    <p>There really isn't much else to this protocol. Just a bunch of error messages.</p>
+                    <p>ICMP is used quite often in traceroute commands that deal with trying to find all intermediate nodes between a sender and destination.</p>
+                    
+                    <br>
+                    <h3>ARP</h1>
+                    <hr>
+
+                    <p>The Address Resolution Protocol (<b>ARP</b>) is used to route a packet to the correct LAN.</p>
+                    <p>Once you arrive at the LAN, you need to know the MAC address of the address.</p>
+                    <p>So in a nutshell, ARP maps an IP address to a MAC address.</p>
+                    <p>The ARP protocol is only used by the border routers in a network.</p>
+
+                    <br>
+                    <img src="../../../img/arp.png" width="500">
+                    <p>Figure 5.9a</p> <br>
+
+                    <p>In <i>Figure 5.9a</i> shown above:</p>
+                    <ul>
+                        <li>There are 2 networks. The CS network (on the left), and the EE network (on the right).</li>
+                        <li>The router in the middle connects the two networks together.</li>
+                        <li>The router stores two IP addresses and two MAC addresses (one for each network).</li>
+                    </ul> <br>
+
+                    <p>Let's imagine 'Host 1' wants to send a packet to eagle.cs.uni.edu (some random website in the CS network)</p>
+                    <p>The first thing Host 1 needs to do, is find out the IP address of eagle.cs.uni.edu</p>
+                    <ul>
+                        <li>How do we get an IP addresse from a domain name? ... DNS Server!</li>
+                        <li>So Host 1 will contact the DNS server for the .cs network, asking for the IP address of eagle.cs.uni.edu</li>
+                        <li>If succesfull, the DNS server replies with an IP address of 192.32.65.4, which as you can see in <i>Figure 5.9a</i> corresponds to the IP address of 'Host 2'.</li>
+                    </ul> <br>
+
+                    <p>The second thing Host 1 needs to do, is find out the MAC address of Host 2:</p>
+                    <ul>
+                        <li>Host 1 knows that 192.32.65.4 is on the cs network.</li>
+                        <li><span style="font-size: 13px; color: rgb(180,180,180);">Now it will run the ARP protocol to find the MAC address of Host 2</span></p>
+<pre class="prettyprint">
+Host1("are you 192.32.65.5 ?");
+Host2("yeah that's me, also my MAC address is E2");
+Host1("cool cheers bro"); 
+</pre>
+                        <li>Host 1 will now put the IP packet inside an Ethernet frame.</li>
+                    </ul> <br>
+
+                    <p>FDDI is often a common central ring where routers from a larger WAN are connected. FDDI is just a data transmission standard when using fiber optic cables.</p>
+                    <br>
+
+                    <h3>RARP</h1>
+                    <hr>
+
+                    <p>The Reverse Address Resolution Protocol (<b>RARP</b>) <b>assigns an IP address to the host</b>.</p>
+                    <p>It used to be done manually:</p>
+                    <ul>
+                        <li>If you wanted to connect to a new network, you would talk the network administrator (admin) in person.</li>
+                        <li>The admin has a table in the router that maps the users MAC address -> IP address</li>
+                        <li>A RARP server is needed on each network because broadcast messages are not forwarded by routers.</li>
+                    </ul> <br>
+                    <p>Like I said though, it's manual. RARP is no longer used because of how manual the process is.</p>
+                    <br>
+                    <h4>What is the difference between ARP and RARP?</h4>
+                    <ul>
+                        <li>ARP retrieves the MAC address of the receiver.</li>
+                        <li>RARP retrieves the IP address for a computer from a database.</p>
+                    </ul> <br>
+
+                    <h3>BOOTP</h1>
+                    <hr>
+
+                    <p>The BOOTstrap Protocol (<b>BOOTP</b>) does exactly the same thing as RARP - <b>it assigns an IP address to the host</b>.</p>
+                    <p>HOWEVER... moving from one LAN to another LAN no longer requires manual input from the database administrator.</p>
+                    <p>So the database is not as static as it was in RARP.</p>
+                    <p>When a BOOTP server receives a request, it looks in its database for a matching entry and then returns the result to the host.</p>
+                    <p>Also BOOTP uses the UDP transport layer protocol. UDP messages are passed by routers.</p>
+                    <p>Disadvantages of BOOTP:</p>
+                    <ul>
+                        <li>You still have to manually create the table initially.</li>
+                        <li>Each time a new host is added to the LAN, we can't actually use Bootp until an admin has assigned it an IP address and manually entered its IP and MAC addresses into the tables.</li>
+                    </ul> <br>
+
+                    <br>
+                    <h3>DHCP</h1>
+                    <hr>
+
+                    <p>The Dynamic Host Configuration Protocol (<b>DHCP</b>) does exactly the same thing as RARP and BOOTP - <b>it assigns an IP address to the host</b>.</p>
+                    <p>The main difference with DHCP is that you no longer have to manually enter into the table the IP address. This was the big disadvantage of RARqP and BOOTP.</p>
+                    <p>So the database not static at all anymore.</p>
+                    <p>How does DHCP do this?</p>
                     <ol>
-                        <li><b>Packets follow the same path</b>.</li>
-                        <li>With virtual circuits, you must <b>setup a path</b>.</li>
-                        <li>Each packet contains its own <b>vc_id</b>.</li>
+                        <li>Broadcast a 'Disover packet' inside the LAN</li>
+                        <li>A DHCP relay on the local LAN forwards the Disover packet to a (possibly remote) DHCP server</li>
+                        <li>The DHCP server replies with an IP address for the host</li>
                     </ol> <br>
 
-                    <p>The Multi-Protocol Label Switching (<b>MPLS</b>) protocol makes virtual circuits.</p>
-
-                    <p>Here's an example of how the virtual circuit service works and how routing tables work:</p>
-                    <img src="../../../img/connection-orientated-vc.png" width="600">
-                    <img src="../../../img/connection-orientated-vc-routing-tableA.png">
-                    <img src="../../../img/connection-orientated-vc-routing-tableC.png">
-                    <img src="../../../img/connection-orientated-vc-routing-tableE.png">
-                    <p>Figure 5.2b</p>
                     <br>
-                    <p>Firstly, let's break down <i>Figure 5.2b</i> to figure out what is going on:</p>
-                    <ul>
-                        <li><span style="color: red;">P1</span> and <span style="color: #6288e5;">P3</span> both decide to send data to P2.</li>
-                        <li>Initially, both <span style="color: red;">P1</span> and <span style="color: #6288e5;">P3</span> have vc_id = 1</li>
-                        <li>This is because they do not know that each other exist yet, so having the same vc_id is no problem.</li>
-                        <li>When they come onto the same path at router A, the vc_id for one of the virtual circuits must change.</li>
-                        <li>We do this by just changing <span style="color: #6288e5;">P3</span>'s vc_id = 2</li>
-                        <li>Then <span style="color: red;">P1</span> and <span style="color: #6288e5;">P3</span>'s virtual circuits continue on the same path towards P2.</li>
-                        <br>
-                        <li><b>Reading the routing table</b> is fairly inuitive:</li>
-                        <ul>
-                            <li><span style="color: #e1b74c;"><b>in</b> - what was the previous router, and what was the vc_id for this virtual circuit?</span></li>
-                            <li><span style="color: #6288e5;"><b>out</b> - what is the next router, and what was the vc_id for this virtual circuit?</span></li>
-                        </ul>                        
-                    </ul>
-
+                    <p>Here's a cool table to summarise everything:</p>
+                    <img src="../../../img/rarp-bootp-dhcp.PNG">
 
                     <div class="button-bar">
-                        <a href="introduction-to-network-layer.html" class="button prev">Previous</a>
-                        <a href="internetworking.html" class="button next">Next</a>
+                        <a href="internet-protocol.html" class="button prev">Previous</a>
+                        <a href="routing-algorithms.html" class="button next">Next</a>
                     </div>
 
                 </div>

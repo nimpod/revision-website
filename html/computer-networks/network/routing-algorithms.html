@@ -205,95 +205,124 @@
                 
                 </div>
                 <div class="inbox-bx container-fluid">
-                    <h1>Services</h1>
-                    <hr>
-
-                    <p>The Data-Link layer is the layer below the Network Layer.</p>
-                    <p>The Data-Link layer provides connectionless services to the Network Layer.</p>
-                    <p>Specifically, the Data-Link layer provides the Datagram service to the Network Layer.</p>
-
-                    <h3>Connectionless Service - Datagram</h3>
-                    <hr>
-
-                    <p>Datagrams have three important properties:</p>
-                    <ol>
-                        <li><b>Packets are routed independently</b>. So each packet may end up going on a very different journey to another packet...</li>
-                        <li>With datagrams, you <b>don't need to setup a path</b>.</li>
-                        <li>The packet contains the <b>full source</b> and <b>destination address</b> <span style="font-size: 13px; color: rgb(180,180,180);"> - where did the packet come from, and where is it going?</spam></li>
-                    </ol> <br>
-
-                    <p>Here's an example of how the datagram service works and how routing tables work:</p>
-                    <img src="../../../img/connectionless-datagram.png" width="600">
-                    <img src="../../../img/connectionless-datagram-routing-tableA.png">
-                    <img src="../../../img/connectionless-datagram-routing-tableC.png">
-                    <img src="../../../img/connectionless-datagram-routing-tableE.png">
-                    <p>Figure 5.2a</p>
-                    <br>
-                    <p>Firstly, let's break down <i>Figure 5.2a</i> to figure out what is going on:</p>
-                    <ul>
-                        <li>The original message is broken down into 4 packets, labelled { 1, 2, 3, 4 } in square blocks on the diagram.</li>
-                        <li>Packets { 2, 3, 4 } travel on the same path (A->C->E->F)</li>
-                        <li>But packet { 1 } went on a different path (A->B->D->F). Why? Possibly due to congestion or network failures.</li>
-                    </ul>
-
-                    <br>
-                    <p>Let's suppose P1 wants to send a message to P2, covering the lowest weight possible:</p>
-                    <ul>
-                        <li>Being humans, it's pretty obvious how to send a message from P1 to P2 - just traverse through the nodes in an order which yields the lowest total weight.</li>
-                        <li>Unfortunately for computers it doesn't see the graph like us humans. Hence the need for routing tables.</li>
-                        <br>
-                        <li>Luckily <b>reading the routing table</b> is fairly inuitive:</li>
-                        <ol>
-                            <li>Starting at table A: <span style="color: #e1b74c; font-weight: bold">to get to router F</span>, <span style="color: #6288e5; font-weight: bold">we must go through router C</span>...</li>
-                            <li>Continue from table C: <span style="color: #e1b74c; font-weight: bold">to get to router F</span>, <span style="color: #6288e5; font-weight: bold">we must go through router E</span>...</li>
-                            <li>Continue from table E: <span style="color: #e1b74c; font-weight: bold">to get to router F</span>, <span style="color: #6288e5; font-weight: bold">we must go through router F</span>...</li>
-                            <li>And we have arrived at router F!</li>
-                        </ol>
-                    </ul><br>
-
-                    <p>Once the message arrives at P2, it will read the MAC address of P1.</p>
-                    <p>We can read a MAC address using the Address Resolution Protocol (<b>ARP</b>), which simply maps IP addresses to MAC addresses.</p>
-                    <br>
-
-                    <h3>Connection-Orientated Service - Virtual Circuit</h3>
+                    <h1>Routing Algorithms</h1>
                     <hr>
                     
-                    <p>Virtual circuits have three important properties:</p>
+                    <p>Routing algorithms are responsible for deciding which output line an incoming packet should be transmitted on.</p>
+                    <p>In other words, what path is best suited for the packet?</p>
+                    <p>The best path is dependent on many factors, which the algorithms must take into account when choosing the best path for a particular packet.</p>
+                    <p>The algorithms will fill in routing tables to document the process.</p>
+                    
+                    <br>
+                    <p>There are <b>2 types</b> of routing algorithms:</p>
                     <ol>
-                        <li><b>Packets follow the same path</b>.</li>
-                        <li>With virtual circuits, you must <b>setup a path</b>.</li>
-                        <li>Each packet contains its own <b>vc_id</b>.</li>
+                        <li><b>Adaptive Routing Algorithms</b> - can change routing decisions depending on network topology and traffic</li>
+                        <li><b>Non-adaptive Routing Algorithms</b> - makes routing decision and does not change it</li>
                     </ol> <br>
 
-                    <p>The Multi-Protocol Label Switching (<b>MPLS</b>) protocol makes virtual circuits.</p>
+                    <p>Routing algorithms are <b>dependent on 4 things</b>:</p>
+                    <ol>
+                        <li><b>Topology</b> - packet must be sent in the right direction</li>
+                        <li><b>Speed of interconnections</b> - avoid slow lines</li>
+                        <li><b>Apparent load of target hosts</b> - avoid slow machines</li>
+                        <li><b>Congestion</b> - avoid busy routes</li>
+                    </ol> <br>
 
-                    <p>Here's an example of how the virtual circuit service works and how routing tables work:</p>
-                    <img src="../../../img/connection-orientated-vc.png" width="600">
-                    <img src="../../../img/connection-orientated-vc-routing-tableA.png">
-                    <img src="../../../img/connection-orientated-vc-routing-tableC.png">
-                    <img src="../../../img/connection-orientated-vc-routing-tableE.png">
-                    <p>Figure 5.2b</p>
+                    <p>All routing algorithms have the following <b>3 properties</b>:</p>
+                    <ol>
+                        <li><b>Robustness</b> - must be able to cope with network changes, network topology changes, hosts going down or fluctuating traffic levels.</li>
+                        <li><b>Stability</b> - converge to equilibrium.</li>
+                        <li>one of...
+                            <ul>
+                                <li><b>Fairness</b> - routers should have the same chance as getting traffic through them (ie. traffic shold be equally split among routers).</li>
+                                <li><b>Optimality</b> - the router should transport a packet to the destination as quickly as possible.
+                            </ul>
+                        </li>
+                        <span style="font-size: 13px; color: rgb(180,180,180);">Fairness and Optimality contradict each other. You can't have both at the same time.</span>
+                    </ol>
                     <br>
-                    <p>Firstly, let's break down <i>Figure 5.2b</i> to figure out what is going on:</p>
+
+                    <p>Routing typically has <b>2 phases</b>:</p>
+                    <ol>
+                        <li><b>Routing</b> - routers exchange information to decide on best routes using routing tables.</li>
+                        <li><b>Forwading</b> - when the packet arrives at the router we forward it to another router using forwarding tables.</li>
+                    </ol> <br>
+
+                    <p>Before we jump straight into the routing algorithms themselves, we need to go over some core concepts surrounding routing algorithms...</p>
+                    <br>
+                                        
+                    <h3>Flooding</h1>
+                    <hr>
+                    
+                    <p>Flooding is similar to broadcasting. You can visualise it like 'flooding' a network with loads of packets.</p>
+                    <p>The algorithm sends every packet out onto every outgoing line (like broadcasting).</p>
+                    <p>It does not send the packet back in the direction it came from.</p>
+                    <p>The main problem with flooding is that it generates lots of duplicate packets.</p>
+                    <p>We have 3 strategies to <b>control flooding</b>:</p>
+                    <ol>
+                        <li><b>Hop Counter</b> (aka. Time To Live)
+                            <ul>
+                                <li>The Hop Counter is initialised to the number of intermediate nodes in the network.</li>
+                                <li>It is decremented each time it gets to a new router (ie. each hop).</li>
+                                <li>if(hop_counter == 0) -> throw the packet away, it's been in the network for too long. Be gone demon-packet! Be gone!</li>
+                            </ul>
+                        </li>
+                        <li><b>Use sequence numbers</b>
+                            <ul>
+                                <li>Watch each packet's sequence number and make sure that the same packet is not sent twice.</li>
+                            </ul>
+                        </li>
+                        <li><b>Selective Flooding</b>
+                            <ul>
+                                <li>Broadcasting the packets to every router isn't necessary most of the time.</li>
+                                <li>To improve, we only send the packets to routers that are approximately in the right direction.</li>
+                                <li>Routers that are way behind or in a totally different direction to the current direction will not receive the packet.</li>
+                            </ul>
+                        </li>
+                    </ol> <br>
+
+                    <p>Advantages of flooding:</p>
                     <ul>
-                        <li><span style="color: red;">P1</span> and <span style="color: #6288e5;">P3</span> both decide to send data to P2.</li>
-                        <li>Initially, both <span style="color: red;">P1</span> and <span style="color: #6288e5;">P3</span> have vc_id = 1</li>
-                        <li>This is because they do not know that each other exist yet, so having the same vc_id is no problem.</li>
-                        <li>When they come onto the same path at router A, the vc_id for one of the virtual circuits must change.</li>
-                        <li>We do this by just changing <span style="color: #6288e5;">P3</span>'s vc_id = 2</li>
-                        <li>Then <span style="color: red;">P1</span> and <span style="color: #6288e5;">P3</span>'s virtual circuits continue on the same path towards P2.</li>
-                        <br>
-                        <li><b>Reading the routing table</b> is fairly inuitive:</li>
-                        <ul>
-                            <li><span style="color: #e1b74c;"><b>in</b> - what was the previous router, and what was the vc_id for this virtual circuit?</span></li>
-                            <li><span style="color: #6288e5;"><b>out</b> - what is the next router, and what was the vc_id for this virtual circuit?</span></li>
-                        </ul>                        
-                    </ul>
+                        <li><b>Very robust</b> - if a large amount of routers were destroyed at once flooding could recover (useful in military applications for this reason!)</li>
+                        <li><b>Always chooses shortest path</b></li>
+                        <li><b>Good for small amounts of data</b></li>
+                    </ul> <br>
+
+                    <p>Disadvantages of flooding:</p>
+                    <ul>
+                        <li><b>Not practical</b> in most applications</li>
+                        <li><b>Very bad for large amounts of data</b> - the network will collapse if you try to send a 2MB file across the network.</li>
+                    </ul> <br>
+
+                    <h3>The Optimality Principle</h1>
+                    <hr>
+
+                    <p>The most optimal route through a network.</p>
+                    <p>It is a general statement about optimal routes, ignoring topology and traffic.</p>
+                    <img src="../../../img/optimality-principle.png" width="400">
+                    <p>Figure 5.11a</p> <br>
+
+                    <p>As you can see in <i>Figure 5.11a</i>...</p>
+                    <ul>
+                        <li>The optimal path to get from <b>I -> K</b> is via <b>I -> J -> B -> K</b></li>
+                        <li>Since <b>J</b> and <b>B</b> are on the same optimal path, <b>J -> K</b> and <b>B -> K</b> would follow the same route.</li>
+                    </ul> <br>
+                    <p>So what this principle tells us is that <b>a node can determine its best route by learning its neighbours best route</b>.</p>
+                    <br>
+
+                    <h3>Link State Routing</h1>
+                    <hr>
+
+                    <p>Link State Routing (LSR) uses Dijkstra's Algorithm to build a routing table.</p>
+                    <p>It uses Dijkstra's Algorithm because it knows the topology of the entire network.</p>
+                    <p>LSR is an Adaptive Routing Algorithm.</p>
+                    <p>LSR is an algorithm to find the shortest path in a network.</p>
+                    <p>Fun fact: The OSPF algorithm (which is used in the Internet) is a variant of this LSR algorithm. Exciting!</p>
 
 
                     <div class="button-bar">
-                        <a href="introduction-to-network-layer.html" class="button prev">Previous</a>
-                        <a href="internetworking.html" class="button next">Next</a>
+                        <a href="internet-protocol.html" class="button prev">Previous</a>
+                        <a href="routing-algorithms.html" class="button next">Next</a>
                     </div>
 
                 </div>

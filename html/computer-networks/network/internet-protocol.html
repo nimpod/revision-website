@@ -1,0 +1,513 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Revision website</title>
+
+    <!-- include css stylesheets -->
+    <link rel="stylesheet" href="../../../styles.css">
+
+    <!-- include bootstrap CDN -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+    <!-- google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+
+    <!-- prettify.js -->
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?lang=ruby&amp;skin=sunburst"></script>
+</head>
+<body>
+    <!-- main navigation bar at top of window -->
+    <nav class="mnb navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <i class="ic fa fa-bars"></i>
+                </button>
+                <div style="padding: 15px 0;">
+                    <a href="#" id="msbo"><i class="ic fa fa-bars"></i></a>
+                </div>
+            </div> <!-- end of div.navbar-header -->
+
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">More revision<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">CSC2023</a></li>
+                            <li><a href="../computer-networks.html">CSC2026</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">CSC1024</a></li>
+                            <li><a href="#">CSC1021</a></li>
+                            <li><a href="#">CSC1022</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#"><i class="fa fa-bell-o"></i></a></li>
+                    <li><a href="#"><i class="fa fa-comment-o"></i></a></li>
+                </ul>
+            </div> <!-- end of div.navbar-collapse -->
+            
+        </div> <!-- end of div.container-fluid -->
+    </nav> <!-- end of main nav-bar -->
+
+    <div class="msb" id="msb">
+        <nav class="navbar navbar-default" role="navigation">
+
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <div class="brand-wrapper">
+                    <!-- Brand -->
+                    <div class="brand-name-wrapper">
+                        <a class="navbar-brand" href="../../../index.html">
+                            NIMPOD
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Menu -->
+            <div class="side-menu-container">
+                <ul class="nav navbar-nav">
+
+                    <li class="panel panel-default" id="dropdown">
+                        <a data-toggle="collapse" href="#intro-dropdown">
+                            1. Introduction to Computer Networks
+                            <span class="caret"></span>                            
+                        </a>
+                        <div id="intro-dropdown" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <ul class="nav navbar-nav">
+                                    <li><a href="../intro/what-is-a-computer-network.html">1.1. What is a computer network?</a></li>
+                                    <li><a href="../intro/circuit-packet-switch.html">1.2. Circuit Switch/Packet Switch</a></li>
+                                    <li><a href="../intro/network-topology.html">1.3. Network Topology</a></li>
+                                    <li><a href="../intro/network-types.html">1.4. Types of networks</a></li>
+                                    <li><a href="../intro/osi-model.html">1.5. OSI model</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="panel panel-default" id="dropdown">
+                        <a data-toggle="collapse" href="#physical-dropdown">
+                            2. Physical Layer
+                            <span class="caret"></span>                            
+                        </a>
+                        <div id="physical-dropdown" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <ul class="nav navbar-nav">
+                                    <li><a href="../physical/introduction-to-physical-layer.html">2.1. Introduction to the Physical Layer</a></li>
+                                    <li><a href="../physical/transmission-media.html">2.2. Trasmission Media</a></li>
+                                    <li><a href="../physical/communication-satellites.html">2.3. Communication Satellites</a></li>
+                                    <li><a href="../physical/transmission-impairment.html">2.4. Transmission Impairment</a></li>
+                                    <li><a href="../physical/encoding-modulation.html">2.5. Encoding and Modulation</a></li>
+                                    <li><a href="../physical/simplex-duplex.html">2.6. Simplex and Duplex</a></li>
+                                    <li><a href="../physical/parallel-serial.html">2.7. Parallel and Serial</a></li>
+                                    <li><a href="../physical/multiplexing.html">2.8. Multiplexing</a></li>
+                                    <li><a href="../physical/communication-systems.html">2.9. Communication Systems</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li class="panel panel-default" id="dropdown">
+                        <a data-toggle="collapse" href="#datalink-dropdown">
+                            3. Data-Link Layer
+                            <span class="caret"></span>
+                        </a>
+                        <div id="datalink-dropdown" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <ul class="nav navbar-nav">
+                                    <li><a href="../datalink/introduction-to-datalink-layer.html">3.1 Introduction to the Data-Link Layer</a></li>
+                                    <li><a href="../datalink/byte-count.html">3.2 Byte Count</a></li>
+                                    <li><a href="../datalink/byte-stuffing.html">3.3 Byte Stuffing</a></li>
+                                    <li><a href="../datalink/bit-stuffing.html">3.4 Bit Stuffing</a></li>
+                                    <li><a href="../datalink/parity-bit.html">3.5 Parity Bit</a></li>
+                                    <li><a href="../datalink/crc.html">3.6 Cyclic Redundancy Check (CRC)</a></li>
+                                    <li><a href="../datalink/hamming-distance.html">3.7 Hamming Distance</a></li>
+                                    <li><a href="../datalink/flow-control.html">3.8 Flow Control</a></li>
+                                    <li><a href="../datalink/hdlc.html">3.9 High Level Data Link Control (HDLC)</a></li>
+                                    <li><a href="../datalink/ppp.html">3.10 Point to Point Protocol (PPP)</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="panel panel-default" id="dropdown">
+                        <a data-toggle="collapse" href="#mac-dropdown">
+                            4. MAC Sublayer
+                            <span class="caret"></span>                            
+                        </a>
+                        <div id="mac-dropdown" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <ul class="nav navbar-nav">
+                                    <li><a href="../mac/introduction-to-mac-sublayer.html">4.1. Introduction to the MAC Sublayer</a></li>
+                                    <li><a href="../mac/mac-address.html">4.2. MAC Address</a></li>
+                                    <li><a href="../mac/aloha.html">4.3. Aloha</a></li>
+                                    <li><a href="../mac/csma.html">4.4. CSMA</a></li>
+                                    <li><a href="../mac/collision-free.html">4.5. Collision-free protocols</a></li>
+                                    <li><a href="../mac/limited-contention.html">4.6. Limited Contention protocols</a></li>
+                                    <li><a href="../mac/wireless-lan-protocols.html">4.7. Wireless LAN protocols</a></li>
+                                    <li><a href="../mac/wired-lan.html">4.8. Wired LAN</a></li>
+                                    <li><a href="../mac/wireless-lan.html">4.9. Wireless LAN</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li class="active panel panel-default" id="dropdown">
+                        <a data-toggle="collapse" href="#network-dropdown">
+                            5. Network Layer
+                            <span class="caret"></span>
+                        </a>
+                        <div id="network-dropdown" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <ul class="nav navbar-nav">
+                                    <li><a href="introduction-to-network-layer.html">5.1. Introduction to the Network Layer</a></li>
+                                    <li><a href="services.html">5.2. Services</a></li>
+                                    <li><a href="internetworking.html">5.3. Internetworking</a></li>
+                                    <li><a href="tunelling.html">5.4. Tunelling</a></li>
+                                    <li><a href="packet-fragmentation.html">5.5. Packet Fragmentation</a></li>
+                                    <li><a href="dns-server.html">5.6. DNS Server</a></li>
+                                    <li><a href="internet-protocol.html">5.7. Internet Protocol (IP)</a></li>
+                                    <li><a href="mobile-ip.html">5.8. Mobile IP</a></li>
+                                    <li><a href="other-internet-protocols.html">5.9. Other Internet Protocols</a></li>
+                                    <li><a href="routing-algorithms.html">5.10. Routing Algorithms</a></li>
+                                    <li><a href="congestion-control.html">5.11. Congestion Control</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li><a href="#"></span> 6. Transport Layer</a></li>
+                    <li><a href="../acronyms.html">Acronyms</a></li>
+                    <li><a href="../terms.html">Terms</a></li>
+                    <li><a href="../formulas.html">Formulas</a></li>
+
+                </ul> <!-- end of ul.navbar -->
+
+            </div><!--  end of div.side-menu-container -->
+        </nav>
+    </div> <!-- end of main side-bar (msb) div -->
+
+    <div class="mcw">
+        <!--navigation here-->
+        <!--main content view-->
+        <div class="cv">
+            <div>
+            <div class="inbox">
+                <div class="inbox-sb">
+                
+                </div>
+                <div class="inbox-bx container-fluid">
+                    <h1>Internet Protocol (IP)</h1>
+                    <hr>
+                    
+                    <p>IP is the common language over the Internet. Kinda like how English is the common language in Europe.</p>
+                    <p>The IP protocol was designed in the late 1970's by Vint Cerf and Bob Kahn.</p>
+                    <p>The Internet is a large collection of different kinds of subnet's. IP is like the 'glue' that allows all these subnet's to communicate and exchange data.</p>
+                    <p>IP provides delivery of packets from one host to another host in The Internet, even if the hosts are in different networks.</p>
+                    <br>
+                    <p>An IP Address is a unique identifier for any device connected to a computer network such as the Internet.</p>
+                    <p>Currently there are two versions of IP addresses in use today:</p>
+                    <ul>
+                        <li>IP Version 4 (<b>IPv4</b>)</li>
+                        <li>IP Version 6 (<b>IPv6</b>)</li>
+                    </ul> <br>
+
+                    <h3>IPv4</h1>
+                    <hr>
+
+                    <p>IPv4 has been the common IP version of the Internet since 1983 January 1st.</p>
+                    <p>There are 4,294,967,296 (approx. 4.3 billion) unique IP addresses with IPv4.</p>
+                    <p>IPv4 addresses are 32-bits or 4-bytes long.</p>
+                    <p>They are displayed in a dotted-decimal format that contains four octets, with each number in range 0-255</p>
+                    <ul>
+                        <li>Example = 54.225.229.200</li>
+                        <li>Lowest = 0.0.0.0</li>
+                        <li>Highest = 255.255.255.255</li>
+                    </ul> <br>
+                    <p>Each IPv4 address consists of (<span style="color: blue; font-weight: bold;">netID</span>, <span style="color: red; font-weight: bold;">hostID</span>)</p>
+                    <ul>
+                        <li>Example = <span style="color: blue; font-weight: bold;">54.255</span>.<span style="color: red; font-weight: bold;">229.200</span></li>
+                        <li>Lowest = <span style="color: blue; font-weight: bold;">0.0</span>.<span style="color: red; font-weight: bold;">0.0</span></li>
+                        <li>Highest = <span style="color: blue; font-weight: bold;">255.255</span>.<span style="color: red; font-weight: bold;">255.255</span></li>
+                    </ul> <br>
+                    <p>The <span style="color: blue; font-weight: bold;">netID</span> identifies a network.</p>
+                    <p>The <span style="color: red; font-weight: bold;">hostID</span> identifies the specific host on that network.</p>
+                    <br>
+                    <p>All IP hosts on the <b>same IP network</b> must have the <b>same netID</b></p>
+                    <ul>
+                        <li>This reduces the size of the routing table.</li>
+                        <li>Why? Because there is 1 entry per network.</li>
+                        <li>If there was 1 entry per host, that would be a bigggg table!</li>
+                    </ul> <br> <br>
+
+                    <h3>IPv4 Format</h3>
+                    <hr>
+
+                    <p>The diagram below shows the header format of IPv4:</p>
+                    <img src="../../../img/header-ipv4.png" width="400"><br>
+                    <p>Figure 5.7a</p> <br>
+
+                    <p>Let's explore <i>Figure 5.7a</i> in a bit more detail.</p>
+                    <ul>
+                        <li><b>Version</b> - 4</li>
+                        <li><b>IHL</b> - stands for Internet Header Length, calculated by len(header)</li>
+                        <li><b>Differentiated services</b> - specifies type service supplied to this packet (e.g. real-time)</li>
+                        <li><b>Total length</b> - len(datagram)</li>
+                        <li><b>Fragment Offset</b> - if you don't want routers to fragment your packet, set fragment offset = 1</li>
+                        <li><b>MF</b> - 1 if the fragment is the final fragment, else 0</li>
+                        <li><b>DF</b> - starting bit-position relative to payload</li>
+                        <li><b>Identification</b> - unique ID to distinguish IP packets including all their fragments.</li>
+                        <li><b>Header Checksum</b> - a CRC checksum for the header only. Recalculated at each router.</li>
+                        <li><b>Protocol</b> - which transport layer protocol should be used for this packet (UDP? TCP?)</li>
+                        <li><b>Time to live</b> - how long does the packet live for? Prevents a packet from roaming around the Internet forever causing congestion. Each time this packet reaches a router, decrement this number by 1. if time_to_live = 0 then drop the packet.</li>
+                        <li><b>Source address</b> - 32-bit IP address of sender.</li>
+                        <li><b>Destination address</b> - 32-bit IP address of receiver.</li>
+                        <li><b>Options</b> - used to extend the functionality of IP (not used much anymore...)</li>
+                        <li><b>payload</b> - data from the transport layer</li>
+                    </ul> <br>
+
+                    <h3>IPv4 Classful Addressing</h3>
+                    <hr>
+
+                    <p>IP addresses can be divided into 5 classes { A, B, C, D, E }</p>
+                    <p>Depending on the size of your network, you are put into one of these classes.</p>
+
+                    <div class="col-xs-12">
+                        <table class="table table-bordered table-hover dt-responsive">
+                            <caption class="text-center">Exposed Terminal Problem</caption> 
+                            <thead>
+                                <tr> <th>Class</th> <th>First section</th> <th>Type</th> <td>Default subnet mask</td> </tr>
+                            </thead>
+                            <tbody style="font-size: 14px;">
+                                <tr> <td>A</td> <td><span style="color: red;">0</span>xxxxxxx</td> <td>Large organisation</td>      <td>255.0.0.0</td> </tr>
+                                <tr> <td>B</td> <td><span style="color: red;">10</span>xxxxxx</td> <td>Mid-size organisation</td>   <td>255.255.0.0</td></tr>
+                                <tr> <td>C</td> <td><span style="color: red;">110</span>xxxxx</td> <td>Small organisation</td>      <td>255.255.255.0</td> </tr>
+                                <tr> <td>D</td> <td><span style="color: red;">1110</span>xxxx</td> <td>Multi-class organisation</td><td></td> </tr>
+                                <tr> <td>E</td> <td><span style="color: red;">11111</span>xxx</td> <td>Reserved for future use</td> <td></td> </tr>
+                            </tbody>
+                        </table>
+                    </div> 
+
+                    <h3>Examples of IPv4 Classful Addressing</h3>
+                    <hr>
+
+                    <p><b>Example 1</b></p>
+                    <div class="example-question">
+                    Determine the class of the following IPv4 address: 128.195.1.80 <br>
+                    <br>
+                    128 = 1000000<br>
+                    <br>
+                    ∴ Class B
+                    </div>
+
+                    <p><b>Example 2</b></p>
+                    <div class="example-question">
+                    Determine the class of the following IPv4 address: 61.210.45.175<br>
+                    <br>
+                    61 = 00111101<br>
+                    <br>
+                    ∴ Class A
+                    </div>
+
+                    <p><b>Example 3</b></p>
+                    <div class="example-question">
+                    Determine the class of the following IPv4 address: 249.115.50.170<br>
+                    <br>
+                    249 = 11111000<br>
+                    <br>
+                    ∴ Resreve for future use
+                    </div>
+
+                    <h4>But what is a 'Default subnet mask'?</h4>
+                    <ul>
+                        <li>It's just an IP address sent with each packet.</li>
+                        <li>It basically tells you how many bits are reserved for the network ID.</li>
+                        <li>The default subnet mask is different for each class...</li>
+                        <li>When the packet arrives at the router, it computes (IP address &amp; default subnet mask)</li>
+                        <li>For example with class A:</li>
+                        &emsp; 61.210.45.175 &amp;<br>
+                        &emsp; 255.0.0.0<br>
+                        &emsp; 61.0.0.0    this is the default subnet mask<br>
+                        <br>
+
+                        <li>For example with class B:</li>
+                        &emsp; 128.15.215.95 &amp;<br>
+                        &emsp; 255.255.0.0<br>
+                        &emsp; 128.15.0.0    this is the default subnet mask<br>
+                        <br>
+                    </ul>
+
+                    <h4>What is the main disadvantage of classful addressing?</h4>
+                    <ul>
+                        <li>If a company wanted 10,000 hosts (a typical amount of hosts for many companies) they will be forced to use class B and waste 55,000 hosts.</li>
+                        <li>Even if a company wanted 255 hosts, they would be forced to use class B and waste 64745 hosts!</li>
+                        <li>That's a lot of wasted hosts!</li>
+                        <li>A better alternative to Classful Addressing is Classless Addressing...</li>
+                    </ul><br><br>
+
+                    <h3>IPv4 Classless Addressing</h3>
+                    <hr>
+
+                    <p>Classless addressing aims to reduce the wastage of IPv4 addresses.</p>
+                    <p>We sometimes call Classless addressing CIDR.</p>
+                    <p>As well as having a default subnet mask, we also calculate and use a custom subnet mask which is how we will reduce the wastage.</p>
+                    <p>These are the main differences between Classless and Classful addressing:</p>
+                    <ul>
+                        <li><b>The network ID is no longer fixed</b> at 8,16,24 or 32. It can be any number allowing you to get a more precise number of hosts in your network.</li>
+                        <li><b>We now have a custom subnet mask</b> - </li>
+                        <li><b>We can do subnetting</b> - we can divide a class into multiple subnets.</li>
+                    </ul> <br>
+
+                    <p>CIDR notation mean we write the IP address / length, where:</p>
+                    <ul>
+                        <li>IP address = the 32-bit address</li>
+                        <li>Length = number of bits that are allocated to the network ID</li>
+                    </ul> <br>
+
+                    <p>For example, <span style="color: purple;">204.17.5.0</span>/<span style="color: blue;">28</span></p>
+                    <p>So now what we do with <span style="color: blue;">28</span> is we calculate a 'Custom subnet mask'</p>
+                    <img src="../../../img/custom-subnet-mask.png" width="1200">
+                    <ul>
+                        <li>The default subnet mask = 255.255.255.255</li>
+                        <li>The custom subnet mask = 255.255.255.240</li>
+                    </ul>
+                    <br>
+                    <p>The structure of a custom subnet mask is divided up into 3 parts:</p>
+                    <img src="../../../img/custom-subnet-mask-structure.png" width="400">
+                    <ul>
+                        <li><b><span style="color: blue;">netID</span></b></li>
+                        <li>hostID is divided up into 2 sub-parts</li>
+                        <ul>
+                            <li><b><span style="color: grey;">subnetID</span></b></li>
+                            <li><b><span style="color: #e6c600;">hostID</span></b></li>
+                        </ul>
+                    </ul> <br>
+
+                    <h3>Examples of IPv4 Classless Addressing</h3>
+                    <hr>
+
+                    <p>Here are some important formulas that you need to remember!</p>
+                    <img src="../../../img/formulas-nos.png" width="200">
+                    <img src="../../../img/formulas-noh.png" width="200">
+                    <img src="../../../img/formulas-lha.png" width="400">
+                    <img src="../../../img/formulas-fha.png" width="400">
+                    <p>Where...</p>
+                    <ul>
+                        <li>n = number of bits borrowed from hostID to make the subnet mask (in other words, n = len(subnet))</li>
+                        <li>b = the number of bits allocated to the netID (in other words, the length field)</li>
+                    </ul><br>
+                    <p>Also...</p>
+                    <ul>
+                        <li><b>Network Address</b> = everything after n = 0</li>
+                        <li><b>Broadcast Address</b> = everything after n = 1</li>
+                    </ul>
+
+                    <br>
+                    <p><b>Example 1</b></p>
+                    <div class="example-question">
+                    You have been assigned the IP address 128.208.0.0/23 in a network block. Answer the following questions about this IP address.<br>
+                    &emsp;a) What is the maximum number of subnets that can be created?<br>
+                    &emsp;b) What is the maximum number of hosts in each subnet?<br>
+                    &emsp;c) What is the first host address in the network?<br>
+                    &emsp;d) What is the last host address in the network?<br>
+                    <br>
+<pre class="prettyprint">
+a)
+    128 = 10000000
+    ∴ Class B
+
+    Default subnet mask = 11111111.11111111.00000000.00000000
+    Custom subnet mask  = 11111111.11111111.11111110.00000000
+                                            &lt;--7--&gt;
+    
+    = 2<sup>7</sup>
+    = 128
+
+b)
+    = 2<sup>32-23</sup> - 2
+    = 2<sup>9</sup> - 2
+    = 510
+
+c)
+    netID = 10000000.11010000.00000000.00000000
+
+    first host address = netID + 1
+                       = 10000000.11010000.00000000.00000000 + 1
+                       = 10000000.11010000.00000000.00000001
+                       = 128.204.0.1
+
+d)
+    broadcastID = 10000000.11010000.000000001.11111111
+
+    last host address = broadcastID - 1
+                      = 10000000.11010000.00000001.11111111 - 1
+                      = 10000000.11010000.00000001.11111110
+                      = 128.204.0.254
+</pre>
+                    </div>
+
+                    <p>Public IP addresses are valid destinations on the Internet.</p>
+                    <p>Private IP addresses can only be used within private networks (home or a small company). It can't be used anywhere else in the Internet.</p>
+                    <p>Examples of reserved prefixes for private IP addresses are:</p>
+                    <ul>
+                        <li>Class A => 10.0.0.0/8                (2nd most common)</li>
+                        <li>Class B => 172.16.0.0/16             (3rd most common)</li>
+                        <li>Class C => 192.168.0.0/12            (1st most common)</li>
+                    </ul> <br>
+                    <p>To communicate with the Internet, a NAT box maps private IP addresses to 1 public IP address.</p>
+                    <p>That NAT box is simply a table that maps private IP address -> public IP address.</p>
+                    <br>
+
+                    <h3>IPv6</h3>
+                    <hr>
+
+                    <p>The Internet is rapidly increasing in popularity all the time, and one day 4.3 billion IPv4 addresses won't be enough...</p>
+                    <p>Because of this, we are slowly migrating towards IPv6.</p>
+                    <p>IPv6 was released in 1999.</p>
+                    <p>IPv6 has 340,282,366,920,938,000,000,000,000,000,000,000,000 unique possible IP addresses (approx. 340 Undecillion).</p>
+                    <p>IPv6 addresses are 128-bits or 32-bytes long.</p>
+                    <p>The main difference between IPv6 and IPv4 is that now the length of the header is fixed.</p>
+                    <p>This wasn't the case with IPv4.</p>
+
+                    <h3>IPv6 Format</h3>
+                    <hr>
+
+                    <p>The format of the IPv6 header actually seems a lot simpler than IPv4:</p>
+                    <img src="../../../img/header-ipv6.png" width="400">
+                    <p>Figure 5.7b</p> <br>
+
+                    <p>Let's explore <i>Figure 5.7b</i> in a bit more detail.</p>
+                    <ul>
+                        <li><b>Version</b> - 6</li>
+                        <li><b>Traffic class</b> - supports prioritisation/(similar to differentiated services from IPv4)</li>
+                        <li><b>Flow label</b> - serves as a hint to routers and switches with multiple outbound paths that these packets should stay on the same path. (similar to how virtual circuits work)</li>
+                        <li><b>Payload length</b> - if you want to know the IP address of each router between a sender and receiver (if you leave this field empty, by default it uses a transport layer protocol)</li>
+                        <li><b>Next header</b> - exactly the same as TTL from IPv4</li>
+                        <li><b>Hop limit</b> - 16-byte IP address of sender.</li>
+                        <li><b>Source address</b> - 16-byte IP address of receiver.</li>
+                        <li><b>Destination address</b> - unique ID to distinguish IP packets including all their fragments.</li>
+                    </ul> <br>
+                    <p>note: there is no CRC - this is assumed to be handled by the Data-Link layer. This is why IPv6 is much faster than IPv4, because it doesn't waste time computing the CRC checksum - yay.</p>
+
+                    <div class="button-bar">
+                        <a href="dns-server.html" class="button prev">Previous</a>
+                        <a href="mobile-ip.html" class="button next">Next</a>
+                    </div>
+
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="../../../funky.js"></script>
+</body>
+</html>
